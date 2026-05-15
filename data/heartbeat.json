@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "cron": "nft-inventory",
+  "capturedAt": "2026-05-15T00:17:34.223Z",
+  "capturedAtUnix": 1778804254223,
+  "runId": "nft-20260515001734",
+  "runMode": "hourly",
+  "currentEpoch": 185,
+  "status": "ok",
+  "stats": {
+    "total_tokens": 10000,
+    "capture_rate": 1,
+    "minted": 4172,
+    "unminted": 5828,
+    "broken": 1093,
+    "daodao": 1673,
+    "enterprise": 898,
+    "unique_holders": 346
+  },
+  "next_expected_run_at": "2026-05-15T01:17:34.223Z"
+}
