@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "cron": "nft-inventory",
-  "capturedAt": "2026-05-22T21:30:25.801Z",
-  "capturedAtUnix": 1779485425801,
-  "runId": "nft-20260522213025",
+  "capturedAt": "2026-05-22T22:30:27.687Z",
+  "capturedAtUnix": 1779489027687,
+  "runId": "nft-20260522223027",
   "runMode": "hourly",
   "currentEpoch": 186,
   "status": "ok",
@@ -17,5 +17,5 @@
     "enterprise": 898,
     "unique_holders": 346
   },
-  "next_expected_run_at": "2026-05-22T22:30:25.801Z"
+  "next_expected_run_at": "2026-05-22T23:30:27.687Z"
 }
