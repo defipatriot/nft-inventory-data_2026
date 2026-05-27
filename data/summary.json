@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-05-27T16:30:45.848Z",
-  "capturedAtUnix": 1779899445848,
+  "capturedAt": "2026-05-27T17:30:18.196Z",
+  "capturedAtUnix": 1779903018196,
   "epoch": 187,
   "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
   "contracts": {
@@ -390,787 +390,782 @@
     {
       "address": "terra1dyh999cuqjkhadpfhh878sar73mrzy65695309",
       "count": 324,
-      "voting_power_pct": 19.35483870967742
+      "voting_power_pct": 19.565217391304348
     },
     {
       "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
       "count": 291,
-      "voting_power_pct": 17.38351254480287
+      "voting_power_pct": 17.57246376811594
     },
     {
       "address": "terra1yct7ls8kw3x2ucm66rxg7mgtyvw7kr5v4t4xsx",
       "count": 165,
-      "voting_power_pct": 9.85663082437276
+      "voting_power_pct": 9.96376811594203
     },
     {
       "address": "terra10kwrzdaxhlp0d4ffr36ds4gkcq8w726dpum2t3",
       "count": 124,
-      "voting_power_pct": 7.4074074074074066
+      "voting_power_pct": 7.487922705314009
     },
     {
       "address": "terra13qjxhnw98lm36rxc9yjakkmulhpv7zctdc5zlz",
       "count": 51,
-      "voting_power_pct": 3.046594982078853
+      "voting_power_pct": 3.0797101449275366
     },
     {
       "address": "terra1n8utaly5st5du65fgaqawhrkvm0qrlfws9kymc",
       "count": 43,
-      "voting_power_pct": 2.5686977299880525
+      "voting_power_pct": 2.5966183574879227
     },
     {
       "address": "terra1j3ynfcuzl9e5y33ts9lcfxcteh7xg2a3zzc7gm",
       "count": 38,
-      "voting_power_pct": 2.2700119474313025
+      "voting_power_pct": 2.2946859903381642
     },
     {
       "address": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
       "count": 32,
-      "voting_power_pct": 1.911589008363202
+      "voting_power_pct": 1.932367149758454
     },
     {
       "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
       "count": 29,
-      "voting_power_pct": 1.7323775388291516
+      "voting_power_pct": 1.7512077294685993
     },
     {
       "address": "terra1alxk3fmhcl0ga80gl9yj9zp3ezjm4sdh8a9l9c",
       "count": 27,
-      "voting_power_pct": 1.6129032258064515
+      "voting_power_pct": 1.6304347826086956
     },
     {
       "address": "terra1fjd6thl0dqh6e5wv9z7rdrqzmtp0xau7fdejpq",
       "count": 26,
-      "voting_power_pct": 1.5531660692951015
+      "voting_power_pct": 1.570048309178744
     },
     {
       "address": "terra18au39029aa4mey00fap4l74c936l8efjuqhf6u",
       "count": 25,
-      "voting_power_pct": 1.4934289127837514
+      "voting_power_pct": 1.5096618357487923
     },
     {
       "address": "terra1fsxuvu22sd4y28zvdrxnf0jekmcfutn8uw5kpv",
       "count": 23,
-      "voting_power_pct": 1.3739545997610514
+      "voting_power_pct": 1.3888888888888888
     },
     {
       "address": "terra1tgvlyhnqyxgwuw07h986jtnjhkcz72es3u33a9",
       "count": 21,
-      "voting_power_pct": 1.2544802867383513
+      "voting_power_pct": 1.2681159420289856
     },
     {
       "address": "terra1w5cjcvdkl004fzf0gxl8g8wga90kgk7pu2rjna",
       "count": 20,
-      "voting_power_pct": 1.1947431302270013
-    },
-    {
-      "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
-      "count": 18,
-      "voting_power_pct": 1.0752688172043012
+      "voting_power_pct": 1.2077294685990339
     },
     {
       "address": "terra1jv2qj2qx0qndrs0qgxq8thq45z0w2uc733pwcq",
       "count": 17,
-      "voting_power_pct": 1.015531660692951
+      "voting_power_pct": 1.0265700483091789
     },
     {
       "address": "terra130hnn9qh9naezd8q9p5cext6qse35ktxpqe07d",
       "count": 15,
-      "voting_power_pct": 0.8960573476702508
+      "voting_power_pct": 0.9057971014492754
     },
     {
       "address": "terra1q0tfewa60enuu8utyjs9w7um58njhd7fn2p7d3",
       "count": 12,
-      "voting_power_pct": 0.7168458781362007
+      "voting_power_pct": 0.7246376811594203
     },
     {
       "address": "terra1krxhlsypsmdv6nd42aejekedx2jn85qzlfy7fw",
       "count": 11,
-      "voting_power_pct": 0.6571087216248507
+      "voting_power_pct": 0.6642512077294686
     },
     {
       "address": "terra1mujx82t28as537835qm22a0s0zszmafm2l8y9r",
       "count": 11,
-      "voting_power_pct": 0.6571087216248507
+      "voting_power_pct": 0.6642512077294686
     },
     {
       "address": "terra1x0njjcge9xykawm7dy48va89vj6wvj77wy3a6k",
       "count": 11,
-      "voting_power_pct": 0.6571087216248507
+      "voting_power_pct": 0.6642512077294686
     },
     {
       "address": "terra14rpmltqh5ymwfvc24k9dyfx02lzgnuu0c5m5cm",
       "count": 10,
-      "voting_power_pct": 0.5973715651135006
+      "voting_power_pct": 0.6038647342995169
     },
     {
       "address": "terra1gpqalumaqz97h0nqyqtxf85cwte37l6hps03mt",
       "count": 10,
-      "voting_power_pct": 0.5973715651135006
+      "voting_power_pct": 0.6038647342995169
     },
     {
       "address": "terra1xtg8xja9tm9rvk0x0nakfax2yeyyaa9m4qvrf5",
       "count": 10,
-      "voting_power_pct": 0.5973715651135006
+      "voting_power_pct": 0.6038647342995169
     },
     {
       "address": "terra1exu3f6t72x7w06ppu5vu5m5m9s4glywenfnplr",
       "count": 9,
-      "voting_power_pct": 0.5376344086021506
+      "voting_power_pct": 0.5434782608695652
     },
     {
       "address": "terra17ezkdj0fqvm8jm9herfdutr0rd55gsu0kmfnpn",
       "count": 8,
-      "voting_power_pct": 0.4778972520908005
+      "voting_power_pct": 0.4830917874396135
     },
     {
       "address": "terra187tcv92rh2asrmtk3fje3x3hc6hk6099tkhuu8",
       "count": 8,
-      "voting_power_pct": 0.4778972520908005
+      "voting_power_pct": 0.4830917874396135
     },
     {
       "address": "terra1vjgada9t78eh4v8whp9p8cg4evq4erusx9w6w8",
       "count": 8,
-      "voting_power_pct": 0.4778972520908005
+      "voting_power_pct": 0.4830917874396135
     },
     {
       "address": "terra1wqv4g0z9v95lcuengwjd9hrqf6jjqckuv4cxnn",
       "count": 8,
-      "voting_power_pct": 0.4778972520908005
+      "voting_power_pct": 0.4830917874396135
     },
     {
       "address": "terra1yukk9ky7znrf7mcegwwxa773k79qgye67xmqlx",
       "count": 8,
-      "voting_power_pct": 0.4778972520908005
+      "voting_power_pct": 0.4830917874396135
     },
     {
       "address": "terra16vnmejq27c3s9ut4mnlrwfq3vlpjmsd3xs3w60",
       "count": 7,
-      "voting_power_pct": 0.4181600955794504
+      "voting_power_pct": 0.4227053140096618
     },
     {
       "address": "terra19v568fzuguj4mu9np4scecm2ye90zdw8gq0nh6",
       "count": 7,
-      "voting_power_pct": 0.4181600955794504
+      "voting_power_pct": 0.4227053140096618
     },
     {
       "address": "terra1xl324wuxrqkpwntzs6guhc757fmrsrx3meyykd",
       "count": 7,
-      "voting_power_pct": 0.4181600955794504
+      "voting_power_pct": 0.4227053140096618
     },
     {
       "address": "terra14xhypjkmweanv5f4ay7n8zvvzug8nfmnpahu7y",
       "count": 6,
-      "voting_power_pct": 0.35842293906810035
+      "voting_power_pct": 0.36231884057971014
     },
     {
       "address": "terra16d6pzemu64ckee4l9t2ryrpjdgdrmxzd5jaajp",
       "count": 6,
-      "voting_power_pct": 0.35842293906810035
+      "voting_power_pct": 0.36231884057971014
     },
     {
       "address": "terra1hch3fmt0kk2verlk26srsy67x8gr920j5cll3g",
       "count": 6,
-      "voting_power_pct": 0.35842293906810035
+      "voting_power_pct": 0.36231884057971014
     },
     {
       "address": "terra12h0hympmykpt8j5f05z6mxwsa0wam3d5vx6hx7",
       "count": 5,
-      "voting_power_pct": 0.2986857825567503
+      "voting_power_pct": 0.30193236714975846
     },
     {
       "address": "terra1dm8uh0782rxufjdgelap72w86l205qs54un5ky",
       "count": 5,
-      "voting_power_pct": 0.2986857825567503
+      "voting_power_pct": 0.30193236714975846
     },
     {
       "address": "terra1k7wrmppe2dl5jerlpu3nlucqgudk8s3ngx48py",
       "count": 5,
-      "voting_power_pct": 0.2986857825567503
+      "voting_power_pct": 0.30193236714975846
     },
     {
       "address": "terra1m753uer4mzysev8h359cxpq86uvr0rzhkfdl7w",
       "count": 5,
-      "voting_power_pct": 0.2986857825567503
+      "voting_power_pct": 0.30193236714975846
     },
     {
       "address": "terra1qss6vvfwaxs8wy9cc4jn2q56q0leevjv5tjakt",
       "count": 5,
-      "voting_power_pct": 0.2986857825567503
+      "voting_power_pct": 0.30193236714975846
     },
     {
       "address": "terra1zstf4e0au48fy56kkztsfea2m4fl4nd040etn8",
       "count": 5,
-      "voting_power_pct": 0.2986857825567503
+      "voting_power_pct": 0.30193236714975846
     },
     {
       "address": "terra174jqm68e3mp28gwcqxu5q4vvdyjujefl7pxf8d",
       "count": 4,
-      "voting_power_pct": 0.23894862604540024
+      "voting_power_pct": 0.24154589371980675
     },
     {
       "address": "terra1d73fvpwm8stsy5y9epfn6fedm74egn2d85xg7t",
       "count": 4,
-      "voting_power_pct": 0.23894862604540024
+      "voting_power_pct": 0.24154589371980675
     },
     {
       "address": "terra1hzyzys3s7s7xsls5gvsta3z3ylcy7fjcnpgmas",
       "count": 4,
-      "voting_power_pct": 0.23894862604540024
+      "voting_power_pct": 0.24154589371980675
     },
     {
       "address": "terra1k6424kpxl2ax6c58lutrz2sdkllyuq9dafq8f8",
       "count": 4,
-      "voting_power_pct": 0.23894862604540024
+      "voting_power_pct": 0.24154589371980675
     },
     {
       "address": "terra1q6wxdv6rc7p4jjhayg4smj7trxcmwfy44yqk3n",
       "count": 4,
-      "voting_power_pct": 0.23894862604540024
+      "voting_power_pct": 0.24154589371980675
     },
     {
       "address": "terra124sffy6y07qm36cptumtg94ur69e7sf85q5fem",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1fgqgr342dhaz6e747tpakwuknwhane0lg09wng",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1fye4el7alj0zekd5eqr29053unqqwjhaymnng3",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1gnuzu4cp7wh900rg0xgvkeq5rpaluw6srv6l0k",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1gudw9nanjmwjgjqree4k0x8aqft8w4rsththl6",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1je9hqw9m8guxwny2qd6j802cqafp5av8vq4pf2",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1kt5wxtdjewnwlg68scjpknxaz0jgvzskxs3lta",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1kw4xe0sjlungq7pm7h7780gmm0wd46kzvd2w9s",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1mq7zc8xjc5mye7vcpqfjwcchs9zsf45pxtwyre",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1n75apcsmzejuwu6qn2zath5maaw83d0s4gmx4j",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1p3x7fcpjqhenwu8x3q0lxpfhlecd8rs0yepn5k",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1ur6629jtzrk7fr94vlg9dythm5nnukay7m00sv",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1w7at930k5t3axzgu94txh8lpwftp7nvm3x5l9k",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1w7ayljrk3hf9xnvsg042l2vdyuyptd7wf2rpx8",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1w88tmp6p9nf9sg4fzlr9dqxx7y4xjwfwgt4urz",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra1zsrrs5wpxvmt6sjfaz64p5e2hquczu284txq4u",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra12u7jfsekpjp3k9g766qjxe9wcvelpxp06474pl",
       "count": 3,
-      "voting_power_pct": 0.17921146953405018
+      "voting_power_pct": 0.18115942028985507
     },
     {
       "address": "terra10w4r9qgtslmk956nshl8f99srwkrpavhd6n6vq",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra15xwsmwc0elma7g45pmy7gy87u72cp8nmf8sny7",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra16cemgtx5cwuxzfprp7zg96pmkpkhzzyf8gav4r",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra17lapk5p993ugazmv2uuc2wdrn3qveqlh7hklpj",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1825czwm8d69kk30c82zmlc03s47cjvudsn5ag2",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra195qt5zc8znz6vgpsj239kgpd09cere4h8mdj9q",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1aewzxqges8n8p5f0u0sve4w6gktlnkkjjkre43",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1caqnsrs6tm3rmvxm477t7apvxqlz02qx6nr5rl",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1cn70sru5ut70rgr8trq9q7kjqtkcuefsgfzg36",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1d0zzmhwgs79u7fr98sgnmp7f9t2x2wj6mmnu2s",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1fcm6mzxls0j59gfvt2d8xeea38fsq02n8stnnf",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1g6054czmwvle0rahwazkdpmtllyfyhnvjr94hn",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1gt34vqgxpkeysrkmq7j3992hv83yyaf49pgw9d",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1j6l072n7m8gzy3xuwwh67w7dtzwx8k0996xw2l",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1jyz6r7ky2lrpcyucey3j65aapf3h9ynfhag2sh",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1mupt2dd70d7esxyt3k7xxgtglz36uv46zlu74d",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1ptezg6qlfzy85kctl2gtdsd4nqkpswsr58mtv8",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1tna52pya6rltrer3nsrxvqnlhejgjdv40ryqum",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1u53z4uhcz08hkmmmqmld7r5yg4pgc8k2a24ge5",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1uaxwcjuswy60cvr2lknks2j6kpwpqqhnuxlvu3",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1v6890jqg9yfnxn5kldy9s4mzt48y47xpucpjys",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1vwlde6e8yxms34p4km73u89emfda0kxdtjjuq2",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1vwpm2gzztvt847hh669w8w2mlvwmjdq2dzwpry",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1xhpknfxfp8agkse5u6gk8zugh0jh4a946d5swp",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1xwn3xt4u3yxcn7yd37qphz6ktq5kua2kehsfx5",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1y5mneh2gamuztzza42pdd89u47sdx9kqdy022l",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1ywrk2thvg2t2mhzztenvt0c6whw5rd7dfdu39t",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1zaq3ghh7fmggw8sjsfscmhha7rnrq5cndsmwpp",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra1zla8ld2ewhenmyf5l0f0guxq00z3653mqumcgr",
       "count": 2,
-      "voting_power_pct": 0.11947431302270012
+      "voting_power_pct": 0.12077294685990338
     },
     {
       "address": "terra10c6l9mm0vzjgh885yx5geks6azfulj3y7pyrml",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra10sq59rxcspl34r9f4gf5vtjca88lk7x3pkwwut",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1227rr6lmse62npdxtra5y7gsp7zs69d03fxk68",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1247xf3nz6atlsmxdz43h37c83tcdnuknc80f48",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra124znjuweqm26jkg4z35kx8kjgcfa30gawm09uz",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra126pzz4ed3r6v65jen9ex6u7ttdv7c0nytl7djf",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra128qmeave7hlnjj5uxd46jce65wrumkhf0j8ew9",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra12hlnzl0hxyjv6kkgd26r27r9dxvdnmc0swc5e4",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra12s2edysenudupmuqx2g7ltcpq4afpdr7hme9lv",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra12sxrtp6rwmlyx622vmk8xe9vc9dm7hdjuyp6kg",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra14adge4r5tvuvqjuvd66kgupmee8l39wnna2lg3",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra14cr2qm7haac4y2rgndlvuvtgqykc8tayvxxjz9",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra14gvc6zysjwcxthan290sjhddk365tdkzzn7a53",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra14mj7snzwkmfacsschhycsv9xccqhvnyj4gechk",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra14vwq8zpr7sh9ajahr0gyhj6at6ha6rmdpecysm",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra157ynvwu6p8sdsznvp39fwcy7xfjxpmv6th3vd7",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra15xed3ve2f3kr8tx30k9s3a3spy22nt9l9fte2g",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra162kt3ja8nwh7kr2ed67y054g42wqfs8ts7y4ee",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra168zqjwh3wwe8ktg64uz4yzepn3d9pct6kgqdqm",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra16vzhe8500360lc8kp4hgapk8rk07ehucsuxa7v",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra17jxk6xu7gcsf0eawlr8kv34uyw44wzjnugy5qr",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra17w93uxwzg55xc97w3lhc9fln2y3j8gje4qr3r7",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra19clr4tuh3u80r57jctt4lyrtjetccnv5faxgxl",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1aj749s3mqexkn4q79htvchk48wrn2lwrqcqsrc",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1aseg4hkalald6hg23hrh73qnqfjyceex7ykktm",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1c3tquhhe959fmpu9jetka4w9xvp9fym0n98uc8",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1c5sln6rzmqzrptf7f837e98eemje6dfge8dc89",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1cwkrvhc6yac5lzrhh6grs9ejzmdv763gus4fl5",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1cyq6n7l3y7lzplv6jnl38julzeyg3rv9cvvyra",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1dqst5kxwruc4g4fflv9rejmrcm0ezkxc2zw4x5",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1dr9xlcr5s7dt7apycdxe82g5l66pyh3djad20w",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1dw80j7tw39e0t0qwlgd9tzfl8vmuqf4wfd4hw6",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1ey9z5wwr6nf8mh96ruhwy6sc5gmuntfuyfdqdx",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1f0z9sm9dz37h9z69yl5smcp6sd5jphv6zynre6",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1fjklhhev666eucy7jrhvfcwgntt7yys2mes9nk",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1g4cvwhye3j99lz822gpz5f3t7purlwxwyrxf6r",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1gp88fnzd4uvk4t5plagz762a29f88qgew3kfa2",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1gszaqmyt9pmhg38cpax3vprccpjuczzp40m35s",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1h7ja4gpgxwl5epnz7mlypzsttmkw8gceu9rc5v",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1jh876grj729q8tuxadefudklv66sq079myycyh",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1k299wgf4w88j85kvv9x7e4ws0d240c44hy9tzy",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1kcpara8gj58huh9yn6dj7rxd764desdsrfppfc",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1kkvmg6l545fjl67f44hx9ytyjurx4s2r9z8att",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1l0jeppq8v3rt6dxhch5m4ydcmgfmvpxl59mhll",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1l3yecz0564jq9cwd7rjkfku8q6267sxsgzcyev",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1l588m0gfv4ns8s8wzlezff76mvzta3n48qxpn5",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1ndwgju2snppn8u8q0e79an2ujn5uhj2j2pqdlt",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1nhvjgyga4yfkmzv7ts79vu3w2azj6mes0jhccm",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1pc3vp2ua6rxyp0eycyhmc0zdsmyknf22r8tvds",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1r28gj0rw7p49pxfmlfy4cja26yens9tyc9fqvu",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1rm8vhy9sdswrfuxyfp8t5g40j59pmctc2mmh7z",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1stwtc4xffhu2etg43q7yyauwlpdh4aw5ake34s",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1u5mrfn4kjk0kaa26p6a8vu8kdra8phucdxamdg",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1uwxj5gpjqc86845w3v4tk7escgvzwsj3r708u7",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1vruulyz47sthkcdqafcug3x7t357ctrw6a6fcy",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1w9zctxzq393lgawqlgdzfs9f4r977fmn24fjyf",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1x0d0pp36t00k7nhcrwhm9h8jj7d2f76n8aydgz",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1x9jh7pl623jaj8dlt4q53mpmv5mv5nlpzdpxfs",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1xaqf2tfhd6cejckezug3cvjyhue2a8gtu3uaqs",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1xvsjzv8mhr4h6n7dlvq9lxdr9ne3yxn0w84cle",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1zgllgkux94tdqpuufn5cedmrk98qtdcmwhy7ts",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     },
     {
       "address": "terra1zagw3g5mlu4g2uhtds52knnxyx7pfjk5pr20xr",
       "count": 1,
-      "voting_power_pct": 0.05973715651135006
+      "voting_power_pct": 0.06038647342995169
     }
   ],
   "enterprise_stakers_note": "Enterprise treasury holds all migrated NFTs as a single owner. Individual staker attribution requires event log walk (not currently captured)."
