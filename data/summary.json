@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-05-28T13:30:34.429Z",
-  "capturedAtUnix": 1779975034429,
+  "capturedAt": "2026-05-28T14:30:33.217Z",
+  "capturedAtUnix": 1779978633217,
   "epoch": 187,
   "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
   "contracts": {
@@ -17,8 +17,8 @@
   "daodao_staked_count": 1678,
   "enterprise_staked_count": 898,
   "dao_held_count": 5828,
-  "unique_holders": 346,
-  "dao_members_count": 343,
+  "unique_holders": 345,
+  "dao_members_count": 342,
   "circulating_supply": 0,
   "per_owner_counts": {
     "terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv": 503,
@@ -33,7 +33,7 @@
     "terra1tt6th4t29j9g9u6nlgdggwh6gx4ea399fg8aht": 37,
     "terra1qqtgqsp4a6vpcpew7dayraf8fp64s3dndqwk3h": 15,
     "terra103nkswnxykepke9h2l970y7s9uyuh3k3mljfup": 1,
-    "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9": 24,
+    "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9": 25,
     "terra1ettjrqla8cpmx0wvdurjynn7776gurx5ywfufx": 4,
     "terra1lek6syqjr3gmuzxv5wa2kewpl92kccp3u5a5e9": 1,
     "terra1k299wgf4w88j85kvv9x7e4ws0d240c44hy9tzy": 1,
@@ -201,7 +201,6 @@
     "terra19ujmpkuamfpsk3ujqrh09rzqegqn95fugu3yf8": 3,
     "terra1z9svx2ydtre9vel7nqc7up3hg2rkaxmw5vyu4g": 1,
     "terra1huz0kuae5us3f75qhhjqwzt507tnunygy7lmkr": 1,
-    "terra1zstf4e0au48fy56kkztsfea2m4fl4nd040etn8": 1,
     "terra18ad0432wgth6g3gfvnvxpsjkf6slm0mn8skcm0": 1,
     "terra1jjzq6n86cdd3qqq2mq3qxrr756wyadhks29mmg": 3,
     "terra1m2mzpyvvwu8eam6d4zpwdmhk4jed80y0yg9yj6": 1,
