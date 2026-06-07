@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-07T11:30:30.015Z",
-  "capturedAtUnix": 1780831830015,
+  "capturedAt": "2026-06-07T11:41:10.380Z",
+  "capturedAtUnix": 1780832470380,
   "epoch": 188,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -34,7 +34,7 @@
   "dao_held_count": 5828,
   "user_liquid_count": 1060,
   "unique_holders": 351,
-  "dao_members_count": 344,
+  "dao_members_count": 345,
   "per_owner_counts": {
     "terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv": 503,
     "terra1jpqphvz2d24ys4z8llwh643yj94ksc4rxfda0e": 4,
@@ -464,7 +464,7 @@
     "terra1rv4fqpsazmq8l4fmz96pjjef43vtx5uy7he2vm": 1,
     "terra1f0p979gm6evwkhz8ahw0vxvgsjs3gtf4ff0hhn": 5,
     "terra1ggx3feptwzn9f6y826tzq5q9c5sxrtaw2fa2p9": 1,
-    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 1,
+    "terra1vrjdx0t3jzarp66tml99skeuhaz308sr80p7u4": 1,
     "terra1khualx2a4a0haj6vvh2e9dvxvyhuwfyaqy0a5y": 1,
     "terra16mala8z8xej526t4n889v5dedd8zyxsaw6wkmu": 1,
     "terra1k62efklsgmn348l8whn8jqw406xjpkmr2rwpt8": 1,
@@ -775,9 +775,16 @@
       }
     },
     "atrium": {
-      "count": 0,
-      "count_resolved": 0,
-      "by_token": {}
+      "count": 1,
+      "count_resolved": 1,
+      "by_token": {
+        "SOLID": {
+          "count": 1,
+          "total": 100,
+          "min": 100,
+          "total_usd": 103.098694
+        }
+      }
     },
     "boost": {
       "count": 4,
