@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rebuiltAt": "2026-06-07T13:01:08.691Z",
+  "rebuiltAt": "2026-06-07T13:06:10.406Z",
   "rebuiltByMode": "full",
   "note": "Token IDs the hot (15-min) path polls: user-held + marketplace-owned + pending-claim. Rebuilt on full runs; warm derives hot ∪ staked at runtime.",
   "count": 1112,
