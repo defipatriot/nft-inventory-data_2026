@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-07",
-  "capturedAt": "2026-06-07T11:30:30.015Z",
+  "capturedAt": "2026-06-07T11:41:10.380Z",
   "epoch": 188,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -40,9 +40,16 @@
       }
     },
     "atrium": {
-      "count": 0,
-      "count_resolved": 0,
-      "by_token": {}
+      "count": 1,
+      "count_resolved": 1,
+      "by_token": {
+        "SOLID": {
+          "count": 1,
+          "total": 100,
+          "min": 100,
+          "total_usd": 103.098694
+        }
+      }
     },
     "boost": {
       "count": 4,
