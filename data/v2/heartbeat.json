@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "cron": "nft-inventory",
+  "capturedAt": "2026-06-07T05:15:20.900Z",
+  "capturedAtUnix": 1780809320900,
+  "runId": "nft-20260607051520",
+  "runMode": "hourly",
+  "currentEpoch": 188,
+  "status": "ok",
+  "stats": {
+    "total_tokens": 10000,
+    "capture_rate": 1,
+    "unminted": 5828,
+    "broken": 1093,
+    "unbroken": 8907,
+    "treasury_held": 898,
+    "dao_wallet_8ywv_held": 2,
+    "enterprise_staked": 403,
+    "enterprise_dao_broken": 100,
+    "daodao_staked": 1661,
+    "daodao_staked_broken": 65,
+    "bbl_listed": 43,
+    "atrium_listed": 1,
+    "boost_listed": 4,
+    "user_held": 1060,
+    "user_liquid": 1060,
+    "user_held_broken": 27,
+    "unique_holders": 351,
+    "ampluna_balance": 785796.778857,
+    "per_nft_ampluna": 88.22238451296734
+  },
+  "next_expected_run_at": "2026-06-07T06:15:20.900Z"
+}
