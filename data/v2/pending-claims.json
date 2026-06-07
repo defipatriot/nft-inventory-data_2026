@@ -1,10 +1,30 @@
 {
-  "_comment": "data/v2/pending-claims.json — DAODAO pending-claim state. Seeded 2026-06-07 at block 21353559 with 4 verified forgotten-claims (tokens 1319, 3605, 6847, 7123, all matured). The cron OVERWRITES this file every run: it adds new unstakes and removes claimed tokens automatically, and reconciles against custody - total_power. No manual edits ever needed; this _comment naturally drops off after the first run rewrites the file. Do not delete — it only holds per-wallet attribution; the count is always recomputed live from chain.",
   "lastScannedHeight": 21353559,
   "entries": [
-    { "token_id": 1319, "address": "terra1x0njjcge9xykawm7dy48va89vj6wvj77wy3a6k", "unstaked_at": "2026-03-15T06:28:51Z", "release_at": "2026-03-22T06:28:51Z", "note": "unstaked 2x / claimed 1x; confirm holder via nft_claims before nudging" },
-    { "token_id": 3605, "address": "terra1exu3f6t72x7w06ppu5vu5m5m9s4glywenfnplr", "unstaked_at": "2025-10-11T12:14:07Z", "release_at": "2025-10-18T12:14:07Z" },
-    { "token_id": 6847, "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc", "unstaked_at": "2026-01-24T13:27:27Z", "release_at": "2026-01-31T13:27:27Z" },
-    { "token_id": 7123, "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc", "unstaked_at": "2026-01-24T13:27:27Z", "release_at": "2026-01-31T13:27:27Z" }
+    {
+      "token_id": 1319,
+      "address": "terra1x0njjcge9xykawm7dy48va89vj6wvj77wy3a6k",
+      "unstaked_at": "2026-03-15T06:28:51Z",
+      "release_at": "2026-03-22T06:28:51Z",
+      "note": "unstaked 2x / claimed 1x; confirm holder via nft_claims before nudging"
+    },
+    {
+      "token_id": 3605,
+      "address": "terra1exu3f6t72x7w06ppu5vu5m5m9s4glywenfnplr",
+      "unstaked_at": "2025-10-11T12:14:07Z",
+      "release_at": "2025-10-18T12:14:07Z"
+    },
+    {
+      "token_id": 6847,
+      "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc",
+      "unstaked_at": "2026-01-24T13:27:27Z",
+      "release_at": "2026-01-31T13:27:27Z"
+    },
+    {
+      "token_id": 7123,
+      "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc",
+      "unstaked_at": "2026-01-24T13:27:27Z",
+      "release_at": "2026-01-31T13:27:27Z"
+    }
   ]
 }
