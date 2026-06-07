@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "cron": "nft-inventory",
-  "capturedAt": "2026-06-07T08:30:26.729Z",
-  "capturedAtUnix": 1780821026729,
-  "runId": "nft-20260607083026",
+  "capturedAt": "2026-06-07T09:30:23.227Z",
+  "capturedAtUnix": 1780824623227,
+  "runId": "nft-20260607093023",
   "runMode": "hourly",
   "currentEpoch": 188,
   "status": "ok",
@@ -26,8 +26,8 @@
     "user_liquid": 1060,
     "user_held_broken": 27,
     "unique_holders": 351,
-    "ampluna_balance": 785796.778857,
-    "per_nft_ampluna": 88.22238451296734
+    "ampluna_balance": 786597.20035,
+    "per_nft_ampluna": 88.31224883237904
   },
-  "next_expected_run_at": "2026-06-07T09:30:26.729Z"
+  "next_expected_run_at": "2026-06-07T10:30:23.227Z"
 }
