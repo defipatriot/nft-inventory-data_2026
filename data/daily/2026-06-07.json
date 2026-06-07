@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-06-07",
+  "capturedAt": "2026-06-07T03:30:25.253Z",
+  "epoch": 188,
+  "total_tokens": 10000,
+  "broken_count": 1093,
+  "unbroken_count": 8907,
+  "unminted_count": 5828,
+  "treasury_held_count": 898,
+  "enterprise_staked_count": 403,
+  "enterprise_dao_broken_count": 100,
+  "daodao_staked_count": 1661,
+  "bbl_listed_count": 43,
+  "atrium_listed_count": 1,
+  "boost_listed_count": 4,
+  "user_held_count": 1060,
+  "backing": {
+    "ampluna_balance": 785796.778857,
+    "per_nft_ampluna": 88.22238451296734,
+    "unbroken_count": 8907,
+    "ampluna_usd": null,
+    "treasury_value_usd": null,
+    "per_nft_value_usd": null
+  },
+  "marketplaces": {
+    "bbl": {
+      "count": 3030,
+      "count_resolved": 30,
+      "by_token": {
+        "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml": {
+          "count": 30,
+          "total": 74718.99900000001,
+          "min": 200,
+          "total_usd": 0
+        }
+      }
+    },
+    "atrium": {
+      "count": 0,
+      "count_resolved": 0,
+      "by_token": {}
+    },
+    "boost": {
+      "count": 4,
+      "count_resolved": 4,
+      "by_token": {
+        "LUNA": {
+          "count": 3,
+          "total": 57200,
+          "min": 2200,
+          "total_usd": 0
+        },
+        "cw20:terra1ecgazyd0waaj3g7l9cmy5gulhxkps2gmxu9ghducvuypjq68mq2s5lvsct": {
+          "count": 1,
+          "total": 3000,
+          "min": 3000,
+          "total_usd": 0
+        }
+      }
+    }
+  }
+}
