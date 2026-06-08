@@ -179,24 +179,36 @@ function rollups(enriched, spot, oracleSpan) {
 
     // denom split
     const denom = {};
-    for (const s of enriched) { const d = s.denom_symbol; (denom[d] = denom[d] || { count: 0, luna_equiv: 0, notional_usd: 0, value_today_usd: 0 }); denom[d].count++; denom[d].luna_equiv += s.luna_equiv || 0; denom[d].notional_usd += s.notional_usd || 0; denom[d].value_today_usd += s.value_today_usd || 0; }
-    for (const d in denom) { denom[d].luna_equiv = round(denom[d].luna_equiv, 2); denom[d].notional_usd = round(denom[d].notional_usd, 2); denom[d].value_today_usd = round(denom[d].value_today_usd, 2); }
+    for (const s of enriched) { const d = s.denom_symbol; (denom[d] = denom[d] || { count: 0, tokens: 0, luna_equiv: 0, notional_usd: 0, value_today_usd: 0 }); denom[d].count++; denom[d].tokens += s.amount || 0; denom[d].luna_equiv += s.luna_equiv || 0; denom[d].notional_usd += s.notional_usd || 0; denom[d].value_today_usd += s.value_today_usd || 0; }
+    for (const d in denom) { denom[d].tokens = round(denom[d].tokens, 4); denom[d].luna_equiv = round(denom[d].luna_equiv, 2); denom[d].notional_usd = round(denom[d].notional_usd, 2); denom[d].value_today_usd = round(denom[d].value_today_usd, 2); }
+    const volumeTokens = Object.fromEntries(Object.entries(denom).map(([d, v]) => [d, v.tokens]));
 
-    // royalties (residual leg), priced denom-aware. aDAO recipients = royalty wallet + DAO main (both "to DAO")
-    const roy = {}; let royNotional = 0;
+    // royalties (residual leg). Royalties accrue to the treasury AS TOKENS (held, not sold), so the
+    // honest figure is per-denom token totals. USD is context only: "when earned" (at-sale) overstates
+    // (LUNA has since fallen), "today" reflects current value of the still-held tokens. aDAO recipients
+    // = royalty wallet + DAO main (both "to DAO"). Boost sales carry no royalty data (royalty_fee null).
+    const roy = {};
     for (const s of enriched) {
         if (s.royalty_fee == null) continue;
         const rNative = Number(s.royalty_fee) / 1e6;                         // royalty in the sale's own token
-        const rNotional = s.price_usd_at_sale != null ? rNative * s.price_usd_at_sale : 0;
-        const rToday = rNative * (s.denom_spot_usd || 0);
+        const d = s.denom_symbol;
+        const rEarned = s.price_usd_at_sale != null ? rNative * s.price_usd_at_sale : 0;
+        const rToday  = rNative * (s.denom_spot_usd || 0);
         const r = s.royalty_recipient || 'unknown';
-        (roy[r] = roy[r] || { notional_usd: 0, value_today_usd: 0 });
-        roy[r].notional_usd += rNotional; roy[r].value_today_usd += rToday;
-        royNotional += rNotional;
+        const rec = (roy[r] = roy[r] || { tokens: {}, usd_when_earned: 0, usd_today: 0 });
+        rec.tokens[d] = (rec.tokens[d] || 0) + rNative;
+        rec.usd_when_earned += rEarned; rec.usd_today += rToday;
     }
     const royaltyByRecipient = Object.entries(roy).map(([r, v]) => ({
-        recipient: r, is_dao: DAO_ROYALTY_RECIPIENTS.has(r), notional_usd: round(v.notional_usd, 2), value_today_usd: round(v.value_today_usd, 2),
-    })).sort((a, b) => b.notional_usd - a.notional_usd);
+        recipient: r, is_dao: DAO_ROYALTY_RECIPIENTS.has(r),
+        tokens: Object.fromEntries(Object.entries(v.tokens).map(([d, t]) => [d, round(t, 4)])),
+        usd_when_earned: round(v.usd_when_earned, 2), usd_today: round(v.usd_today, 2),
+    })).sort((a, b) => b.usd_when_earned - a.usd_when_earned);
+    // DAO royalty TOKENS (the headline), summed per denom across DAO recipients
+    const daoRoyaltyTokens = {};
+    for (const r of royaltyByRecipient) if (r.is_dao) for (const d in r.tokens) daoRoyaltyTokens[d] = round((daoRoyaltyTokens[d] || 0) + r.tokens[d], 4);
+    const daoUsdWhenEarned = round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.usd_when_earned, 0), 2);
+    const daoUsdToday       = round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.usd_today, 0), 2);
 
     // monthly time series (notional + count)
     const monthly = {};
@@ -248,18 +260,20 @@ function rollups(enriched, spot, oracleSpan) {
     return {
         volume: {
             sales_count: n,
-            luna_equiv_total: round(lunaTot, 2),
-            notional_usd_at_sale: round(notional, 2),     // headline: what buyers actually paid, in USD-of-the-day
-            value_today_usd: round(today, 2),             // reproduces BBL all-time-volume (per-denom amount * spot)
+            tokens: volumeTokens,                         // HEADLINE 1: all-time volume — TOKENS (what actually changed hands)
+            usd_at_sale: round(notional, 2),              // HEADLINE 2: all-time volume — USD at time of each sale (what buyers paid)
+            value_today_usd: round(today, 2),             // secondary context: current market value of that volume (BBL-style; misleading as LUNA fell)
+            luna_equiv_total: round(lunaTot, 2),          // LUNA-equivalent size (LUNA + bLUNA×ratio; excludes USDC/SOLID)
             spot_luna_usd: spot,
-            note: 'notional = sum(amount * token-USD on sale date, per denom); value_today = sum(amount * denom spot). They differ because LUNA/bLUNA were worth more historically.',
+            note: 'tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only).',
         },
         denom_split: denom,
         royalties: {
-            to_dao_notional_usd: round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.notional_usd, 0), 2),
-            to_dao_value_today_usd: round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.value_today_usd, 0), 2),
-            notional_usd_at_sale: round(royNotional, 2),
+            to_dao_tokens: daoRoyaltyTokens,              // HEADLINE 3: royalties — TOKENS accrued to treasury (held, not sold)
+            to_dao_usd_when_earned: daoUsdWhenEarned,     // context only — USD value at the moments earned (unrealized; LUNA has since fallen)
+            to_dao_usd_today: daoUsdToday,                // context only — current USD value of those still-held tokens
             by_recipient: royaltyByRecipient,
+            note: 'Royalties accrue to the treasury as tokens and are not sold, so token totals are the real figure. USD is shown for context only and was never realized. Boost sales carry no royalty data.',
         },
         leaderboards: { top_buyers: topBuyers, top_sellers: topSellers, most_traded_tokens: mostTraded },
         monthly: monthlySeries,
@@ -300,14 +314,15 @@ async function main() {
     console.log(`  priced ${priced}/${enriched.length} sales`);
     const roll = rollups(enriched, spot, oracleSpan);
     if (blunaRatio) roll.bluna_ratio_curve = { latest: round(blunaRatio.latest, 4), span: blunaRatio.span, anchors: blunaRatio.anchors.map(a => ({ month: a.date.slice(0, 7), ratio: round(a.ratio, 3) })) };
-    console.log(`  notional(at-sale)=$${roll.volume.notional_usd_at_sale} | value-today=$${roll.volume.value_today_usd} | LUNA-equiv=${roll.volume.luna_equiv_total} | bLUNA: ${roll.bluna_pricing.mode}`);
+    console.log(`  volume: usd-at-sale=$${roll.volume.usd_at_sale} | value-today=$${roll.volume.value_today_usd} | tokens=${JSON.stringify(roll.volume.tokens)}`);
+    console.log(`  royalties to DAO: ${JSON.stringify(roll.royalties.to_dao_tokens)} (=$${roll.royalties.to_dao_usd_when_earned} when earned, $${roll.royalties.to_dao_usd_today} today) | bLUNA: ${roll.bluna_pricing.mode}`);
 
     const enrichedDoc = { schemaVersion: 1, collection: COLLECTION, builtAt: new Date().toISOString(), spot_luna_usd: spot, count: enriched.length, sales: enriched };
     const analyticsDoc = { schemaVersion: 1, collection: COLLECTION, builtAt: new Date().toISOString(), ...roll };
 
     if (GITHUB_TOKEN) {
         console.log('📤 Publishing…');
-        await pushToGithub(`${COLL_DIR}/nft-analytics.json`, JSON.stringify(analyticsDoc, null, 1), `nft analytics — ${COLLECTION} — $${roll.volume.notional_usd_at_sale} notional`);
+        await pushToGithub(`${COLL_DIR}/nft-analytics.json`, JSON.stringify(analyticsDoc, null, 1), `nft analytics — ${COLLECTION} — $${roll.volume.usd_at_sale} usd-at-sale`);
         await pushToGithub(`${COLL_DIR}/sales-enriched.json`, JSON.stringify(enrichedDoc), `nft sales enriched — ${COLLECTION} — ${enriched.length} sales`);
         console.log('✅ pushed nft-analytics.json + sales-enriched.json');
     } else {
