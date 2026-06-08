@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-08T12:45:16.801Z",
-  "capturedAtUnix": 1780922716801,
+  "capturedAt": "2026-06-08T13:00:12.091Z",
+  "capturedAtUnix": 1780923612091,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -25,16 +25,16 @@
   "enterprise_dao_broken_count": 100,
   "daodao_staked_count": 1661,
   "bbl_listed_count": 43,
-  "atrium_listed_count": 1,
+  "atrium_listed_count": 0,
   "boost_listed_count": 4,
-  "user_held_count": 1060,
+  "user_held_count": 1061,
   "daodao_staked_broken_count": 65,
-  "user_held_broken_count": 27,
+  "user_held_broken_count": 28,
   "minted_count": 4172,
   "dao_held_count": 5828,
-  "user_liquid_count": 1060,
-  "unique_holders": 351,
-  "dao_members_count": 345,
+  "user_liquid_count": 1061,
+  "unique_holders": 350,
+  "dao_members_count": 344,
   "per_owner_counts": {
     "terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv": 503,
     "terra1h8psjgcsg9fef7w2yv0j6262sfcaszj8vs4tsy3uwla6zwtaspvqrp4l7v": 898,
@@ -154,7 +154,7 @@
     "terra1rv4fqpsazmq8l4fmz96pjjef43vtx5uy7he2vm": 1,
     "terra1f0p979gm6evwkhz8ahw0vxvgsjs3gtf4ff0hhn": 5,
     "terra1ggx3feptwzn9f6y826tzq5q9c5sxrtaw2fa2p9": 1,
-    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 1,
+    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 2,
     "terra16mala8z8xej526t4n889v5dedd8zyxsaw6wkmu": 1,
     "terra1k62efklsgmn348l8whn8jqw406xjpkmr2rwpt8": 1,
     "terra1duwwejcudtnxkfmvua50vgdlcfpx9aqxatpmtm": 1,
@@ -363,7 +363,6 @@
     "terra1tfshgycj7cya6pndu9y0czua9lx90grarha270": 1,
     "terra1962s9qa6d7vg8w8ta2x30zyyqxekdj85ke9x0w": 1,
     "terra1g4xnrkkuccfw0e2rx8xk4vq0lg7a72v4yhl3d3": 1,
-    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 1,
     "terra1lz4ydc6ck6gd7ec0ne0km0upxd8f0pktgtjy49": 1,
     "terra19l4n2nn563zdg2rhqy0yjg3fm6hw22ntnzzmnk": 1,
     "terra1ual8d4v7v926qtwkwn3lgjyzm0flg27zpseufw": 1,
@@ -502,7 +501,7 @@
     "terra1rv4fqpsazmq8l4fmz96pjjef43vtx5uy7he2vm": 1,
     "terra1f0p979gm6evwkhz8ahw0vxvgsjs3gtf4ff0hhn": 5,
     "terra1ggx3feptwzn9f6y826tzq5q9c5sxrtaw2fa2p9": 1,
-    "terra1vrjdx0t3jzarp66tml99skeuhaz308sr80p7u4": 1,
+    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 2,
     "terra16mala8z8xej526t4n889v5dedd8zyxsaw6wkmu": 1,
     "terra1k62efklsgmn348l8whn8jqw406xjpkmr2rwpt8": 1,
     "terra1duwwejcudtnxkfmvua50vgdlcfpx9aqxatpmtm": 1,
@@ -716,7 +715,6 @@
     "terra1tfshgycj7cya6pndu9y0czua9lx90grarha270": 1,
     "terra1962s9qa6d7vg8w8ta2x30zyyqxekdj85ke9x0w": 1,
     "terra1g4xnrkkuccfw0e2rx8xk4vq0lg7a72v4yhl3d3": 1,
-    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 1,
     "terra1lz4ydc6ck6gd7ec0ne0km0upxd8f0pktgtjy49": 1,
     "terra19l4n2nn563zdg2rhqy0yjg3fm6hw22ntnzzmnk": 1,
     "terra1ual8d4v7v926qtwkwn3lgjyzm0flg27zpseufw": 1,
@@ -742,7 +740,7 @@
     "terra1drwt52wuqd2p3z5y9pgylhnmqaaznga8xwfcds": 1,
     "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh": 10,
     "terra1r086c539nhw5t6khsjy3xe9x3s9f6l5v9rdz9x": 3,
-    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 1,
+    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 2,
     "terra1k7cftdjzdmtqmfl5nyny8vu77m280tm8c009x5": 2,
     "terra1yqv0af22675wlcmgflxk4ve07vt8qlm999gk0cuw5l64r5xxgadsyg8ywv": 2,
     "terra1mqmqc7vmjpslgeju4m0pwwt94gutllnur775kv": 1,
@@ -750,8 +748,7 @@
     "terra10gdvn7j3hgtvnzncr8vvmhu3mn6gdd0lq56aq0": 1,
     "terra1aavxhkpne90snmg3feyu8g96ta5qype6ja4g3n": 1,
     "terra1220zac029dwpy9usfnnx0awmwmleur56evat8j": 2,
-    "terra15zpetcnjmg5p53na6rvyp6vvm7gnf0qcfrn8p9": 1,
-    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 1
+    "terra15zpetcnjmg5p53na6rvyp6vvm7gnf0qcfrn8p9": 1
   },
   "backing": {
     "ampluna_balance": 787396.94442,
@@ -775,16 +772,9 @@
       }
     },
     "atrium": {
-      "count": 1,
-      "count_resolved": 1,
-      "by_token": {
-        "SOLID": {
-          "count": 1,
-          "total": 100,
-          "min": 100,
-          "total_usd": 103.471887
-        }
-      }
+      "count": 0,
+      "count_resolved": 0,
+      "by_token": {}
     },
     "boost": {
       "count": 4,
