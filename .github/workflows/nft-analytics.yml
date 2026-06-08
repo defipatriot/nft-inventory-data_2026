@@ -1,0 +1,43 @@
+name: NFT Analytics Builder
+
+# Reads the committed seed files for a collection and rebuilds its analytics:
+#   data/v2[/<collection>]/sales-history.json  + nft-provenance.json  + data/v2/luna-usd-daily.json
+#   → data/v2[/<collection>]/nft-analytics.json  +  sales-enriched.json
+# Re-runnable any time without re-sweeping. Requires the seeds (and luna-usd-daily.json) to be committed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      collection:
+        description: "Which collection to build analytics for"
+        type: choice
+        default: adao
+        options: [adao, pixel-lions, scalandious]
+      bluna_rate:
+        description: "boneLUNA→LUNA rate for bLUNA sales (flat, until historical hub rate is wired in)"
+        type: string
+        default: "1.0"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (gets the seed files + builder)
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build analytics
+        env:
+          COLLECTION: ${{ inputs.collection }}
+          BLUNA_RATE: ${{ inputs.bluna_rate }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node nft-analytics-builder.js
