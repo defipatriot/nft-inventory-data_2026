@@ -1,0 +1,52 @@
+name: NFT History Backfill (one-time)
+
+# Manual-only. No schedule — this is a one-shot job, not a cron.
+# Click "Run workflow" in the Actions tab, pick what to run, and it commits
+# the seed files into data/v2/ of this repo. Delete this workflow when done.
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Which backfill to run"
+        type: choice
+        default: both
+        options: [both, sales, provenance]
+      mode:
+        description: "sample = dry-run (writes nothing) | full = write data/v2"
+        type: choice
+        default: full
+        options: [full, sample]
+
+permissions:
+  contents: write   # lets the scripts push the output files to this repo
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (gets the backfill scripts in this repo)
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run BBL sales backfill
+        if: ${{ inputs.target == 'both' || inputs.target == 'sales' }}
+        env:
+          RUN_MODE: ${{ inputs.mode }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node bbl-sales-backfill.js
+
+      - name: Run NFT provenance backfill
+        if: ${{ inputs.target == 'both' || inputs.target == 'provenance' }}
+        env:
+          RUN_MODE: ${{ inputs.mode }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node nft-provenance-backfill.js
