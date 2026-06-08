@@ -52,9 +52,10 @@ function phaseFor(dateStr) {
 }
 
 // ─── HTTP / tx-search ───────────────────────────────────────────────────────
+const KEEPALIVE_AGENT = new https.Agent({ keepAlive: true, maxSockets: 1, keepAliveMsecs: 30000 });
 function httpGet(url, t = 20000) {
     return new Promise((res, rej) => {
-        const r = https.get(url, { headers: { Accept: 'application/json', 'User-Agent': 'aDAO-provenance/1.0' } }, (x) => {
+        const r = https.get(url, { agent: KEEPALIVE_AGENT, headers: { Accept: 'application/json', Connection: 'keep-alive', 'User-Agent': 'aDAO-backfill/3.0' } }, (x) => {
             let b = ''; x.on('data', c => b += c); x.on('end', () => {
                 if (x.statusCode >= 200 && x.statusCode < 300) { try { res(JSON.parse(b)); } catch (e) { rej(new Error('bad JSON')); } }
                 else rej(new Error(`HTTP ${x.statusCode} ${b.slice(0, 120)}`)); });
@@ -63,60 +64,69 @@ function httpGet(url, t = 20000) {
     });
 }
 async function lcdGet(p, label) { try { return await httpGet(LCD_PRIMARY + p); } catch (e) { try { return await httpGet(LCD_FALLBACK + p); } catch (e2) { throw new Error(`${label}: both LCDs failed (${e2.message})`); } } }
-function txPath(conds, offset) { return `/cosmos/tx/v1beta1/txs?query=${encodeURIComponent(conds.join(' AND '))}&order_by=ORDER_BY_ASC&pagination.limit=${PAGE_LIMIT}&pagination.offset=${offset}`; }
+function txPath(conds, page) { return `/cosmos/tx/v1beta1/txs?query=${encodeURIComponent(conds.join(' AND '))}&order_by=ORDER_BY_ASC&page=${page}&limit=${PAGE_LIMIT}`; }
 async function fetchAllTxs(conds, label, _get = lcdGet) {
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-    const OVERLAP = 20, RETRIES = 30, EMPTY_CONFIRM = 6, BACKOFF = 400;
-    const heights = b => b.map(t => Number(t.height));
+    const RETRIES = +(process.env.PAGER_RETRIES||60), ERR_BACKOFF = +(process.env.PAGER_ERR_BACKOFF||400), PROBE_DELAY = +(process.env.PAGER_PROBE_DELAY||120), CONTIG_DELTA = 250000;
     const out = [], seen = new Set();
-    const stats = { calls: 0, good: 0, dup: 0, discont: 0, empty: 0, error: 0, advances: 0 };
-    let lastMaxHeight = 0, partialSeen = false, stop = 'complete';
+    const stats = { calls: 0, pages: 0, regress: 0, far: 0, dup: 0, empty: 0, error: 0, reprobe: 0 };
+    let frontier = 0, globalMax = 0, stop = 'complete';
+    const scan = (batch) => { let freshMin = Infinity, fresh = 0; for (const tx of batch) { const h = Number(tx.height); if (h > globalMax) globalMax = h; if (!seen.has(tx.txhash)) { fresh++; if (h < freshMin) freshMin = h; } } return { fresh, freshMin }; };
+    const commit = (batch) => { let added = 0; for (const tx of batch) { const h = Number(tx.height); if (h > frontier) frontier = h; if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; } } stats.pages++; return added; };
 
-    // page 0: probe RETRIES times, keep the deepest-archive page (smallest min height)
-    let best = null;
+    // page 1: deepest archive wins (smallest min-height); sample the full budget
+    let best1 = null;
     for (let a = 0; a < RETRIES; a++) {
         stats.calls++;
-        let resp; try { resp = await _get(txPath(conds, 0), `${label} p0.${a}`); } catch { stats.error++; await sleep(BACKOFF); continue; }
+        let resp; try { resp = await _get(txPath(conds, 1), label + ' p1.' + a); } catch { stats.error++; await sleep(ERR_BACKOFF); continue; }
         const batch = resp?.tx_responses || [];
-        if (batch.length === 0) { stats.empty++; await sleep(BACKOFF); continue; }
-        const minH = Math.min(...heights(batch));
-        if (!best || minH < best.minH) best = { batch, minH };
-        await sleep(120);
+        if (!batch.length) { stats.empty++; await sleep(ERR_BACKOFF); continue; }
+        scan(batch);
+        const minH = Math.min(...batch.map(t => Number(t.height)));
+        if (!best1 || minH < best1.minH) best1 = { batch, minH };
+        await sleep(PROBE_DELAY);
     }
-    if (!best) throw new Error(`${label}: first page unreachable after ${RETRIES} tries (node pool down?)`);
-    for (const tx of best.batch) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); }
-    lastMaxHeight = Math.max(...heights(best.batch));
-    partialSeen = best.batch.length < PAGE_LIMIT;
-    console.log(`  ${label}: page0 start-height=${best.minH} (${out.length} txs)`);
+    if (!best1) throw new Error(label + ': page 1 unreachable after ' + RETRIES + ' tries');
+    commit(best1.batch);
+    console.log('  ' + label + ': page1 start-height=' + best1.minH + ' (' + out.length + ' txs, frontier=' + frontier + ')');
 
-    // subsequent pages: overlap-anchored (must re-share seen txs AND add new), retry bad backends.
-    // KEY: an empty response mid-data does NOT mean "end" — it's just a backend without that offset.
-    // Empties only confirm the end once we've already seen a partial (short) page.
-    for (let page = 1; page < MAX_PAGES; page++) {
-        const offset = Math.max(0, out.length - OVERLAP);
-        let accepted = null, emptyVotes = 0, endVotes = 0;
-        for (let a = 0; a < RETRIES; a++) {
-            stats.calls++;
-            let resp; try { resp = await _get(txPath(conds, offset), `${label} p${page}.${a}`); } catch { stats.error++; await sleep(BACKOFF); continue; }
-            const batch = resp?.tx_responses || [];
-            if (batch.length === 0) { stats.empty++; if (partialSeen && ++emptyVotes >= EMPTY_CONFIRM) { accepted = 'END'; break; } await sleep(BACKOFF); continue; }
-            let overlap = 0, fresh = 0;
-            for (const tx of batch) (seen.has(tx.txhash) ? overlap++ : fresh++);
-            if (overlap === 0) { stats.discont++; await sleep(BACKOFF); continue; }              // wrong window (recent-only / misaligned)
-            if (fresh === 0) { stats.dup++; if (partialSeen && ++endVotes >= 2) { accepted = 'END'; break; } await sleep(BACKOFF); continue; } // offset ignored, or true end
-            stats.good++; accepted = batch; break;                                               // continuous + progress
+    // pages 2..N: accept the tightest forward continuation; never jump past data
+    for (let page = 2; page < MAX_PAGES; page++) {
+        const avg = out.length > 1 ? Math.max(1, (frontier - Number(out[0].height)) / (out.length - 1)) : 1;
+        const TIGHT = Math.max(2000, 3 * avg);        // a candidate this close MUST be the immediate next page
+        const LOOSE = Math.max(50000, 10 * avg);      // a "best" beyond this is suspicious → re-probe before trusting
+        let bestCand = null, rounds = 0;
+        do {
+            if (rounds > 0) stats.reprobe++;
+            for (let a = 0; a < RETRIES; a++) {
+                stats.calls++;
+                let resp; try { resp = await _get(txPath(conds, page), label + ' p' + page + '.' + a); } catch { stats.error++; await sleep(ERR_BACKOFF); continue; }
+                const batch = resp?.tx_responses || [];
+                if (!batch.length) { stats.empty++; await sleep(ERR_BACKOFF); continue; }
+                const { fresh, freshMin } = scan(batch);
+                if (fresh === 0) { stats.dup++; await sleep(PROBE_DELAY); continue; }
+                if (freshMin < frontier) { stats.regress++; await sleep(PROBE_DELAY); continue; }
+                if (freshMin - frontier > CONTIG_DELTA) { stats.far++; await sleep(PROBE_DELAY); continue; }
+                if (!bestCand || freshMin < bestCand.freshMin) bestCand = { batch, freshMin };
+                if (bestCand.freshMin - frontier <= TIGHT) break; // unambiguously the immediate next page
+                await sleep(PROBE_DELAY);
+            }
+            rounds++;
+        } while (frontier < globalMax && rounds < 3 && (!bestCand || bestCand.freshMin - frontier > LOOSE));
+
+        if (bestCand) {
+            const added = commit(bestCand.batch);
+            if (page % 10 === 0 || added < PAGE_LIMIT) console.log('  ' + label + ': ' + out.length + ' txs (page ' + page + ', frontier=' + frontier + ', +' + added + ')');
+            if (page === MAX_PAGES - 1) { stop = 'page-cap'; console.warn('  ⚠ ' + label + ' hit page cap (' + MAX_PAGES + ')'); }
+            continue;
         }
-        if (accepted === 'END') { stop = 'clean-end'; break; }
-        if (!accepted) { stop = `stuck@offset_${offset}`; console.warn(`  ⚠ ${label}: STUCK at offset ${offset} after ${RETRIES} tries — partial coverage up to height ${lastMaxHeight}`); break; }
-        let added = 0;
-        for (const tx of accepted) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; }
-        stats.advances++;
-        lastMaxHeight = Math.max(lastMaxHeight, Math.max(...heights(accepted)));
-        partialSeen = accepted.length < PAGE_LIMIT;
-        if (page % 10 === 0 || added < PAGE_LIMIT) console.log(`  ${label}: ${out.length} txs (page ${page}, height=${lastMaxHeight}, +${added})`);
-        if (page === MAX_PAGES - 1) { stop = 'page-cap'; console.warn(`  ⚠ ${label} hit page cap (${MAX_PAGES})`); }
+        if (frontier >= globalMax) { stop = 'clean-end'; break; }
+        stop = 'stuck@page' + page;
+        console.warn('  ⚠ ' + label + ': STUCK at page ' + page + ' — frontier ' + frontier + ' < globalMax ' + globalMax);
+        break;
     }
-    console.log(`  ${label}: DONE — ${out.length} txs | stop=${stop} | pages_advanced=${stats.advances} | calls=${stats.calls} | good=${stats.good} dup(offset-ignored)=${stats.dup} discont=${stats.discont} empty=${stats.empty} error=${stats.error}`);
+    out.sort((a, b) => Number(a.height) - Number(b.height) || (a.txhash < b.txhash ? -1 : 1));
+    console.log('  ' + label + ': DONE — ' + out.length + ' txs | stop=' + stop + ' | pages=' + stats.pages + ' | calls=' + stats.calls + ' | reprobe=' + stats.reprobe + ' | regress=' + stats.regress + ' far=' + stats.far + ' dup=' + stats.dup + ' empty=' + stats.empty + ' error=' + stats.error);
     return out;
 }
 
