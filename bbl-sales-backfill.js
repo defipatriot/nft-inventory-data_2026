@@ -26,7 +26,8 @@ const https = require('https');
 
 // ─── Config ─────────────────────────────────────────────────────────────────
 const BBL_CONTRACT  = 'terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9';
-const ADAO_NFT      = 'terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9';
+const ADAO_NFT      = process.env.NFT_CONTRACT || 'terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9'; // parameterized per collection
+const COLLECTION    = (process.env.COLLECTION || 'adao').toLowerCase();
 const BBL_FEE_WALLET = 'terra1jgk8dhtv0qf5s08jxrwecf4a04hdmeznqpty75'; // BBL marketplace fee (2%), constant across collections
 const LCD_PRIMARY   = process.env.LCD_PRIMARY  || 'https://terra-lcd.publicnode.com';
 const LCD_FALLBACK  = process.env.LCD_FALLBACK || LCD_PRIMARY; // default: retry same node, never mix indexes mid-pagination
@@ -40,7 +41,7 @@ const GITHUB_TOKEN  = process.env.GITHUB_TOKEN;
 const GITHUB_REPO   = process.env.GITHUB_REPO   || 'defipatriot/nft-inventory-data_2026';
 const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
 const OUTPUT_PATH   = 'data/v2';
-const SALES_PATH    = `${OUTPUT_PATH}/sales-history.json`;
+const SALES_PATH    = COLLECTION === 'adao' ? `${OUTPUT_PATH}/sales-history.json` : `${OUTPUT_PATH}/${COLLECTION}/sales-history.json`;
 
 // cw20 contract → symbol (USD pass maps symbol → historical price). Extend as needed.
 const DENOM_SYMBOLS = {
@@ -83,23 +84,25 @@ function txSearchPath(conditions, page) {
 // node rather than a recent-only one. The node's `total` is ignored (unreliable).
 async function fetchAllTxs(conditions, label, _get = lcdGet) {
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-    const RETRIES = +(process.env.PAGER_RETRIES||60), ERR_BACKOFF = +(process.env.PAGER_ERR_BACKOFF||400), PROBE_DELAY = +(process.env.PAGER_PROBE_DELAY||120), CONTIG_DELTA = 250000;
+    const RETRIES = +(process.env.PAGER_RETRIES||40), ROUNDS = +(process.env.PAGER_ROUNDS||2), ERR_BACKOFF = +(process.env.PAGER_ERR_BACKOFF||250), PROBE_DELAY = +(process.env.PAGER_PROBE_DELAY||40), CONTIG_DELTA = 250000, P1_STABLE = 12;
     const out = [], seen = new Set();
     const stats = { calls: 0, pages: 0, regress: 0, far: 0, dup: 0, empty: 0, error: 0, reprobe: 0 };
     let frontier = 0, globalMax = 0, stop = 'complete';
     const scan = (batch) => { let freshMin = Infinity, fresh = 0; for (const tx of batch) { const h = Number(tx.height); if (h > globalMax) globalMax = h; if (!seen.has(tx.txhash)) { fresh++; if (h < freshMin) freshMin = h; } } return { fresh, freshMin }; };
     const commit = (batch) => { let added = 0; for (const tx of batch) { const h = Number(tx.height); if (h > frontier) frontier = h; if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; } } stats.pages++; return added; };
 
-    // page 1: deepest archive wins (smallest min-height); sample the full budget
-    let best1 = null;
+    // page 1: deepest archive wins; early-break once the smallest start-height stabilizes
+    let best1 = null, noImprove = 0, nonEmpty = 0;
     for (let a = 0; a < RETRIES; a++) {
         stats.calls++;
         let resp; try { resp = await _get(txSearchPath(conditions, 1), label + ' p1.' + a); } catch { stats.error++; await sleep(ERR_BACKOFF); continue; }
         const batch = resp?.tx_responses || [];
         if (!batch.length) { stats.empty++; await sleep(ERR_BACKOFF); continue; }
-        scan(batch);
+        scan(batch); nonEmpty++;
         const minH = Math.min(...batch.map(t => Number(t.height)));
-        if (!best1 || minH < best1.minH) best1 = { batch, minH };
+        if (!best1 || minH < best1.minH) { best1 = { batch, minH }; noImprove = 0; } else { noImprove++; }
+        if (a % 8 === 7) console.log('  ' + label + ': probing page 1… best start-height=' + (best1 ? best1.minH : 'n/a') + ' (' + (a + 1) + ' probes)');
+        if (nonEmpty >= 3 && noImprove >= P1_STABLE) break; // deepest start-height stable → stop probing
         await sleep(PROBE_DELAY);
     }
     if (!best1) throw new Error(label + ': page 1 unreachable after ' + RETRIES + ' tries');
@@ -109,8 +112,7 @@ async function fetchAllTxs(conditions, label, _get = lcdGet) {
     // pages 2..N: accept the tightest forward continuation; never jump past data
     for (let page = 2; page < MAX_PAGES; page++) {
         const avg = out.length > 1 ? Math.max(1, (frontier - Number(out[0].height)) / (out.length - 1)) : 1;
-        const TIGHT = Math.max(2000, 3 * avg);        // a candidate this close MUST be the immediate next page
-        const LOOSE = Math.max(50000, 10 * avg);      // a "best" beyond this is suspicious → re-probe before trusting
+        const TIGHT = Math.max(2000, 3 * avg), LOOSE = Math.max(50000, 10 * avg);
         let bestCand = null, rounds = 0;
         do {
             if (rounds > 0) stats.reprobe++;
@@ -124,15 +126,15 @@ async function fetchAllTxs(conditions, label, _get = lcdGet) {
                 if (freshMin < frontier) { stats.regress++; await sleep(PROBE_DELAY); continue; }
                 if (freshMin - frontier > CONTIG_DELTA) { stats.far++; await sleep(PROBE_DELAY); continue; }
                 if (!bestCand || freshMin < bestCand.freshMin) bestCand = { batch, freshMin };
-                if (bestCand.freshMin - frontier <= TIGHT) break; // unambiguously the immediate next page
+                if (bestCand.freshMin - frontier <= TIGHT) break;
                 await sleep(PROBE_DELAY);
             }
             rounds++;
-        } while (frontier < globalMax && rounds < 3 && (!bestCand || bestCand.freshMin - frontier > LOOSE));
+        } while (frontier < globalMax && rounds < ROUNDS && (!bestCand || bestCand.freshMin - frontier > LOOSE));
 
         if (bestCand) {
             const added = commit(bestCand.batch);
-            if (page % 10 === 0 || added < PAGE_LIMIT) console.log('  ' + label + ': ' + out.length + ' txs (page ' + page + ', frontier=' + frontier + ', +' + added + ')');
+            console.log('  ' + label + ': ' + out.length + ' txs (page ' + page + ', frontier=' + frontier + ', +' + added + ')');
             if (page === MAX_PAGES - 1) { stop = 'page-cap'; console.warn('  ⚠ ' + label + ' hit page cap (' + MAX_PAGES + ')'); }
             continue;
         }
@@ -310,7 +312,7 @@ async function main() {
     const doc = {
         schemaVersion: 1, builtAt: new Date().toISOString(),
         source: 'bbl-sales-backfill.js (settle events, aDAO)',
-        marketplace: 'BBL', nft_contract: ADAO_NFT, bbl_fee_wallet: BBL_FEE_WALLET,
+        marketplace: 'BBL', nft_contract: ADAO_NFT, collection: COLLECTION, bbl_fee_wallet: BBL_FEE_WALLET,
         note: 'Raw on-chain BBL sale record from settle events. USD-at-date + sale spread are separate later passes. sale_number is BBL-only sequence; sale_number=1 is the earliest BBL sale (= mint if mints ran on BBL).',
         denom_breakdown: sum.denomBreakdown,
         royalty_wallets: sum.royaltyWallets,
