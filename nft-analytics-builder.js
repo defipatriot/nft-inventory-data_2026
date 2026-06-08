@@ -52,7 +52,16 @@ function loadInputs() {
     const daily = oracle.daily || oracle;
     const dates = Object.keys(daily).sort();
     const spot = daily[dates[dates.length - 1]];
-    return { salesDoc: sales, sales: sales.sales || sales, prov, daily, spot, oracleSpan: [dates[0], dates[dates.length - 1]] };
+    // optional bLUNA(boneLUNA) USD oracle — prices bLUNA sales at their own market value
+    let blunaDaily = null, blunaSpot = null, blunaSpan = null;
+    try {
+        const bo = readJson(`${DATA_DIR}/bluna-usd-daily.json`);
+        blunaDaily = bo.daily || bo;
+        const bd = Object.keys(blunaDaily).sort();
+        blunaSpot = blunaDaily[bd[bd.length - 1]];
+        blunaSpan = [bd[0], bd[bd.length - 1]];
+    } catch { /* fall back to flat BLUNA_RATE */ }
+    return { salesDoc: sales, sales: sales.sales || sales, prov, daily, spot, oracleSpan: [dates[0], dates[dates.length - 1]], blunaDaily, blunaSpot, blunaSpan };
 }
 
 // nearest-on-or-before price for a date (handles gaps)
@@ -63,19 +72,63 @@ function priceOn(daily, date) {
     return best ? daily[best] : null;
 }
 
-function lunaEquiv(sale) {
-    const amt = Number(sale.gross_amount) / 1e6;
-    return sale.denom_symbol === 'bLUNA' ? amt * BLUNA_RATE : amt;
+// Build a monthly-median bLUNA/LUNA ratio curve from the (clean) overlap points, interpolated
+// across gaps and clamped to a sane LSD band. boneLUNA's CoinGecko USD is illiquid/stale on
+// sparse dates, but the *ratio* where data exists is a clean monotonic accrual (≈1.16→1.76),
+// so we apply ratio(date) × reliable LUNA-USD(date) rather than trusting raw bLUNA prints.
+function buildBlunaRatio(blunaDaily, lunaDaily) {
+    if (!blunaDaily) return null;
+    const byM = {};
+    for (const d in blunaDaily) { const l = priceOn(lunaDaily, d); if (!l) continue; const m = d.slice(0, 7); (byM[m] = byM[m] || []).push(blunaDaily[d] / l); }
+    const anchors = Object.keys(byM).sort().map(m => { const a = byM[m].sort((x, y) => x - y); return { date: m + '-15', ratio: Math.min(2.0, Math.max(1.0, a[Math.floor(a.length / 2)])) }; });
+    if (!anchors.length) return null;
+    const latest = anchors[anchors.length - 1].ratio;
+    const ratioOn = (date) => {
+        if (date <= anchors[0].date) return anchors[0].ratio;
+        if (date >= anchors[anchors.length - 1].date) return latest;
+        for (let i = 1; i < anchors.length; i++) {
+            if (date <= anchors[i].date) { const a = anchors[i - 1], b = anchors[i]; const t = (new Date(date) - new Date(a.date)) / (new Date(b.date) - new Date(a.date)); return a.ratio + (b.ratio - a.ratio) * t; }
+        }
+        return latest;
+    };
+    return { ratioOn, latest, anchors, span: [anchors[0].date, anchors[anchors.length - 1].date] };
 }
 
-function enrich(sales, daily, spot, prov) {
+// Price one sale denom-aware. bLUNA = ratio(date) × LUNA-USD(date) via the curve above;
+// if no bLUNA data at all, fall back to flat BLUNA_RATE.
+function priceSale(s, lunaDaily, lunaSpot, blunaRatio) {
+    const date = dayOf(s.timestamp);
+    const amt = Number(s.gross_amount) / 1e6;
+    const lPx = priceOn(lunaDaily, date);
+    const isBluna = s.denom_symbol === 'bLUNA';
+    let px, spot, src, lunaEq;
+    if (isBluna && blunaRatio) {
+        const r = blunaRatio.ratioOn(date);
+        px = lPx != null ? lPx * r : null; spot = lunaSpot * blunaRatio.latest; src = 'bluna-ratio-curve';
+        lunaEq = amt * r;
+    } else if (isBluna) {
+        px = lPx != null ? lPx * BLUNA_RATE : null; spot = lunaSpot * BLUNA_RATE; src = 'bluna-flat-rate';
+        lunaEq = amt * BLUNA_RATE;
+    } else {
+        px = lPx; spot = lunaSpot; src = 'luna-oracle';
+        lunaEq = amt;
+    }
+    return {
+        amount: amt,
+        price_usd_at_sale: px,
+        price_source: src,
+        notional_usd: px != null ? amt * px : null,
+        value_today_usd: amt * spot,
+        denom_spot_usd: spot,
+        luna_equiv: lunaEq,
+    };
+}
+
+function enrich(sales, lunaDaily, lunaSpot, blunaRatio, prov) {
     const tokens = prov.tokens || {};
     const out = [];
     for (const s of sales) {
-        const date = dayOf(s.timestamp);
-        const px = priceOn(daily, date);
-        const le = lunaEquiv(s);
-        const notional = px != null ? le * px : null;
+        const p = priceSale(s, lunaDaily, lunaSpot, blunaRatio);
         // provenance join: the seller's acquisition (latest event before this sale where recipient===seller)
         let acquired_at = null, basis_kind = null;
         const t = tokens[s.token_id];
@@ -87,10 +140,13 @@ function enrich(sales, daily, spot, prov) {
         const hold_days = acquired_at ? round((new Date(s.timestamp) - new Date(acquired_at)) / 86400000, 1) : null;
         out.push({
             ...s,
-            luna_equiv: round(le, 6),
-            price_luna_usd: px,
-            notional_usd: notional != null ? round(notional, 4) : null,
-            value_today_usd: round(le * spot, 4),
+            amount: round(p.amount, 6),
+            luna_equiv: p.luna_equiv != null ? round(p.luna_equiv, 6) : null,
+            price_usd_at_sale: p.price_usd_at_sale,
+            price_source: p.price_source,
+            notional_usd: p.notional_usd != null ? round(p.notional_usd, 4) : null,
+            value_today_usd: round(p.value_today_usd, 4),
+            denom_spot_usd: p.denom_spot_usd,
             acquired_at, basis_kind, hold_days,
         });
     }
@@ -106,25 +162,28 @@ function rollups(enriched, spot, oracleSpan) {
 
     // denom split
     const denom = {};
-    for (const s of enriched) { const d = s.denom_symbol; (denom[d] = denom[d] || { count: 0, luna_equiv: 0, notional_usd: 0 }); denom[d].count++; denom[d].luna_equiv += s.luna_equiv; denom[d].notional_usd += s.notional_usd || 0; }
-    for (const d in denom) { denom[d].luna_equiv = round(denom[d].luna_equiv, 2); denom[d].notional_usd = round(denom[d].notional_usd, 2); }
+    for (const s of enriched) { const d = s.denom_symbol; (denom[d] = denom[d] || { count: 0, luna_equiv: 0, notional_usd: 0, value_today_usd: 0 }); denom[d].count++; denom[d].luna_equiv += s.luna_equiv || 0; denom[d].notional_usd += s.notional_usd || 0; denom[d].value_today_usd += s.value_today_usd || 0; }
+    for (const d in denom) { denom[d].luna_equiv = round(denom[d].luna_equiv, 2); denom[d].notional_usd = round(denom[d].notional_usd, 2); denom[d].value_today_usd = round(denom[d].value_today_usd, 2); }
 
-    // royalties (residual leg). aDAO recipients = royalty wallet + DAO main (both "to DAO")
-    let royLunaTo = {}, royNotional = 0;
+    // royalties (residual leg), priced denom-aware. aDAO recipients = royalty wallet + DAO main (both "to DAO")
+    const roy = {}; let royNotional = 0;
     for (const s of enriched) {
         if (s.royalty_fee == null) continue;
-        const rle = Number(s.royalty_fee) / 1e6 * (s.denom_symbol === 'bLUNA' ? BLUNA_RATE : 1);
+        const rNative = Number(s.royalty_fee) / 1e6;                         // royalty in the sale's own token
+        const rNotional = s.price_usd_at_sale != null ? rNative * s.price_usd_at_sale : 0;
+        const rToday = rNative * (s.denom_spot_usd || 0);
         const r = s.royalty_recipient || 'unknown';
-        royLunaTo[r] = (royLunaTo[r] || 0) + rle;
-        royNotional += s.price_luna_usd != null ? rle * s.price_luna_usd : 0;
+        (roy[r] = roy[r] || { notional_usd: 0, value_today_usd: 0 });
+        roy[r].notional_usd += rNotional; roy[r].value_today_usd += rToday;
+        royNotional += rNotional;
     }
-    const royaltyByRecipient = Object.entries(royLunaTo).map(([r, l]) => ({
-        recipient: r, is_dao: DAO_ROYALTY_RECIPIENTS.has(r), luna_equiv: round(l, 2), value_today_usd: round(l * spot, 2),
-    })).sort((a, b) => b.luna_equiv - a.luna_equiv);
+    const royaltyByRecipient = Object.entries(roy).map(([r, v]) => ({
+        recipient: r, is_dao: DAO_ROYALTY_RECIPIENTS.has(r), notional_usd: round(v.notional_usd, 2), value_today_usd: round(v.value_today_usd, 2),
+    })).sort((a, b) => b.notional_usd - a.notional_usd);
 
     // monthly time series (notional + count)
     const monthly = {};
-    for (const s of enriched) { const m = dayOf(s.timestamp).slice(0, 7); (monthly[m] = monthly[m] || { count: 0, notional_usd: 0, luna_equiv: 0 }); monthly[m].count++; monthly[m].notional_usd += s.notional_usd || 0; monthly[m].luna_equiv += s.luna_equiv; }
+    for (const s of enriched) { const m = dayOf(s.timestamp).slice(0, 7); (monthly[m] = monthly[m] || { count: 0, notional_usd: 0, luna_equiv: 0 }); monthly[m].count++; monthly[m].notional_usd += s.notional_usd || 0; monthly[m].luna_equiv += s.luna_equiv || 0; }
     const monthlySeries = Object.keys(monthly).sort().map(m => ({ month: m, count: monthly[m].count, notional_usd: round(monthly[m].notional_usd, 2), luna_equiv: round(monthly[m].luna_equiv, 2) }));
 
     // leaderboards
@@ -164,18 +223,24 @@ function rollups(enriched, spot, oracleSpan) {
     // mint-cohort sale behavior (phase from provenance mint, attached during enrich? use sales' first appearance)
     const sorted = [...enriched].sort((a, b) => a.block - b.block);
 
+    const blunaSources = new Set(enriched.filter(s => s.denom_symbol === 'bLUNA').map(s => s.price_source));
+    const BLUNA_PRICING = blunaSources.has('bluna-ratio-curve')
+        ? { mode: 'bluna-ratio-curve', note: 'bLUNA = monotonic monthly-median bLUNA/LUNA ratio (from boneLUNA CoinGecko, gap-interpolated, clamped 1.0–2.0) × LUNA-USD on sale date' }
+        : { mode: 'flat-rate', rate: BLUNA_RATE, note: 'no bluna-usd-daily.json found — used flat BLUNA_RATE × LUNA' };
+
     return {
         volume: {
             sales_count: n,
             luna_equiv_total: round(lunaTot, 2),
             notional_usd_at_sale: round(notional, 2),     // headline: what buyers actually paid, in USD-of-the-day
-            value_today_usd: round(today, 2),             // reproduces BBL all-time-volume (luna_total * spot)
+            value_today_usd: round(today, 2),             // reproduces BBL all-time-volume (per-denom amount * spot)
             spot_luna_usd: spot,
-            note: 'notional = sum(amount * LUNA-USD on sale date); value_today = sum(amount * spot). They differ because LUNA was worth more historically.',
+            note: 'notional = sum(amount * token-USD on sale date, per denom); value_today = sum(amount * denom spot). They differ because LUNA/bLUNA were worth more historically.',
         },
         denom_split: denom,
         royalties: {
-            to_dao_luna_equiv: round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.luna_equiv, 0), 2),
+            to_dao_notional_usd: round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.notional_usd, 0), 2),
+            to_dao_value_today_usd: round(royaltyByRecipient.filter(r => r.is_dao).reduce((x, r) => x + r.value_today_usd, 0), 2),
             notional_usd_at_sale: round(royNotional, 2),
             by_recipient: royaltyByRecipient,
         },
@@ -187,8 +252,7 @@ function rollups(enriched, spot, oracleSpan) {
         first_sale: sorted[0] ? { token_id: sorted[0].token_id, date: sorted[0].timestamp, notional_usd: sorted[0].notional_usd } : null,
         last_sale: sorted[n - 1] ? { token_id: sorted[n - 1].token_id, date: sorted[n - 1].timestamp, notional_usd: sorted[n - 1].notional_usd } : null,
         oracle_span: oracleSpan,
-        bluna_rate_used: BLUNA_RATE,
-        bluna_rate_note: 'flat rate — refine with historical boneLUNA hub exchange_rate later',
+        bluna_pricing: BLUNA_PRICING,
     };
 }
 
@@ -206,13 +270,16 @@ async function pushToGithub(path, content, message) {
 
 async function main() {
     console.log(`📊 NFT analytics builder — collection=${COLLECTION} dir=${COLL_DIR}`);
-    const { sales, prov, daily, spot, oracleSpan } = loadInputs();
-    console.log(`  loaded ${sales.length} sales, ${Object.keys(prov.tokens || {}).length} provenance tokens, oracle ${oracleSpan[0]}→${oracleSpan[1]} (spot $${spot})`);
-    const enriched = enrich(sales, daily, spot, prov);
+    const { sales, prov, daily, spot, oracleSpan, blunaDaily, blunaSpot, blunaSpan } = loadInputs();
+    console.log(`  loaded ${sales.length} sales, ${Object.keys(prov.tokens || {}).length} provenance tokens, LUNA oracle ${oracleSpan[0]}→${oracleSpan[1]} (spot $${spot})`);
+    const blunaRatio = buildBlunaRatio(blunaDaily, daily);
+    console.log(blunaRatio ? `  bLUNA ratio curve: ${blunaRatio.anchors.length} monthly anchors ${blunaRatio.span[0]}→${blunaRatio.span[1]}, latest ${blunaRatio.latest.toFixed(3)}` : `  bLUNA: no oracle → flat rate ${BLUNA_RATE}`);
+    const enriched = enrich(sales, daily, spot, blunaRatio, prov);
     const priced = enriched.filter(s => s.notional_usd != null).length;
     console.log(`  priced ${priced}/${enriched.length} sales`);
     const roll = rollups(enriched, spot, oracleSpan);
-    console.log(`  notional(at-sale)=$${roll.volume.notional_usd_at_sale} | value-today=$${roll.volume.value_today_usd} | LUNA-equiv=${roll.volume.luna_equiv_total}`);
+    if (blunaRatio) roll.bluna_ratio_curve = { latest: round(blunaRatio.latest, 4), span: blunaRatio.span, anchors: blunaRatio.anchors.map(a => ({ month: a.date.slice(0, 7), ratio: round(a.ratio, 3) })) };
+    console.log(`  notional(at-sale)=$${roll.volume.notional_usd_at_sale} | value-today=$${roll.volume.value_today_usd} | LUNA-equiv=${roll.volume.luna_equiv_total} | bLUNA: ${roll.bluna_pricing.mode}`);
 
     const enrichedDoc = { schemaVersion: 1, collection: COLLECTION, builtAt: new Date().toISOString(), spot_luna_usd: spot, count: enriched.length, sales: enriched };
     const analyticsDoc = { schemaVersion: 1, collection: COLLECTION, builtAt: new Date().toISOString(), ...roll };
@@ -231,4 +298,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch(e => { console.error('❌', e.message); process.exit(1); });
-module.exports = { enrich, rollups, priceOn, lunaEquiv, loadInputs };
+module.exports = { enrich, rollups, priceOn, priceSale, buildBlunaRatio, loadInputs };
