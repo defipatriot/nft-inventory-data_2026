@@ -17,6 +17,10 @@ on:
         type: choice
         default: full
         options: [full, sample]
+      lcd:
+        description: "LCD endpoint (publicnode is fine now — the sweeper is resilient to its flaky pool)"
+        type: string
+        default: "https://terra-lcd.publicnode.com"
 
 permissions:
   contents: write   # lets the scripts push the output files to this repo
@@ -37,6 +41,7 @@ jobs:
         if: ${{ inputs.target == 'both' || inputs.target == 'sales' }}
         env:
           RUN_MODE: ${{ inputs.mode }}
+          LCD_PRIMARY: ${{ inputs.lcd }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_BRANCH: ${{ github.ref_name }}
@@ -46,6 +51,7 @@ jobs:
         if: ${{ inputs.target == 'both' || inputs.target == 'provenance' }}
         env:
           RUN_MODE: ${{ inputs.mode }}
+          LCD_PRIMARY: ${{ inputs.lcd }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_BRANCH: ${{ github.ref_name }}
