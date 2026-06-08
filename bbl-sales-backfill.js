@@ -28,11 +28,11 @@ const https = require('https');
 const BBL_CONTRACT  = 'terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9';
 const ADAO_NFT      = 'terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9';
 const BBL_FEE_WALLET = 'terra1jgk8dhtv0qf5s08jxrwecf4a04hdmeznqpty75'; // BBL marketplace fee (2%), constant across collections
-const LCD_PRIMARY   = 'https://terra-lcd.publicnode.com';
-const LCD_FALLBACK  = 'https://terra-rest.publicnode.com';
+const LCD_PRIMARY   = process.env.LCD_PRIMARY  || 'https://terra-lcd.publicnode.com';
+const LCD_FALLBACK  = process.env.LCD_FALLBACK || LCD_PRIMARY; // default: retry same node, never mix indexes mid-pagination
 const HTTP_TIMEOUT  = 20000;
 const PAGE_LIMIT    = 100;
-const MAX_PAGES     = 120;
+const MAX_PAGES     = 200;
 
 const RUN_MODE      = (process.env.RUN_MODE || 'sample').toLowerCase();
 const SAMPLE_N      = Number(process.env.SAMPLE_N || 6);
@@ -74,18 +74,59 @@ function txSearchPath(conditions, offset) {
     const q = conditions.join(' AND ');
     return `/cosmos/tx/v1beta1/txs?query=${encodeURIComponent(q)}&order_by=ORDER_BY_ASC&pagination.limit=${PAGE_LIMIT}&pagination.offset=${offset}`;
 }
-async function fetchAllTxs(conditions, label) {
-    const out = [], seen = new Set(); let total = null;
-    for (let page = 0; page < MAX_PAGES; page++) {
-        const resp = await lcdGet(txSearchPath(conditions, page * PAGE_LIMIT), `${label} p${page}`);
+// Resilient pager for a load-balanced node pool with inconsistent backends.
+// Strategy: never trust one response. Anchor every page to the prior accepted
+// page by OVERLAP (a page MUST re-share some already-seen txs AND add new ones),
+// retrying until a backend gives a continuous, advancing answer. Page 0 is taken
+// by "deepest wins" (smallest min-height across attempts) to find a real archive
+// node rather than a recent-only one. The node's `total` is ignored (unreliable).
+async function fetchAllTxs(conditions, label, _get = lcdGet) {
+    const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+    const OVERLAP = 20, RETRIES = 25, EMPTY_CONFIRM = 5, BACKOFF = 400;
+    const heights = b => b.map(t => Number(t.height));
+    const out = [], seen = new Set();
+    let lastMaxHeight = 0, partialSeen = false;
+
+    // ── page 0: probe several times, keep the deepest-archive page (smallest min height) ──
+    let best = null;
+    for (let a = 0; a < RETRIES; a++) {
+        let resp; try { resp = await _get(txSearchPath(conditions, 0), `${label} p0.${a}`); } catch { await sleep(BACKOFF); continue; }
         const batch = resp?.tx_responses || [];
-        if (total === null) total = Number(resp?.total ?? resp?.pagination?.total ?? 0) || null;
-        if (batch.length === 0) break;                       // past the end
-        let added = 0;
-        for (const tx of batch) { if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; } }
-        process.stdout.write(`\r  ${label}: ${out.length}${total ? '/' + total : ''} txs   `);
-        if (added === 0) break;                              // only dupes → end / cycling offset
-        if (page === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap (${MAX_PAGES}); got ${out.length}${total ? '/' + total : ''}`);
+        if (batch.length === 0) { await sleep(BACKOFF); continue; }
+        const minH = Math.min(...heights(batch));
+        if (!best || minH < best.minH) best = { batch, minH };
+        await sleep(120);
+    }
+    if (!best) throw new Error(`${label}: could not fetch first page after ${RETRIES} tries (node pool unreachable?)`);
+    for (const tx of best.batch) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); }
+    lastMaxHeight = Math.max(...heights(best.batch));
+    partialSeen = best.batch.length < PAGE_LIMIT;
+    process.stdout.write(`\r  ${label}: ${out.length} txs (start h=${best.minH})   `);
+
+    // ── subsequent pages: overlap-anchored, retry inconsistent/stale/duplicate responses ──
+    for (let page = 1; page < MAX_PAGES; page++) {
+        const offset = Math.max(0, out.length - OVERLAP);
+        let accepted = null, emptyVotes = 0, endVotes = 0;
+        for (let a = 0; a < RETRIES; a++) {
+            let resp; try { resp = await _get(txSearchPath(conditions, offset), `${label} p${page}.${a}`); } catch { await sleep(BACKOFF); continue; }
+            const batch = resp?.tx_responses || [];
+            if (batch.length === 0) { if (++emptyVotes >= EMPTY_CONFIRM) { accepted = 'END'; break; } await sleep(BACKOFF); continue; }
+            let overlap = 0, fresh = 0;
+            for (const tx of batch) (seen.has(tx.txhash) ? overlap++ : fresh++);
+            if (overlap === 0) { await sleep(BACKOFF); continue; }        // discontinuous window → bad/recent-only node, retry
+            if (fresh === 0) {                                            // window fully seen
+                if (partialSeen) { if (++endVotes >= 2) { accepted = 'END'; break; } } // genuine end (prior page was partial)
+                await sleep(BACKOFF); continue;                          // else a duplicate-serving node mid-sweep → retry
+            }
+            accepted = batch; break;                                      // continuous + progress = good page
+        }
+        if (accepted === 'END') break;
+        if (!accepted) { console.warn(`\n  ⚠ ${label}: stuck at offset ${offset} after ${RETRIES} tries — coverage partial up to height ${lastMaxHeight}. RE-RUN to extend.`); break; }
+        for (const tx of accepted) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); }
+        lastMaxHeight = Math.max(lastMaxHeight, Math.max(...heights(accepted)));
+        partialSeen = accepted.length < PAGE_LIMIT;
+        process.stdout.write(`\r  ${label}: ${out.length} txs (h=${lastMaxHeight})   `);
+        if (page === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap (${MAX_PAGES}); got ${out.length}`);
     }
     process.stdout.write('\n');
     return out;
@@ -267,4 +308,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch(e => { console.error(`❌ FATAL: ${e.message}`); console.error(e.stack); process.exit(1); });
-module.exports = { parseSettleTx, buildSales, summarize, eventsOf };
+module.exports = { parseSettleTx, buildSales, summarize, eventsOf, fetchAllTxs, txSearchPath };
