@@ -1,0 +1,834 @@
+{
+ "schemaVersion": 1,
+ "collection": "adao",
+ "builtAt": "2026-06-08T11:20:46.073Z",
+ "volume": {
+  "sales_count": 1213,
+  "luna_equiv_total": 265604.61,
+  "notional_usd_at_sale": 146177.13,
+  "value_today_usd": 14344.51,
+  "spot_luna_usd": 0.05165883717157952,
+  "note": "notional = sum(amount * token-USD on sale date, per denom); value_today = sum(amount * denom spot). They differ because LUNA/bLUNA were worth more historically."
+ },
+ "denom_split": {
+  "LUNA": {
+   "count": 1043,
+   "luna_equiv": 177643.24,
+   "notional_usd": 134015.17,
+   "value_today_usd": 9176.85
+  },
+  "bLUNA": {
+   "count": 170,
+   "luna_equiv": 87961.37,
+   "notional_usd": 12161.95,
+   "value_today_usd": 5167.67
+  }
+ },
+ "royalties": {
+  "to_dao_notional_usd": 7270.14,
+  "to_dao_value_today_usd": 714.57,
+  "notional_usd_at_sale": 7315.87,
+  "by_recipient": [
+   {
+    "recipient": "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm",
+    "is_dao": true,
+    "notional_usd": 7027.01,
+    "value_today_usd": 588.56
+   },
+   {
+    "recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+    "is_dao": true,
+    "notional_usd": 243.13,
+    "value_today_usd": 126.01
+   },
+   {
+    "recipient": "unknown",
+    "is_dao": false,
+    "notional_usd": 45.73,
+    "value_today_usd": 3.2
+   }
+  ]
+ },
+ "leaderboards": {
+  "top_buyers": [
+   {
+    "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+    "count": 200,
+    "notional_usd": 24534.57,
+    "luna_equiv": 91365.03
+   },
+   {
+    "address": "terra1yct7ls8kw3x2ucm66rxg7mgtyvw7kr5v4t4xsx",
+    "count": 128,
+    "notional_usd": 13407.53,
+    "luna_equiv": 15183.5
+   },
+   {
+    "address": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "count": 56,
+    "notional_usd": 9198.56,
+    "luna_equiv": 11861.4
+   },
+   {
+    "address": "terra1ettjrqla8cpmx0wvdurjynn7776gurx5ywfufx",
+    "count": 52,
+    "notional_usd": 9177.24,
+    "luna_equiv": 12670
+   },
+   {
+    "address": "terra10pa0qv7mrqst053zhv9hxxt9mwhmr45ggguygs",
+    "count": 55,
+    "notional_usd": 8864.39,
+    "luna_equiv": 12306
+   },
+   {
+    "address": "terra1ud0pnytt8nsmrupl9md40xpqp4w5ea3w4se5ht",
+    "count": 96,
+    "notional_usd": 8555.46,
+    "luna_equiv": 10411
+   },
+   {
+    "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
+    "count": 19,
+    "notional_usd": 7587.75,
+    "luna_equiv": 10572
+   },
+   {
+    "address": "terra1cq63m53vke52juv6zgkajx7c0xryv3w8r59tas",
+    "count": 36,
+    "notional_usd": 3124.68,
+    "luna_equiv": 3644
+   },
+   {
+    "address": "terra1zgu5w9ddpdt5ft36qn8cags0h8rz2uswr95p98",
+    "count": 21,
+    "notional_usd": 2591.38,
+    "luna_equiv": 3374.7
+   },
+   {
+    "address": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
+    "count": 25,
+    "notional_usd": 2484.07,
+    "luna_equiv": 3154
+   },
+   {
+    "address": "terra18fju88d7fjz8gykqd76klky2nwg2mgh3w2har2",
+    "count": 20,
+    "notional_usd": 2265.42,
+    "luna_equiv": 3008
+   },
+   {
+    "address": "terra1xrz940kw377snj292z9sktqm5ex983v33h6j5s",
+    "count": 15,
+    "notional_usd": 2198.12,
+    "luna_equiv": 3046.36
+   },
+   {
+    "address": "terra1alxk3fmhcl0ga80gl9yj9zp3ezjm4sdh8a9l9c",
+    "count": 13,
+    "notional_usd": 2129.52,
+    "luna_equiv": 1873
+   },
+   {
+    "address": "terra13qjxhnw98lm36rxc9yjakkmulhpv7zctdc5zlz",
+    "count": 11,
+    "notional_usd": 2083.98,
+    "luna_equiv": 2565
+   },
+   {
+    "address": "terra1466ahezuy8r47mvd0qnvcjh8pqy22p9mqkj8sl",
+    "count": 12,
+    "notional_usd": 2011.51,
+    "luna_equiv": 2541
+   },
+   {
+    "address": "terra1nj74mncupt0xhpxljls09gg7ufy0nx68fyarfy",
+    "count": 15,
+    "notional_usd": 1703.94,
+    "luna_equiv": 2395
+   },
+   {
+    "address": "terra1w5cjcvdkl004fzf0gxl8g8wga90kgk7pu2rjna",
+    "count": 18,
+    "notional_usd": 1665.48,
+    "luna_equiv": 2641
+   },
+   {
+    "address": "terra1x9mtkf6avf6ytq5yfca3tj2pghe964t7lhll4k",
+    "count": 12,
+    "notional_usd": 1392.28,
+    "luna_equiv": 1624
+   },
+   {
+    "address": "terra1vrjdx0t3jzarp66tml99skeuhaz308sr80p7u4",
+    "count": 14,
+    "notional_usd": 1280.16,
+    "luna_equiv": 4847.55
+   },
+   {
+    "address": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+    "count": 28,
+    "notional_usd": 1276.09,
+    "luna_equiv": 9181.67
+   }
+  ],
+  "top_sellers": [
+   {
+    "address": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "count": 79,
+    "notional_usd": 10707.57,
+    "luna_equiv": 11633
+   },
+   {
+    "address": "terra1h8ngvstds2tw32s483pqpsglw9vzspwc7x6m79",
+    "count": 18,
+    "notional_usd": 5649.92,
+    "luna_equiv": 7965.16
+   },
+   {
+    "address": "terra1ettjrqla8cpmx0wvdurjynn7776gurx5ywfufx",
+    "count": 41,
+    "notional_usd": 4832.18,
+    "luna_equiv": 6910
+   },
+   {
+    "address": "terra19psr0jp9xyznv73ujm3jwumjeq9cdnzz36xz2x",
+    "count": 1,
+    "notional_usd": 3621.64,
+    "luna_equiv": 5000
+   },
+   {
+    "address": "terra1rhwkcg5wxd2feylq8krghgvvszral690g40n4p",
+    "count": 1,
+    "notional_usd": 2172.99,
+    "luna_equiv": 3000
+   },
+   {
+    "address": "terra1wyctph2jylkd4jsyuxj98jfpvfhv6q60jdnrgw",
+    "count": 1,
+    "notional_usd": 2099.26,
+    "luna_equiv": 3000
+   },
+   {
+    "address": "terra175qc8zprp4e0tn2d57rsajrw7pr52mvny6hld0",
+    "count": 33,
+    "notional_usd": 1980.74,
+    "luna_equiv": 14230.49
+   },
+   {
+    "address": "terra1xrz940kw377snj292z9sktqm5ex983v33h6j5s",
+    "count": 16,
+    "notional_usd": 1972.87,
+    "luna_equiv": 8637.65
+   },
+   {
+    "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
+    "count": 2,
+    "notional_usd": 1860.94,
+    "luna_equiv": 26526.05
+   },
+   {
+    "address": "terra1nxs02ts72cj5w455nva02l3r7czfjtf9qn9pda",
+    "count": 7,
+    "notional_usd": 1290.24,
+    "luna_equiv": 1273
+   },
+   {
+    "address": "terra1fsw49avf84r2927cvly3a467gsx02trftxscc5",
+    "count": 13,
+    "notional_usd": 1177.35,
+    "luna_equiv": 4450.06
+   },
+   {
+    "address": "terra1ulh95rzcy8npzygxaf9jxgyta4ekg2qsxjw8k5",
+    "count": 13,
+    "notional_usd": 1162.22,
+    "luna_equiv": 1400
+   },
+   {
+    "address": "terra1eyfu3dp7nkg528xgd9dwlafqwvc3d6j2v8mpkm",
+    "count": 2,
+    "notional_usd": 1144.06,
+    "luna_equiv": 1740
+   },
+   {
+    "address": "terra1lz5pgjwzky00mva2dxd6evvxy7ramr4qujd9dd",
+    "count": 7,
+    "notional_usd": 849.18,
+    "luna_equiv": 1182.49
+   },
+   {
+    "address": "terra1k6424kpxl2ax6c58lutrz2sdkllyuq9dafq8f8",
+    "count": 6,
+    "notional_usd": 833.49,
+    "luna_equiv": 1040
+   },
+   {
+    "address": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
+    "count": 6,
+    "notional_usd": 801.92,
+    "luna_equiv": 5515.89
+   },
+   {
+    "address": "terra1mgk6rn7gxwcvzpzr6uxzusvk4avs9ctstvscqs",
+    "count": 8,
+    "notional_usd": 729.95,
+    "luna_equiv": 1020
+   },
+   {
+    "address": "terra1qaadpldgr97v0dh9u72nre588e093j5s0f4007",
+    "count": 4,
+    "notional_usd": 665.32,
+    "luna_equiv": 600
+   },
+   {
+    "address": "terra1lu4mp529xkxxyy5yt07wye6a264qmuda7h3r70",
+    "count": 2,
+    "notional_usd": 654.9,
+    "luna_equiv": 900
+   },
+   {
+    "address": "terra1t6hnypwjk6q48h3myrhza3vvquc4xkl93nwv4n",
+    "count": 3,
+    "notional_usd": 623.94,
+    "luna_equiv": 850
+   }
+  ],
+  "most_traded_tokens": [
+   {
+    "token_id": "3290",
+    "sales": 4,
+    "notional_usd": 346.65
+   },
+   {
+    "token_id": "1554",
+    "sales": 4,
+    "notional_usd": 290.39
+   },
+   {
+    "token_id": "1921",
+    "sales": 3,
+    "notional_usd": 471.83
+   },
+   {
+    "token_id": "2276",
+    "sales": 3,
+    "notional_usd": 453.04
+   },
+   {
+    "token_id": "1667",
+    "sales": 3,
+    "notional_usd": 377.2
+   },
+   {
+    "token_id": "3096",
+    "sales": 3,
+    "notional_usd": 354.17
+   },
+   {
+    "token_id": "2180",
+    "sales": 3,
+    "notional_usd": 334.41
+   },
+   {
+    "token_id": "6750",
+    "sales": 3,
+    "notional_usd": 332.64
+   },
+   {
+    "token_id": "6218",
+    "sales": 3,
+    "notional_usd": 301.07
+   },
+   {
+    "token_id": "8982",
+    "sales": 3,
+    "notional_usd": 294.31
+   },
+   {
+    "token_id": "4196",
+    "sales": 3,
+    "notional_usd": 286.35
+   },
+   {
+    "token_id": "9436",
+    "sales": 3,
+    "notional_usd": 270.24
+   },
+   {
+    "token_id": "9346",
+    "sales": 3,
+    "notional_usd": 266.33
+   },
+   {
+    "token_id": "4871",
+    "sales": 3,
+    "notional_usd": 265.44
+   },
+   {
+    "token_id": "8473",
+    "sales": 3,
+    "notional_usd": 224.6
+   },
+   {
+    "token_id": "7234",
+    "sales": 3,
+    "notional_usd": 211.74
+   },
+   {
+    "token_id": "1144",
+    "sales": 3,
+    "notional_usd": 201.99
+   },
+   {
+    "token_id": "4709",
+    "sales": 3,
+    "notional_usd": 201
+   },
+   {
+    "token_id": "1891",
+    "sales": 3,
+    "notional_usd": 185.74
+   },
+   {
+    "token_id": "7859",
+    "sales": 3,
+    "notional_usd": 177.27
+   }
+  ]
+ },
+ "monthly": [
+  {
+   "month": "2023-12",
+   "count": 211,
+   "notional_usd": 21951.6,
+   "luna_equiv": 25461.96
+  },
+  {
+   "month": "2024-01",
+   "count": 439,
+   "notional_usd": 61904.09,
+   "luna_equiv": 83929.59
+  },
+  {
+   "month": "2024-02",
+   "count": 100,
+   "notional_usd": 13871.23,
+   "luna_equiv": 20253
+  },
+  {
+   "month": "2024-03",
+   "count": 113,
+   "notional_usd": 20236.33,
+   "luna_equiv": 20024.99
+  },
+  {
+   "month": "2024-04",
+   "count": 62,
+   "notional_usd": 6961.41,
+   "luna_equiv": 8582.7
+  },
+  {
+   "month": "2024-05",
+   "count": 25,
+   "notional_usd": 1764.92,
+   "luna_equiv": 2966
+  },
+  {
+   "month": "2024-06",
+   "count": 53,
+   "notional_usd": 4358.05,
+   "luna_equiv": 7854
+  },
+  {
+   "month": "2024-07",
+   "count": 16,
+   "notional_usd": 1195.75,
+   "luna_equiv": 3157
+  },
+  {
+   "month": "2024-08",
+   "count": 21,
+   "notional_usd": 1330.19,
+   "luna_equiv": 4139
+  },
+  {
+   "month": "2024-09",
+   "count": 12,
+   "notional_usd": 1231.83,
+   "luna_equiv": 3531.66
+  },
+  {
+   "month": "2024-10",
+   "count": 12,
+   "notional_usd": 1082.68,
+   "luna_equiv": 2927.39
+  },
+  {
+   "month": "2024-11",
+   "count": 12,
+   "notional_usd": 692.64,
+   "luna_equiv": 1811.39
+  },
+  {
+   "month": "2024-12",
+   "count": 10,
+   "notional_usd": 724.6,
+   "luna_equiv": 1671.63
+  },
+  {
+   "month": "2025-01",
+   "count": 4,
+   "notional_usd": 261.78,
+   "luna_equiv": 680.36
+  },
+  {
+   "month": "2025-02",
+   "count": 14,
+   "notional_usd": 1231.28,
+   "luna_equiv": 4654.34
+  },
+  {
+   "month": "2025-03",
+   "count": 6,
+   "notional_usd": 263.89,
+   "luna_equiv": 1337.32
+  },
+  {
+   "month": "2025-04",
+   "count": 7,
+   "notional_usd": 235.44,
+   "luna_equiv": 1461.71
+  },
+  {
+   "month": "2025-05",
+   "count": 1,
+   "notional_usd": 44.66,
+   "luna_equiv": 239.23
+  },
+  {
+   "month": "2025-06",
+   "count": 7,
+   "notional_usd": 326.86,
+   "luna_equiv": 1959.58
+  },
+  {
+   "month": "2025-07",
+   "count": 12,
+   "notional_usd": 842.95,
+   "luna_equiv": 5306.75
+  },
+  {
+   "month": "2025-08",
+   "count": 14,
+   "notional_usd": 908.63,
+   "luna_equiv": 5749.76
+  },
+  {
+   "month": "2025-09",
+   "count": 19,
+   "notional_usd": 1088.59,
+   "luna_equiv": 7250.17
+  },
+  {
+   "month": "2025-10",
+   "count": 8,
+   "notional_usd": 221.09,
+   "luna_equiv": 1687.52
+  },
+  {
+   "month": "2025-11",
+   "count": 1,
+   "notional_usd": 28.28,
+   "luna_equiv": 299.83
+  },
+  {
+   "month": "2025-12",
+   "count": 8,
+   "notional_usd": 636.22,
+   "luna_equiv": 5037
+  },
+  {
+   "month": "2026-01",
+   "count": 5,
+   "notional_usd": 149.83,
+   "luna_equiv": 1744.99
+  },
+  {
+   "month": "2026-02",
+   "count": 6,
+   "notional_usd": 168.37,
+   "luna_equiv": 2893.35
+  },
+  {
+   "month": "2026-03",
+   "count": 10,
+   "notional_usd": 437.26,
+   "luna_equiv": 6971.38
+  },
+  {
+   "month": "2026-04",
+   "count": 4,
+   "notional_usd": 353.4,
+   "luna_equiv": 6094.97
+  },
+  {
+   "month": "2026-05",
+   "count": 1,
+   "notional_usd": 1673.29,
+   "luna_equiv": 25926.05
+  }
+ ],
+ "sale_number_distribution": {
+  "1": 970,
+  "2": 221,
+  "3": 20,
+  "4": 2
+ },
+ "flips": {
+  "realized_pnl_usd": -2610.43,
+  "flip_count": 243,
+  "top_flips": [
+   {
+    "token_id": "3070",
+    "flipper": "terra1xrz940kw377snj292z9sktqm5ex983v33h6j5s",
+    "buy_usd": 190.6,
+    "sell_usd": 1047.14,
+    "pnl_usd": 856.55,
+    "hold_days": 9.2
+   },
+   {
+    "token_id": "5587",
+    "flipper": "terra1x4xd8qsjqze5a56v6m6j5ejqdhf9sas980mjmq",
+    "buy_usd": 153.59,
+    "sell_usd": 340.01,
+    "pnl_usd": 186.42,
+    "hold_days": 5
+   },
+   {
+    "token_id": "4179",
+    "flipper": "terra1ettjrqla8cpmx0wvdurjynn7776gurx5ywfufx",
+    "buy_usd": 144.87,
+    "sell_usd": 313.83,
+    "pnl_usd": 168.96,
+    "hold_days": 57.4
+   },
+   {
+    "token_id": "2243",
+    "flipper": "terra1t6hnypwjk6q48h3myrhza3vvquc4xkl93nwv4n",
+    "buy_usd": 126.98,
+    "sell_usd": 285.34,
+    "pnl_usd": 158.36,
+    "hold_days": 1.1
+   },
+   {
+    "token_id": "6929",
+    "flipper": "terra1lu4mp529xkxxyy5yt07wye6a264qmuda7h3r70",
+    "buy_usd": 218.09,
+    "sell_usd": 364.12,
+    "pnl_usd": 146.03,
+    "hold_days": 1.1
+   },
+   {
+    "token_id": "2305",
+    "flipper": "terra1z3m3284nk5yzvw94q6nvhf7u2ulm7fa60gwf0x",
+    "buy_usd": 101.27,
+    "sell_usd": 235.22,
+    "pnl_usd": 133.95,
+    "hold_days": 1.1
+   },
+   {
+    "token_id": "174",
+    "flipper": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "buy_usd": 69.79,
+    "sell_usd": 193.55,
+    "pnl_usd": 123.76,
+    "hold_days": 10.5
+   },
+   {
+    "token_id": "1483",
+    "flipper": "terra1t6hnypwjk6q48h3myrhza3vvquc4xkl93nwv4n",
+    "buy_usd": 86.89,
+    "sell_usd": 209.39,
+    "pnl_usd": 122.5,
+    "hold_days": 2.6
+   },
+   {
+    "token_id": "324",
+    "flipper": "terra1ls86exlsu3n5mpu6ql3fhc7zanklnun4t8kvyh",
+    "buy_usd": 73.65,
+    "sell_usd": 188.28,
+    "pnl_usd": 114.63,
+    "hold_days": 1.9
+   },
+   {
+    "token_id": "4337",
+    "flipper": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "buy_usd": 55.63,
+    "sell_usd": 170.01,
+    "pnl_usd": 114.38,
+    "hold_days": 12.2
+   },
+   {
+    "token_id": "2925",
+    "flipper": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "buy_usd": 84.39,
+    "sell_usd": 191.85,
+    "pnl_usd": 107.46,
+    "hold_days": 10.2
+   },
+   {
+    "token_id": "1383",
+    "flipper": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "buy_usd": 74.2,
+    "sell_usd": 179.81,
+    "pnl_usd": 105.61,
+    "hold_days": 1.1
+   },
+   {
+    "token_id": "7786",
+    "flipper": "terra1ettjrqla8cpmx0wvdurjynn7776gurx5ywfufx",
+    "buy_usd": 123.14,
+    "sell_usd": 228.27,
+    "pnl_usd": 105.13,
+    "hold_days": 31.4
+   },
+   {
+    "token_id": "3624",
+    "flipper": "terra1fsw49avf84r2927cvly3a467gsx02trftxscc5",
+    "buy_usd": 43.16,
+    "sell_usd": 143.46,
+    "pnl_usd": 100.31,
+    "hold_days": 2.4
+   },
+   {
+    "token_id": "2979",
+    "flipper": "terra1ls86exlsu3n5mpu6ql3fhc7zanklnun4t8kvyh",
+    "buy_usd": 57.93,
+    "sell_usd": 158.21,
+    "pnl_usd": 100.28,
+    "hold_days": 20.4
+   },
+   {
+    "token_id": "1921",
+    "flipper": "terra1lz5pgjwzky00mva2dxd6evvxy7ramr4qujd9dd",
+    "buy_usd": 102.65,
+    "sell_usd": 188.09,
+    "pnl_usd": 85.44,
+    "hold_days": 4.6
+   },
+   {
+    "token_id": "1079",
+    "flipper": "terra182mmc4g2sr340tnr0nr8nv98vlcqw0j7suaztc",
+    "buy_usd": 97.22,
+    "sell_usd": 181.74,
+    "pnl_usd": 84.52,
+    "hold_days": 0
+   },
+   {
+    "token_id": "4361",
+    "flipper": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "buy_usd": 101.79,
+    "sell_usd": 185.83,
+    "pnl_usd": 84.05,
+    "hold_days": 8.6
+   },
+   {
+    "token_id": "3049",
+    "flipper": "terra10lznz809q80re8fm9qa7cazu8crl4f76v3ccs8",
+    "buy_usd": 75.8,
+    "sell_usd": 157.33,
+    "pnl_usd": 81.53,
+    "hold_days": 13.2
+   },
+   {
+    "token_id": "4709",
+    "flipper": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
+    "buy_usd": 9.32,
+    "sell_usd": 90.42,
+    "pnl_usd": 81.1,
+    "hold_days": 12.7
+   }
+  ]
+ },
+ "hold_time_days": {
+  "resales_with_basis": 1009,
+  "median": 1,
+  "max": 734.2
+ },
+ "first_sale": {
+  "token_id": "7839",
+  "date": "2023-12-27T15:43:40Z",
+  "notional_usd": 153.6273
+ },
+ "last_sale": {
+  "token_id": "6067",
+  "date": "2026-05-22T18:17:45Z",
+  "notional_usd": 1673.2882
+ },
+ "oracle_span": [
+  "2022-05-28",
+  "2026-06-08"
+ ],
+ "bluna_pricing": {
+  "mode": "bluna-ratio-curve",
+  "note": "bLUNA = monotonic monthly-median bLUNA/LUNA ratio (from boneLUNA CoinGecko, gap-interpolated, clamped 1.0–2.0) × LUNA-USD on sale date"
+ },
+ "bluna_ratio_curve": {
+  "latest": 1.7553,
+  "span": [
+   "2024-03-15",
+   "2026-06-15"
+  ],
+  "anchors": [
+   {
+    "month": "2024-03",
+    "ratio": 1.157
+   },
+   {
+    "month": "2024-04",
+    "ratio": 1.172
+   },
+   {
+    "month": "2025-09",
+    "ratio": 1.49
+   },
+   {
+    "month": "2025-10",
+    "ratio": 1.505
+   },
+   {
+    "month": "2025-11",
+    "ratio": 1.508
+   },
+   {
+    "month": "2025-12",
+    "ratio": 1.53
+   },
+   {
+    "month": "2026-01",
+    "ratio": 1.611
+   },
+   {
+    "month": "2026-02",
+    "ratio": 1.625
+   },
+   {
+    "month": "2026-03",
+    "ratio": 1.647
+   },
+   {
+    "month": "2026-04",
+    "ratio": 1.691
+   },
+   {
+    "month": "2026-05",
+    "ratio": 1.721
+   },
+   {
+    "month": "2026-06",
+    "ratio": 1.755
+   }
+  ]
+ }
+}
