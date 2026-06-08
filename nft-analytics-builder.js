@@ -47,6 +47,16 @@ const round = (n, d = 2) => Math.round(n * 10 ** d) / 10 ** d;
 
 function loadInputs() {
     const sales = readJson(`${COLL_DIR}/sales-history.json`);
+    let salesArr = sales.sales || sales;
+    // optional Boost sales — settlements on BoostDAO that the BBL settle-sweep can't see.
+    // Already date/buyer/tx-joined to provenance; LUNA/bLUNA re-priced via oracle in priceSale,
+    // USDC at par, SOLID/ampLUNA via their stored Boost USD (to_usd_boost).
+    try {
+        const boost = readJson(`${COLL_DIR}/boost-sales.json`);
+        const bArr = boost.sales || boost;
+        salesArr = salesArr.concat(bArr);
+        console.log(`  merged ${bArr.length} Boost sales (other-marketplace settlements)`);
+    } catch { /* no boost-sales.json — BBL only */ }
     const prov  = readJson(`${COLL_DIR}/nft-provenance.json`);
     const oracle = readJson(`${DATA_DIR}/luna-usd-daily.json`);
     const daily = oracle.daily || oracle;
@@ -61,7 +71,7 @@ function loadInputs() {
         blunaSpot = blunaDaily[bd[bd.length - 1]];
         blunaSpan = [bd[0], bd[bd.length - 1]];
     } catch { /* fall back to flat BLUNA_RATE */ }
-    return { salesDoc: sales, sales: sales.sales || sales, prov, daily, spot, oracleSpan: [dates[0], dates[dates.length - 1]], blunaDaily, blunaSpot, blunaSpan };
+    return { salesDoc: sales, sales: salesArr, prov, daily, spot, oracleSpan: [dates[0], dates[dates.length - 1]], blunaDaily, blunaSpot, blunaSpan };
 }
 
 // nearest-on-or-before price for a date (handles gaps)
@@ -109,9 +119,16 @@ function priceSale(s, lunaDaily, lunaSpot, blunaRatio) {
     } else if (isBluna) {
         px = lPx != null ? lPx * BLUNA_RATE : null; spot = lunaSpot * BLUNA_RATE; src = 'bluna-flat-rate';
         lunaEq = amt * BLUNA_RATE;
-    } else {
+    } else if (s.denom_symbol === 'LUNA') {
         px = lPx; spot = lunaSpot; src = 'luna-oracle';
         lunaEq = amt;
+    } else if (s.denom_symbol === 'USDC') {
+        // dollar-denominated sale — par. Not LUNA, so excluded from luna_equiv_total.
+        px = 1; spot = 1; src = 'usdc-par'; lunaEq = 0;
+    } else {
+        // SOLID / ampLUNA / other exotic Boost denoms — no oracle, use Boost's recorded USD.
+        const tb = Number(s.to_usd_boost) || 0;
+        px = amt > 0 ? tb / amt : 0; spot = px; src = 'boost-to-usd'; lunaEq = 0;
     }
     return {
         amount: amt,
@@ -275,6 +292,10 @@ async function main() {
     const blunaRatio = buildBlunaRatio(blunaDaily, daily);
     console.log(blunaRatio ? `  bLUNA ratio curve: ${blunaRatio.anchors.length} monthly anchors ${blunaRatio.span[0]}→${blunaRatio.span[1]}, latest ${blunaRatio.latest.toFixed(3)}` : `  bLUNA: no oracle → flat rate ${BLUNA_RATE}`);
     const enriched = enrich(sales, daily, spot, blunaRatio, prov);
+    // sale_number is authoritative across ALL sources (BBL + Boost): re-derive by block order per token,
+    // so a Boost sale of a token that also sold on BBL is numbered in true sequence (not per-sweep).
+    { const byT = {}; for (const s of enriched) (byT[s.token_id] = byT[s.token_id] || []).push(s);
+      for (const t in byT) byT[t].sort((a, b) => a.block - b.block).forEach((s, i) => { s.sale_number = i + 1; }); }
     const priced = enriched.filter(s => s.notional_usd != null).length;
     console.log(`  priced ${priced}/${enriched.length} sales`);
     const roll = rollups(enriched, spot, oracleSpan);
