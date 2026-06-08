@@ -28,7 +28,7 @@ const DAODAO_STK   = 'terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6q
 const ENT_STK      = 'terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv';
 const LCD_PRIMARY  = 'https://terra-lcd.publicnode.com';
 const LCD_FALLBACK = 'https://terra-rest.publicnode.com';
-const PAGE_LIMIT   = 100, MAX_PAGES = 80;
+const PAGE_LIMIT   = 100, MAX_PAGES = 120;
 
 const RUN_MODE     = (process.env.RUN_MODE || 'sample').toLowerCase();
 const SAMPLE_N     = Number(process.env.SAMPLE_N || 8);
@@ -65,13 +65,17 @@ function httpGet(url, t = 20000) {
 async function lcdGet(p, label) { try { return await httpGet(LCD_PRIMARY + p); } catch (e) { try { return await httpGet(LCD_FALLBACK + p); } catch (e2) { throw new Error(`${label}: both LCDs failed (${e2.message})`); } } }
 function txPath(conds, offset) { return `/cosmos/tx/v1beta1/txs?query=${encodeURIComponent(conds.join(' AND '))}&order_by=ORDER_BY_ASC&pagination.limit=${PAGE_LIMIT}&pagination.offset=${offset}`; }
 async function fetchAllTxs(conds, label) {
-    const out = [];
+    const out = [], seen = new Set(); let total = null;
     for (let pg = 0; pg < MAX_PAGES; pg++) {
         const r = await lcdGet(txPath(conds, pg * PAGE_LIMIT), `${label} p${pg}`);
-        const batch = r?.tx_responses || []; out.push(...batch);
-        process.stdout.write(`\r  ${label}: ${out.length} txs   `);
-        if (batch.length < PAGE_LIMIT) break;
-        if (pg === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap`);
+        const batch = r?.tx_responses || [];
+        if (total === null) total = Number(r?.total ?? r?.pagination?.total ?? 0) || null;
+        if (batch.length === 0) break;                       // past the end
+        let added = 0;
+        for (const tx of batch) { if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; } }
+        process.stdout.write(`\r  ${label}: ${out.length}${total ? '/' + total : ''} txs   `);
+        if (added === 0) break;                              // only dupes → end / cycling offset
+        if (pg === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap (${MAX_PAGES}); got ${out.length}${total ? '/' + total : ''}`);
     }
     process.stdout.write('\n'); return out;
 }

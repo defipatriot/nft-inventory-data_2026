@@ -32,7 +32,7 @@ const LCD_PRIMARY   = 'https://terra-lcd.publicnode.com';
 const LCD_FALLBACK  = 'https://terra-rest.publicnode.com';
 const HTTP_TIMEOUT  = 20000;
 const PAGE_LIMIT    = 100;
-const MAX_PAGES     = 50;
+const MAX_PAGES     = 120;
 
 const RUN_MODE      = (process.env.RUN_MODE || 'sample').toLowerCase();
 const SAMPLE_N      = Number(process.env.SAMPLE_N || 6);
@@ -75,14 +75,17 @@ function txSearchPath(conditions, offset) {
     return `/cosmos/tx/v1beta1/txs?query=${encodeURIComponent(q)}&order_by=ORDER_BY_ASC&pagination.limit=${PAGE_LIMIT}&pagination.offset=${offset}`;
 }
 async function fetchAllTxs(conditions, label) {
-    const out = [];
+    const out = [], seen = new Set(); let total = null;
     for (let page = 0; page < MAX_PAGES; page++) {
         const resp = await lcdGet(txSearchPath(conditions, page * PAGE_LIMIT), `${label} p${page}`);
         const batch = resp?.tx_responses || [];
-        out.push(...batch);
-        process.stdout.write(`\r  ${label}: ${out.length} txs   `);
-        if (batch.length < PAGE_LIMIT) break;
-        if (page === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap (${MAX_PAGES})`);
+        if (total === null) total = Number(resp?.total ?? resp?.pagination?.total ?? 0) || null;
+        if (batch.length === 0) break;                       // past the end
+        let added = 0;
+        for (const tx of batch) { if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; } }
+        process.stdout.write(`\r  ${label}: ${out.length}${total ? '/' + total : ''} txs   `);
+        if (added === 0) break;                              // only dupes → end / cycling offset
+        if (page === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap (${MAX_PAGES}); got ${out.length}${total ? '/' + total : ''}`);
     }
     process.stdout.write('\n');
     return out;
