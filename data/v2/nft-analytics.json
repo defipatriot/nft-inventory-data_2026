@@ -1,71 +1,97 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-06-08T12:04:05.584Z",
+ "builtAt": "2026-06-08T12:18:28.096Z",
  "volume": {
   "sales_count": 1243,
-  "luna_equiv_total": 269174.61,
-  "notional_usd_at_sale": 147131.55,
+  "tokens": {
+   "LUNA": 181213.24,
+   "bLUNA": 56991.5453,
+   "USDC": 105,
+   "ampLUNA": 1,
+   "SOLID": 245
+  },
+  "usd_at_sale": 147131.55,
   "value_today_usd": 14887.62,
+  "luna_equiv_total": 269174.61,
   "spot_luna_usd": 0.05165883717157952,
-  "note": "notional = sum(amount * token-USD on sale date, per denom); value_today = sum(amount * denom spot). They differ because LUNA/bLUNA were worth more historically."
+  "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
  },
  "denom_split": {
   "LUNA": {
    "count": 1063,
+   "tokens": 181213.24,
    "luna_equiv": 181213.24,
    "notional_usd": 134610.9,
    "value_today_usd": 9361.27
   },
   "bLUNA": {
    "count": 170,
+   "tokens": 56991.5453,
    "luna_equiv": 87961.37,
    "notional_usd": 12161.95,
    "value_today_usd": 5167.67
   },
   "USDC": {
    "count": 2,
+   "tokens": 105,
    "luna_equiv": 0,
    "notional_usd": 105,
    "value_today_usd": 105
   },
   "ampLUNA": {
    "count": 1,
+   "tokens": 1,
    "luna_equiv": 0,
    "notional_usd": 0.11,
    "value_today_usd": 0.11
   },
   "SOLID": {
    "count": 7,
+   "tokens": 245,
    "luna_equiv": 0,
    "notional_usd": 253.58,
    "value_today_usd": 253.58
   }
  },
  "royalties": {
-  "to_dao_notional_usd": 7270.14,
-  "to_dao_value_today_usd": 714.57,
-  "notional_usd_at_sale": 7315.87,
+  "to_dao_tokens": {
+   "LUNA": 8830.662,
+   "bLUNA": 2849.5773
+  },
+  "to_dao_usd_when_earned": 7270.14,
+  "to_dao_usd_today": 714.57,
   "by_recipient": [
    {
     "recipient": "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm",
     "is_dao": true,
-    "notional_usd": 7027.01,
-    "value_today_usd": 588.56
+    "tokens": {
+     "LUNA": 8830.662,
+     "bLUNA": 1459.8833
+    },
+    "usd_when_earned": 7027.01,
+    "usd_today": 588.56
    },
    {
     "recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
     "is_dao": true,
-    "notional_usd": 243.13,
-    "value_today_usd": 126.01
+    "tokens": {
+     "bLUNA": 1389.694
+    },
+    "usd_when_earned": 243.13,
+    "usd_today": 126.01
    },
    {
     "recipient": "unknown",
     "is_dao": false,
-    "notional_usd": 45.73,
-    "value_today_usd": 3.2
+    "tokens": {
+     "LUNA": 62
+    },
+    "usd_when_earned": 45.73,
+    "usd_today": 3.2
    }
-  ]
+  ],
+  "note": "Royalties accrue to the treasury as tokens and are not sold, so token totals are the real figure. USD is shown for context only and was never realized. Boost sales carry no royalty data."
  },
  "leaderboards": {
   "top_buyers": [
