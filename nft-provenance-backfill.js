@@ -66,49 +66,58 @@ async function lcdGet(p, label) { try { return await httpGet(LCD_PRIMARY + p); }
 function txPath(conds, offset) { return `/cosmos/tx/v1beta1/txs?query=${encodeURIComponent(conds.join(' AND '))}&order_by=ORDER_BY_ASC&pagination.limit=${PAGE_LIMIT}&pagination.offset=${offset}`; }
 async function fetchAllTxs(conds, label, _get = lcdGet) {
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-    const OVERLAP = 20, RETRIES = 25, EMPTY_CONFIRM = 5, BACKOFF = 400;
+    const OVERLAP = 20, RETRIES = 30, EMPTY_CONFIRM = 6, BACKOFF = 400;
     const heights = b => b.map(t => Number(t.height));
     const out = [], seen = new Set();
-    let lastMaxHeight = 0, partialSeen = false;
+    const stats = { calls: 0, good: 0, dup: 0, discont: 0, empty: 0, error: 0, advances: 0 };
+    let lastMaxHeight = 0, partialSeen = false, stop = 'complete';
 
-    // page 0: keep the deepest-archive page (smallest min height) across probes
+    // page 0: probe RETRIES times, keep the deepest-archive page (smallest min height)
     let best = null;
     for (let a = 0; a < RETRIES; a++) {
-        let r; try { r = await _get(txPath(conds, 0), `${label} p0.${a}`); } catch { await sleep(BACKOFF); continue; }
-        const batch = r?.tx_responses || [];
-        if (batch.length === 0) { await sleep(BACKOFF); continue; }
+        stats.calls++;
+        let resp; try { resp = await _get(txPath(conds, 0), `${label} p0.${a}`); } catch { stats.error++; await sleep(BACKOFF); continue; }
+        const batch = resp?.tx_responses || [];
+        if (batch.length === 0) { stats.empty++; await sleep(BACKOFF); continue; }
         const minH = Math.min(...heights(batch));
         if (!best || minH < best.minH) best = { batch, minH };
         await sleep(120);
     }
-    if (!best) throw new Error(`${label}: could not fetch first page after ${RETRIES} tries (node pool unreachable?)`);
+    if (!best) throw new Error(`${label}: first page unreachable after ${RETRIES} tries (node pool down?)`);
     for (const tx of best.batch) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); }
     lastMaxHeight = Math.max(...heights(best.batch));
     partialSeen = best.batch.length < PAGE_LIMIT;
-    process.stdout.write(`\r  ${label}: ${out.length} txs (start h=${best.minH})   `);
+    console.log(`  ${label}: page0 start-height=${best.minH} (${out.length} txs)`);
 
-    for (let pg = 1; pg < MAX_PAGES; pg++) {
+    // subsequent pages: overlap-anchored (must re-share seen txs AND add new), retry bad backends.
+    // KEY: an empty response mid-data does NOT mean "end" — it's just a backend without that offset.
+    // Empties only confirm the end once we've already seen a partial (short) page.
+    for (let page = 1; page < MAX_PAGES; page++) {
         const offset = Math.max(0, out.length - OVERLAP);
         let accepted = null, emptyVotes = 0, endVotes = 0;
         for (let a = 0; a < RETRIES; a++) {
-            let r; try { r = await _get(txPath(conds, offset), `${label} p${pg}.${a}`); } catch { await sleep(BACKOFF); continue; }
-            const batch = r?.tx_responses || [];
-            if (batch.length === 0) { if (++emptyVotes >= EMPTY_CONFIRM) { accepted = 'END'; break; } await sleep(BACKOFF); continue; }
+            stats.calls++;
+            let resp; try { resp = await _get(txPath(conds, offset), `${label} p${page}.${a}`); } catch { stats.error++; await sleep(BACKOFF); continue; }
+            const batch = resp?.tx_responses || [];
+            if (batch.length === 0) { stats.empty++; if (partialSeen && ++emptyVotes >= EMPTY_CONFIRM) { accepted = 'END'; break; } await sleep(BACKOFF); continue; }
             let overlap = 0, fresh = 0;
             for (const tx of batch) (seen.has(tx.txhash) ? overlap++ : fresh++);
-            if (overlap === 0) { await sleep(BACKOFF); continue; }        // discontinuous → bad/recent-only node
-            if (fresh === 0) { if (partialSeen) { if (++endVotes >= 2) { accepted = 'END'; break; } } await sleep(BACKOFF); continue; }
-            accepted = batch; break;
+            if (overlap === 0) { stats.discont++; await sleep(BACKOFF); continue; }              // wrong window (recent-only / misaligned)
+            if (fresh === 0) { stats.dup++; if (partialSeen && ++endVotes >= 2) { accepted = 'END'; break; } await sleep(BACKOFF); continue; } // offset ignored, or true end
+            stats.good++; accepted = batch; break;                                               // continuous + progress
         }
-        if (accepted === 'END') break;
-        if (!accepted) { console.warn(`\n  ⚠ ${label}: stuck at offset ${offset} after ${RETRIES} tries — coverage partial up to height ${lastMaxHeight}. RE-RUN to extend.`); break; }
-        for (const tx of accepted) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); }
+        if (accepted === 'END') { stop = 'clean-end'; break; }
+        if (!accepted) { stop = `stuck@offset_${offset}`; console.warn(`  ⚠ ${label}: STUCK at offset ${offset} after ${RETRIES} tries — partial coverage up to height ${lastMaxHeight}`); break; }
+        let added = 0;
+        for (const tx of accepted) if (!seen.has(tx.txhash)) { seen.add(tx.txhash); out.push(tx); added++; }
+        stats.advances++;
         lastMaxHeight = Math.max(lastMaxHeight, Math.max(...heights(accepted)));
         partialSeen = accepted.length < PAGE_LIMIT;
-        process.stdout.write(`\r  ${label}: ${out.length} txs (h=${lastMaxHeight})   `);
-        if (pg === MAX_PAGES - 1) console.warn(`\n  ⚠ ${label} hit page cap (${MAX_PAGES}); got ${out.length}`);
+        if (page % 10 === 0 || added < PAGE_LIMIT) console.log(`  ${label}: ${out.length} txs (page ${page}, height=${lastMaxHeight}, +${added})`);
+        if (page === MAX_PAGES - 1) { stop = 'page-cap'; console.warn(`  ⚠ ${label} hit page cap (${MAX_PAGES})`); }
     }
-    process.stdout.write('\n'); return out;
+    console.log(`  ${label}: DONE — ${out.length} txs | stop=${stop} | pages_advanced=${stats.advances} | calls=${stats.calls} | good=${stats.good} dup(offset-ignored)=${stats.dup} discont=${stats.discont} empty=${stats.empty} error=${stats.error}`);
+    return out;
 }
 
 // ─── events ───────────────────────────────────────────────────────────────────
