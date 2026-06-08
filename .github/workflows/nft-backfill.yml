@@ -7,6 +7,11 @@ name: NFT History Backfill (one-time)
 on:
   workflow_dispatch:
     inputs:
+      collection:
+        description: "Which NFT collection to backfill"
+        type: choice
+        default: adao
+        options: [adao, pixel-lions, scalandious]
       target:
         description: "Which backfill to run"
         type: choice
@@ -21,6 +26,18 @@ on:
         description: "LCD endpoint (publicnode is fine now — the sweeper is resilient to its flaky pool)"
         type: string
         default: "https://terra-lcd.publicnode.com"
+      probe_delay_ms:
+        description: "Per-probe delay (ms). Lower = faster, higher = gentler on the LCD. Pacing only — does not affect data completeness."
+        type: string
+        default: "40"
+      err_backoff_ms:
+        description: "Backoff after an error/empty response (ms)."
+        type: string
+        default: "250"
+      retries:
+        description: "Probes per page (robustness margin). 60 is safe; lower only if you accept a smaller margin."
+        type: string
+        default: "60"
 
 permissions:
   contents: write   # lets the scripts push the output files to this repo
@@ -37,11 +54,26 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Resolve collection → NFT contract
+        run: |
+          case "${{ inputs.collection }}" in
+            adao)        echo "NFT_CONTRACT=terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9" >> "$GITHUB_ENV" ;;
+            pixel-lions) echo "NFT_CONTRACT=terra17z7fpaa8kah698xn5tarrcucvualdy4wsztkfc404g3garucpu6qmxp50g" >> "$GITHUB_ENV" ;;
+            scalandious) echo "NFT_CONTRACT=terra1dad37a4sacsa7qkvfazrhq7h8t3j34j6trelmm8ajcap8d453mfsmccv92" >> "$GITHUB_ENV" ;;
+          esac
+          echo "COLLECTION=${{ inputs.collection }}" >> "$GITHUB_ENV"
+          echo "Resolved ${{ inputs.collection }} → $NFT_CONTRACT"
+
       - name: Run BBL sales backfill
         if: ${{ inputs.target == 'both' || inputs.target == 'sales' }}
         env:
           RUN_MODE: ${{ inputs.mode }}
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
           LCD_PRIMARY: ${{ inputs.lcd }}
+          PAGER_PROBE_DELAY: ${{ inputs.probe_delay_ms }}
+          PAGER_ERR_BACKOFF: ${{ inputs.err_backoff_ms }}
+          PAGER_RETRIES: ${{ inputs.retries }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_BRANCH: ${{ github.ref_name }}
@@ -51,7 +83,12 @@ jobs:
         if: ${{ inputs.target == 'both' || inputs.target == 'provenance' }}
         env:
           RUN_MODE: ${{ inputs.mode }}
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
           LCD_PRIMARY: ${{ inputs.lcd }}
+          PAGER_PROBE_DELAY: ${{ inputs.probe_delay_ms }}
+          PAGER_ERR_BACKOFF: ${{ inputs.err_backoff_ms }}
+          PAGER_RETRIES: ${{ inputs.retries }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_BRANCH: ${{ github.ref_name }}
