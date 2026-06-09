@@ -1,0 +1,49 @@
+{
+ "schemaVersion": 1,
+ "builtAt": "2026-06-09T11:44:18.695Z",
+ "source": "atrium-sales-backfill.js (buy_nft events, aDAO)",
+ "marketplace": "Atrium",
+ "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+ "collection": "adao",
+ "atrium_contract": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+ "note": "Self-contained buy_nft settle record. gross_amount in micro-units of denom. LUNA→oracle, USDC/SOLID→par, others priced in builder. royalty_fee null when the sale had no royalty.",
+ "count": 2,
+ "sales": [
+  {
+   "tx_hash": "B028FDE130355659003308EF3E1961E8DE260F93EC636F28780A92DF5E33D742",
+   "block": 21370924,
+   "timestamp": "2026-06-08T12:50:05Z",
+   "listing_id": 93,
+   "token_id": "2219",
+   "seller": "terra1vrjdx0t3jzarp66tml99skeuhaz308sr80p7u4",
+   "buyer": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+   "denom": "terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+   "denom_symbol": "SOLID",
+   "gross_amount": "5000000",
+   "seller_net": "4925000",
+   "marketplace_fee": "75000",
+   "royalty_fee": null,
+   "royalty_recipient": null,
+   "marketplace": "Atrium",
+   "sale_number": 1
+  },
+  {
+   "tx_hash": "8A6AB1C1305E3D56A6A1B054EDC931423FCF07968B8E7BF9EAAE1681F7CD964A",
+   "block": 21383527,
+   "timestamp": "2026-06-09T09:08:40Z",
+   "listing_id": 146,
+   "token_id": "2219",
+   "seller": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+   "buyer": "terra1fjd6thl0dqh6e5wv9z7rdrqzmtp0xau7fdejpq",
+   "denom": "terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+   "denom_symbol": "SOLID",
+   "gross_amount": "5000000",
+   "seller_net": "5000000",
+   "marketplace_fee": "0",
+   "royalty_fee": null,
+   "royalty_recipient": null,
+   "marketplace": "Atrium",
+   "sale_number": 2
+  }
+ ]
+}
