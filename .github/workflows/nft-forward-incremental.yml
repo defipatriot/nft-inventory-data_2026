@@ -1,0 +1,71 @@
+name: NFT Incremental Update (every 6h)
+
+# Cheap "since last block" refresh of the aDAO NFT history. The full backfill already did the heavy
+# lifting; this only fetches NEW txs since the highest block in our data (~10–50/day on one contract),
+# so it runs in seconds. Chain: incremental (provenance + BBL + Atrium) → Boost → analytics.
+# All steps read/write the runner's local files (the incremental script writes local AND pushes),
+# so no git pull is needed. Correctness backstop = the WEEKLY full sweep (nft-forward-update.yml).
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'      # every 6 hours
+  workflow_dispatch:
+    inputs:
+      collection:
+        description: "Collection to refresh"
+        type: choice
+        default: adao
+        options: [adao]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nft-forward            # shared with the weekly reconcile — the two never overlap
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (brings current data/v2 into the runner = the watermark)
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Resolve collection → NFT contract
+        run: |
+          COLL="${{ inputs.collection || 'adao' }}"
+          case "$COLL" in
+            adao) echo "NFT_CONTRACT=terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9" >> "$GITHUB_ENV" ;;
+          esac
+          echo "COLLECTION=$COLL" >> "$GITHUB_ENV"
+
+      - name: Incremental — new txs since watermark (provenance + BBL + Atrium)
+        env:
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node nft-forward-incremental.js
+
+      - name: Boost — refresh + join to (now-updated) provenance
+        env:
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node boost-sales-fetch.js
+
+      - name: Analytics — rebuild from the refreshed local data
+        env:
+          COLLECTION: ${{ env.COLLECTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node nft-analytics-builder.js

@@ -1,4 +1,4 @@
-name: NFT Forward Update (scheduled)
+name: NFT Full Reconcile (weekly backstop)
 
 # Keeps the aDAO NFT history layer current. Runs the PROVEN full sweepers (idempotent — each run
 # rebuilds the complete dataset from chain), refreshes Boost sales, then rebuilds analytics:
@@ -11,7 +11,7 @@ name: NFT Forward Update (scheduled)
 
 on:
   schedule:
-    - cron: '0 6 * * *'        # daily 06:00 UTC (NFT trades are sporadic; daily is plenty). Adjust freely.
+    - cron: '0 6 * * 0'        # WEEKLY, Sunday 06:00 UTC. Heavy full re-sweep = the correctness backstop; the cheap incremental (nft-forward-incremental.yml) handles freshness every 6h.
   workflow_dispatch:
     inputs:
       collection:
@@ -32,7 +32,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nft-forward-update          # never overlap two runs (they'd race on the same files)
+  group: nft-forward          # never overlap two runs (they'd race on the same files)
   cancel-in-progress: false
 
 jobs:
