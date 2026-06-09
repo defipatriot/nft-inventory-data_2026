@@ -1,9 +1,10 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-09T06:52:45.149Z",
+ "builtAt": "2026-06-09T11:43:44.765Z",
  "source": "bbl-sales-backfill.js (settle events, aDAO)",
  "marketplace": "BBL",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+ "collection": "adao",
  "bbl_fee_wallet": "terra1jgk8dhtv0qf5s08jxrwecf4a04hdmeznqpty75",
  "note": "Raw on-chain BBL sale record from settle events. USD-at-date + sale spread are separate later passes. sale_number is BBL-only sequence; sale_number=1 is the earliest BBL sale (= mint if mints ran on BBL).",
  "denom_breakdown": {
@@ -20756,6 +20757,5 @@
    "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
    "sale_number": 1
   }
- ],
- "updatedBy": "nft-forward-incremental.js"
+ ]
 }
