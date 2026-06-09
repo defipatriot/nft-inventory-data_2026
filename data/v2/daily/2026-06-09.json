@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-09",
-  "capturedAt": "2026-06-09T09:00:27.102Z",
+  "capturedAt": "2026-06-09T09:15:05.508Z",
   "epoch": 189,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -45,9 +45,9 @@
       "by_token": {
         "SOLID": {
           "count": 13,
-          "total": 6790,
-          "min": 5,
-          "total_usd": 6932.359095000001
+          "total": 6795,
+          "min": 10,
+          "total_usd": 6937.463925000001
         }
       }
     },
