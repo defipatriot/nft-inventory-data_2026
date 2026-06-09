@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-08T08:19:09.185Z",
+ "builtAt": "2026-06-09T06:52:45.149Z",
  "source": "bbl-sales-backfill.js (settle events, aDAO)",
  "marketplace": "BBL",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -8,13 +8,13 @@
  "note": "Raw on-chain BBL sale record from settle events. USD-at-date + sale spread are separate later passes. sale_number is BBL-only sequence; sale_number=1 is the earliest BBL sale (= mint if mints ran on BBL).",
  "denom_breakdown": {
   "LUNA": 1043,
-  "bLUNA": 170
+  "bLUNA": 177
  },
  "royalty_wallets": {
   "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm": 1117,
-  "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm": 90
+  "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm": 97
  },
- "count": 1213,
+ "count": 1220,
  "sales": [
   {
    "tx_hash": "E1F830B6E7A68B09CB877C2D1EC50DA4B5B94D34BEA8BC5A03E5BD2FA1C704D8",
@@ -20636,6 +20636,126 @@
    "royalty_fee": "750000000",
    "royalty_recipient": "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm",
    "sale_number": 2
+  },
+  {
+   "tx_hash": "B3E577E7736B6742BAB855BED962998B1434E96923DAE2BC585B15230636FC6B",
+   "block": 21381523,
+   "timestamp": "2026-06-09T05:55:01Z",
+   "auction_id": "17724",
+   "token_id": "7025",
+   "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1149999000",
+   "seller_net": "1069499070",
+   "marketplace_fee": "22999980",
+   "royalty_fee": "57499950",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 2
+  },
+  {
+   "tx_hash": "21FD2441A37A220E2A1B2494F4ED5B71B745F69328492C2044075ADF9C9DCC89",
+   "block": 21381527,
+   "timestamp": "2026-06-09T05:55:24Z",
+   "auction_id": "17708",
+   "token_id": "417",
+   "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1150000000",
+   "seller_net": "1069500000",
+   "marketplace_fee": "23000000",
+   "royalty_fee": "57500000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 1
+  },
+  {
+   "tx_hash": "4F2BDCEBA82B458978FC7C65A8178C08CDF9F57EBA61C331EE475151E5FE9375",
+   "block": 21381532,
+   "timestamp": "2026-06-09T05:55:53Z",
+   "auction_id": "17705",
+   "token_id": "1290",
+   "seller": "terra1wpg32jhp3qnaguyayy6phxhz3kpv2c6reg9lta",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1200000000",
+   "seller_net": "1116000000",
+   "marketplace_fee": "24000000",
+   "royalty_fee": "60000000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 2
+  },
+  {
+   "tx_hash": "956152A85529F44557EBDF1125CB30E418ED5A00BC67E8AEAE39DAC6D68F5563",
+   "block": 21381538,
+   "timestamp": "2026-06-09T05:56:27Z",
+   "auction_id": "17709",
+   "token_id": "4617",
+   "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1200000000",
+   "seller_net": "1116000000",
+   "marketplace_fee": "24000000",
+   "royalty_fee": "60000000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 2
+  },
+  {
+   "tx_hash": "6757AC75ED344BE09FB20AB1F70E301E251CE9719B0626F22757E25B65F3BCD9",
+   "block": 21381545,
+   "timestamp": "2026-06-09T05:57:05Z",
+   "auction_id": "17711",
+   "token_id": "5157",
+   "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1500000000",
+   "seller_net": "1395000000",
+   "marketplace_fee": "30000000",
+   "royalty_fee": "75000000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 1
+  },
+  {
+   "tx_hash": "466E77E555EB3087A8A2DB5EF0A5BD8AAC009EEE3D49A66B6CBCC31A4D730911",
+   "block": 21381600,
+   "timestamp": "2026-06-09T06:02:22Z",
+   "auction_id": "17712",
+   "token_id": "8369",
+   "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1800000000",
+   "seller_net": "1674000000",
+   "marketplace_fee": "36000000",
+   "royalty_fee": "90000000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 1
+  },
+  {
+   "tx_hash": "E855F94CF0F79CCBB7C3FDCF60ED186259C5C53E8899396613F5C2CD6ECC9D69",
+   "block": 21381613,
+   "timestamp": "2026-06-09T06:03:38Z",
+   "auction_id": "17701",
+   "token_id": "8316",
+   "seller": "terra16lshrh8gmjk62t30xm2j3wnhc3w4kgxkvvrdd9",
+   "buyer": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "2475000000",
+   "seller_net": "2301750000",
+   "marketplace_fee": "49500000",
+   "royalty_fee": "123750000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 1
   }
- ]
+ ],
+ "updatedBy": "nft-forward-incremental.js"
 }
