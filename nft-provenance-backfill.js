@@ -25,6 +25,7 @@ const https = require('https');
 const ADAO_NFT     = process.env.NFT_CONTRACT || 'terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9'; // parameterized per collection
 const COLLECTION   = (process.env.COLLECTION || 'adao').toLowerCase();
 const BBL_CONTRACT = 'terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9';
+const ATRIUM_MKT   = 'terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj';
 const DAODAO_STK   = 'terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47';
 const ENT_STK      = 'terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv';
 const LCD_PRIMARY  = process.env.LCD_PRIMARY  || 'https://terra-lcd.publicnode.com';
@@ -144,10 +145,12 @@ function eventsOf(tx) {
 function classify(evs, from, to) {
     const hasSettle = evs.some(e => e.type === 'wasm' && e.a.action === 'settle');
     if (hasSettle) return 'sale';
+    const hasBuyNft = evs.some(e => e.type === 'wasm' && e.a.action === 'buy_nft');
+    if (hasBuyNft) return 'sale';                       // Atrium settles via buy_nft (not settle)
     if (to === DAODAO_STK || to === ENT_STK) return 'stake';
     if (from === DAODAO_STK || from === ENT_STK) return 'unstake_or_claim';
-    if (from === BBL_CONTRACT) return 'marketplace_move';
-    if (to === BBL_CONTRACT) return 'list';
+    if (from === BBL_CONTRACT || from === ATRIUM_MKT) return 'marketplace_move';
+    if (to === BBL_CONTRACT || to === ATRIUM_MKT) return 'list';
     return 'transfer';
 }
 

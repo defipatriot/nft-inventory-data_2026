@@ -57,6 +57,13 @@ function loadInputs() {
         salesArr = salesArr.concat(bArr);
         console.log(`  merged ${bArr.length} Boost sales (other-marketplace settlements)`);
     } catch { /* no boost-sales.json — BBL only */ }
+    // optional Atrium sales — buy_nft settlements on the Atrium marketplace.
+    try {
+        const atrium = readJson(`${COLL_DIR}/atrium-sales.json`);
+        const aArr = atrium.sales || atrium;
+        salesArr = salesArr.concat(aArr);
+        console.log(`  merged ${aArr.length} Atrium sales`);
+    } catch { /* no atrium-sales.json yet — none until Atrium has aDAO sales */ }
     const prov  = readJson(`${COLL_DIR}/nft-provenance.json`);
     const oracle = readJson(`${DATA_DIR}/luna-usd-daily.json`);
     const daily = oracle.daily || oracle;
@@ -122,9 +129,10 @@ function priceSale(s, lunaDaily, lunaSpot, blunaRatio) {
     } else if (s.denom_symbol === 'LUNA') {
         px = lPx; spot = lunaSpot; src = 'luna-oracle';
         lunaEq = amt;
-    } else if (s.denom_symbol === 'USDC') {
-        // dollar-denominated sale — par. Not LUNA, so excluded from luna_equiv_total.
-        px = 1; spot = 1; src = 'usdc-par'; lunaEq = 0;
+    } else if (s.denom_symbol === 'USDC' || s.denom_symbol === 'SOLID') {
+        // dollar-pegged stables priced at par (SOLID ≈ $1; replace with an oracle if volume grows).
+        // Not LUNA, so excluded from luna_equiv_total.
+        px = 1; spot = 1; src = s.denom_symbol === 'USDC' ? 'usdc-par' : 'solid-par'; lunaEq = 0;
     } else {
         // SOLID / ampLUNA / other exotic Boost denoms — no oracle, use Boost's recorded USD.
         const tb = Number(s.to_usd_boost) || 0;
