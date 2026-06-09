@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-06-09",
+  "capturedAt": "2026-06-09T00:00:43.829Z",
+  "epoch": 189,
+  "total_tokens": 10000,
+  "broken_count": 1093,
+  "unbroken_count": 8907,
+  "unminted_count": 5828,
+  "treasury_held_count": 898,
+  "dao_wallet_8ywv_held_count": 2,
+  "enterprise_staked_count": 403,
+  "enterprise_dao_broken_count": 100,
+  "daodao_staked_count": 1661,
+  "daodao_staked_broken_count": 65,
+  "bbl_listed_count": 43,
+  "atrium_listed_count": 4,
+  "boost_listed_count": 4,
+  "user_held_count": 1057,
+  "user_held_broken_count": 27,
+  "backing": {
+    "ampluna_balance": 787396.94442,
+    "per_nft_ampluna": 88.40203709666554,
+    "unbroken_count": 8907,
+    "ampluna_usd": 0.1139797632517715,
+    "treasury_value_usd": 89747.32,
+    "per_nft_value_usd": 10.076
+  },
+  "marketplaces": {
+    "bbl": {
+      "count": 30,
+      "count_resolved": 30,
+      "by_token": {
+        "bLUNA": {
+          "count": 30,
+          "total": 74718.99900000001,
+          "min": 200,
+          "total_usd": 6959.964483
+        }
+      }
+    },
+    "atrium": {
+      "count": 4,
+      "count_resolved": 4,
+      "by_token": {
+        "SOLID": {
+          "count": 4,
+          "total": 310,
+          "min": 10,
+          "total_usd": 316.853083
+        }
+      }
+    },
+    "boost": {
+      "count": 4,
+      "count_resolved": 4,
+      "by_token": {
+        "LUNA": {
+          "count": 3,
+          "total": 57200,
+          "min": 2200,
+          "total_usd": 3023.9352000000003
+        },
+        "ampLUNA": {
+          "count": 1,
+          "total": 3000,
+          "min": 3000,
+          "total_usd": 341.93929
+        }
+      }
+    }
+  }
+}
