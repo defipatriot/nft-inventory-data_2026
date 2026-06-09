@@ -266,6 +266,16 @@ async function main() {
         note: 'Per-token change-of-hands history. First event per token = initial distribution; mint phase/price assigned by date from release-history.html (approximate). Sale events tagged where the tx also had a BBL settle — join sales-history.json by tx_hash for price/USD. Stakes use send_nft (different action) and are NOT in this transfer_nft spine; current stake status comes from nfts.json.',
         summary: sum, tokens,
     };
+    // SAFETY GUARD — history is append-only. A flaky-LCD sweep can stop 'stuck'/'page-cap' and return
+    // PARTIAL data; publishing it would overwrite good history with a truncated set. Refuse to shrink.
+    try {
+        const prev = JSON.parse(require('fs').readFileSync(PROV_PATH, 'utf8'));
+        const prevEvents = prev?.summary?.total_hand_changes || 0, prevTokens = prev?.summary?.distinct_tokens || 0;
+        if (prevEvents > 0 && (sum.total_hand_changes < prevEvents || sum.distinct_tokens < prevTokens)) {
+            console.error(`❌ ABORT: sweep produced ${sum.total_hand_changes} events / ${sum.distinct_tokens} tokens < committed ${prevEvents} / ${prevTokens} — incomplete sweep, NOT publishing. Existing data is safe; rerun when LCDs are healthy.`);
+            process.exit(1);
+        }
+    } catch (e) { if (e.code !== 'ENOENT') console.warn('  (shrink-guard: could not read prior file: ' + e.message + ')'); }
     if (GITHUB_TOKEN) { console.log('\n📤 Publishing…'); await pushToGithub(PROV_PATH, JSON.stringify(doc), `nft provenance — ${sum.distinct_tokens} tokens`); }
     else { require('fs').writeFileSync('nft-provenance.json', JSON.stringify(doc)); console.log('\n⚠️  GITHUB_TOKEN not set — wrote locally'); }
     console.log(`\n✅ full sweep done (${((Date.now() - t0) / 1000).toFixed(1)}s)`);

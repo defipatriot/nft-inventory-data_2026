@@ -56,14 +56,14 @@ function loadInputs() {
         const bArr = boost.sales || boost;
         salesArr = salesArr.concat(bArr);
         console.log(`  merged ${bArr.length} Boost sales (other-marketplace settlements)`);
-    } catch { /* no boost-sales.json — BBL only */ }
+    } catch (e) { if (e.code !== 'ENOENT') throw new Error(`boost-sales.json present but unreadable (corrupt?) — refusing to silently drop Boost sales: ${e.message}`); }
     // optional Atrium sales — buy_nft settlements on the Atrium marketplace.
     try {
         const atrium = readJson(`${COLL_DIR}/atrium-sales.json`);
         const aArr = atrium.sales || atrium;
         salesArr = salesArr.concat(aArr);
         console.log(`  merged ${aArr.length} Atrium sales`);
-    } catch { /* no atrium-sales.json yet — none until Atrium has aDAO sales */ }
+    } catch (e) { if (e.code !== 'ENOENT') throw new Error(`atrium-sales.json present but unreadable (corrupt?) — refusing to silently drop Atrium sales: ${e.message}`); }
     const prov  = readJson(`${COLL_DIR}/nft-provenance.json`);
     const oracle = readJson(`${DATA_DIR}/luna-usd-daily.json`);
     const daily = oracle.daily || oracle;
@@ -77,7 +77,7 @@ function loadInputs() {
         const bd = Object.keys(blunaDaily).sort();
         blunaSpot = blunaDaily[bd[bd.length - 1]];
         blunaSpan = [bd[0], bd[bd.length - 1]];
-    } catch { /* fall back to flat BLUNA_RATE */ }
+    } catch (e) { if (e.code !== 'ENOENT') throw new Error(`bluna-usd-daily.json present but unreadable (corrupt?): ${e.message}`); }
     return { salesDoc: sales, sales: salesArr, prov, daily, spot, oracleSpan: [dates[0], dates[dates.length - 1]], blunaDaily, blunaSpot, blunaSpan };
 }
 
@@ -307,10 +307,51 @@ async function pushToGithub(path, content, message) {
     });
 }
 
+// F5 (oracle staleness): pull the current LUNA/bLUNA USD from the network-and-prices cron so sales
+// dated AFTER our static oracle's last entry aren't priced at a stale months-old last-known value.
+// Best-effort — any failure resolves to nulls and we fall back to the static oracle unchanged.
+function fetchLivePrices() {
+    const url = process.env.NETWORK_PRICES_URL || 'https://raw.githubusercontent.com/defipatriot/network-and-prices-data_2026/main/data/network-and-prices.json';
+    return new Promise((resolve) => {
+        https.get(url, { headers: { 'User-Agent': 'aDAO-analytics/1.0' } }, r => {
+            let b = ''; r.on('data', c => b += c); r.on('end', () => {
+                try {
+                    const j = JSON.parse(b);
+                    const luna = Number(j?.luna_market?.usd_price);
+                    const bluna = Number(j?.token_prices?.bLUNA?.final_price_usd);
+                    resolve({ luna: Number.isFinite(luna) ? luna : null, bluna: Number.isFinite(bluna) ? bluna : null });
+                } catch { resolve({ luna: null, bluna: null }); }
+            });
+        }).on('error', () => resolve({ luna: null, bluna: null }));
+    });
+}
+
 async function main() {
     console.log(`📊 NFT analytics builder — collection=${COLLECTION} dir=${COLL_DIR}`);
-    const { sales, prov, daily, spot, oracleSpan, blunaDaily, blunaSpot, blunaSpan } = loadInputs();
+    let { sales, prov, daily, spot, oracleSpan, blunaDaily, blunaSpot, blunaSpan } = loadInputs();
     console.log(`  loaded ${sales.length} sales, ${Object.keys(prov.tokens || {}).length} provenance tokens, LUNA oracle ${oracleSpan[0]}→${oracleSpan[1]} (spot $${spot})`);
+    // Extend the oracle(s) forward to "now" with the live price, so post-oracle sales price at a
+    // current value instead of a stale last-known one. (Within-oracle dates keep their history.)
+    const live = await fetchLivePrices();
+    if (live.luna != null) {
+        const today = new Date().toISOString().slice(0, 10);
+        const fill = (dict, lastDate, val) => {
+            if (val == null || !lastDate) return 0;
+            let added = 0;
+            for (let d = new Date(lastDate + 'T00:00:00Z'); d.toISOString().slice(0, 10) <= today; d.setUTCDate(d.getUTCDate() + 1)) {
+                const k = d.toISOString().slice(0, 10);
+                if (dict[k] == null) { dict[k] = val; added++; }
+            }
+            return added;
+        };
+        const la = fill(daily, oracleSpan[1], live.luna);
+        spot = live.luna; oracleSpan = [oracleSpan[0], today];
+        let ba = 0;
+        if (blunaDaily && live.bluna != null) { ba = fill(blunaDaily, (blunaSpan && blunaSpan[1]) || oracleSpan[1], live.bluna); blunaSpot = live.bluna; }
+        console.log(`  oracle extended to ${today} via live prices (LUNA $${live.luna}${live.bluna != null ? `, bLUNA $${live.bluna}` : ''}; +${la} LUNA / +${ba} bLUNA day(s))`);
+    } else {
+        console.log('  ⚠ live prices unavailable — static oracle only (recent sales may price stale)');
+    }
     const blunaRatio = buildBlunaRatio(blunaDaily, daily);
     console.log(blunaRatio ? `  bLUNA ratio curve: ${blunaRatio.anchors.length} monthly anchors ${blunaRatio.span[0]}→${blunaRatio.span[1]}, latest ${blunaRatio.latest.toFixed(3)}` : `  bLUNA: no oracle → flat rate ${BLUNA_RATE}`);
     const enriched = enrich(sales, daily, spot, blunaRatio, prov);

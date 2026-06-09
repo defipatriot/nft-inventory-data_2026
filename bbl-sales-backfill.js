@@ -318,6 +318,15 @@ async function main() {
         royalty_wallets: sum.royaltyWallets,
         count: sales.length, sales,
     };
+    // SAFETY GUARD — sales history is append-only; never overwrite committed data with fewer sales.
+    try {
+        const prev = JSON.parse(require('fs').readFileSync(SALES_PATH, 'utf8'));
+        const prevCount = prev?.count ?? (prev?.sales || []).length ?? 0;
+        if (prevCount > 0 && sales.length < prevCount) {
+            console.error(`❌ ABORT: ${sales.length} sales < committed ${prevCount} — incomplete sweep, NOT publishing. Existing data is safe.`);
+            process.exit(1);
+        }
+    } catch (e) { if (e.code !== 'ENOENT') console.warn('  (shrink-guard: could not read prior file: ' + e.message + ')'); }
     if (GITHUB_TOKEN) { console.log('\n📤 Publishing…'); await pushToGithub(SALES_PATH, JSON.stringify(doc, null, 1), `BBL sales backfill — ${sales.length} sales`); }
     else { require('fs').writeFileSync('sales-history.json', JSON.stringify(doc, null, 1)); console.log('\n⚠️  GITHUB_TOKEN not set — wrote sales-history.json locally'); }
     console.log(`\n✅ full sweep done (${((Date.now() - t0) / 1000).toFixed(1)}s)`);

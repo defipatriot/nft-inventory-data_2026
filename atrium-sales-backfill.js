@@ -129,6 +129,15 @@ async function main() {
     if (RUN_MODE === 'sample') { console.log(`\n── SAMPLE (nothing written) ──`); sales.slice(0, 8).forEach(s => console.log('  ' + JSON.stringify(s))); return; }
     fs.writeFileSync('atrium-sales.json', json);
     try { fs.mkdirSync(COLL_DIR, { recursive: true }); fs.writeFileSync(ATRIUM_PATH, json); } catch {}
+    // SAFETY GUARD — append-only; never overwrite committed Atrium sales with fewer.
+    try {
+        const prev = JSON.parse(fs.readFileSync(ATRIUM_PATH, 'utf8'));
+        const prevCount = prev?.count ?? (prev?.sales || []).length ?? 0;
+        if (prevCount > 0 && sales.length < prevCount) {
+            console.error(`❌ ABORT: ${sales.length} Atrium sales < committed ${prevCount} — incomplete sweep, NOT publishing.`);
+            process.exit(1);
+        }
+    } catch (e) { if (e.code !== 'ENOENT') console.warn('  (shrink-guard: could not read prior file: ' + e.message + ')'); }
     if (GITHUB_TOKEN) { console.log('\n📤 Publishing…'); await pushToGithub(ATRIUM_PATH, json, `atrium sales — ${COLLECTION} — ${sales.length} sales`); }
     else console.log(`\n⚠️  GITHUB_TOKEN not set — wrote atrium-sales.json locally only`);
     console.log(`\n✅ done (${((Date.now() - t0) / 1000).toFixed(1)}s)`);
