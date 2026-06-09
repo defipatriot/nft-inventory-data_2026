@@ -1,0 +1,117 @@
+name: NFT Forward Update (scheduled)
+
+# Keeps the aDAO NFT history layer current. Runs the PROVEN full sweepers (idempotent — each run
+# rebuilds the complete dataset from chain), refreshes Boost sales, then rebuilds analytics:
+#   provenance (full)  →  BBL sales (full)  →  [git pull]  →  Boost fetch  →  analytics build
+# The git pull brings the just-pushed seeds into the runner so the builder reads fresh local data.
+#
+# v1 deliberately re-sweeps in full rather than doing a watermark/incremental delta: the full path is
+# the tested one, completes in a couple of minutes, and is self-healing. A true incremental (DESC fetch
+# since last block) is a later optimization once it's proven against the live LCD pool.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'        # daily 06:00 UTC (NFT trades are sporadic; daily is plenty). Adjust freely.
+  workflow_dispatch:
+    inputs:
+      collection:
+        description: "Collection to refresh"
+        type: choice
+        default: adao
+        options: [adao]
+      retries:
+        description: "Probes per page (LCD robustness margin)"
+        type: string
+        default: "60"
+      probe_delay_ms:
+        description: "Per-probe delay (ms) — pacing only"
+        type: string
+        default: "40"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nft-forward-update          # never overlap two runs (they'd race on the same files)
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history, so git pull can fast-forward)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Resolve collection → NFT contract
+        run: |
+          COLL="${{ inputs.collection || 'adao' }}"
+          case "$COLL" in
+            adao) echo "NFT_CONTRACT=terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9" >> "$GITHUB_ENV" ;;
+          esac
+          echo "COLLECTION=$COLL" >> "$GITHUB_ENV"
+
+      - name: Provenance — full sweep (pushes nft-provenance.json)
+        env:
+          RUN_MODE: full
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
+          PAGER_RETRIES: ${{ inputs.retries || '60' }}
+          PAGER_PROBE_DELAY: ${{ inputs.probe_delay_ms || '40' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node nft-provenance-backfill.js
+
+      - name: BBL sales — full sweep (pushes sales-history.json)
+        env:
+          RUN_MODE: full
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
+          PAGER_RETRIES: ${{ inputs.retries || '60' }}
+          PAGER_PROBE_DELAY: ${{ inputs.probe_delay_ms || '40' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node bbl-sales-backfill.js
+
+      - name: Atrium sales — full sweep (pushes atrium-sales.json)
+        env:
+          RUN_MODE: full
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
+          PAGER_RETRIES: ${{ inputs.retries || '60' }}
+          PAGER_PROBE_DELAY: ${{ inputs.probe_delay_ms || '40' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node atrium-sales-backfill.js
+
+      - name: Sync just-pushed seeds into the runner
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin "${{ github.ref_name }}"
+
+      - name: Boost — fetch + join to provenance (pushes boost-sales.json)
+        env:
+          NFT_CONTRACT: ${{ env.NFT_CONTRACT }}
+          COLLECTION: ${{ env.COLLECTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node boost-sales-fetch.js
+
+      - name: Analytics — rebuild (pushes nft-analytics.json + sales-enriched.json)
+        env:
+          COLLECTION: ${{ env.COLLECTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: node nft-analytics-builder.js
