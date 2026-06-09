@@ -97,7 +97,15 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --ff-only origin "${{ github.ref_name }}"
+          # All prior steps (provenance, BBL, Atrium) already pushed to origin, so
+          # origin/<branch> IS the source of truth at this point. A plain
+          # `git pull --ff-only` aborts when a data file was *bootstrapped* this run
+          # (created untracked locally AND pushed, so now tracked on origin → collision).
+          # Clean only the untracked output dir (keeps node_modules for later steps),
+          # then hard-reset the runner's tree to origin.
+          git fetch origin "${{ github.ref_name }}"
+          git clean -fd data/v2/
+          git reset --hard "origin/${{ github.ref_name }}"
 
       - name: Boost — fetch + join to provenance (pushes boost-sales.json)
         env:
