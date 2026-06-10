@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-10T13:00:35.295Z",
-  "capturedAtUnix": 1781096435295,
+  "capturedAt": "2026-06-10T13:15:14.895Z",
+  "capturedAtUnix": 1781097314895,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -26,14 +26,14 @@
   "daodao_staked_count": 1632,
   "daodao_pending_claim_count": 14,
   "bbl_listed_count": 36,
-  "atrium_listed_count": 13,
+  "atrium_listed_count": 12,
   "boost_listed_count": 4,
-  "user_held_count": 1055,
+  "user_held_count": 1056,
   "daodao_staked_broken_count": 49,
-  "user_held_broken_count": 26,
+  "user_held_broken_count": 27,
   "minted_count": 4172,
   "dao_held_count": 5828,
-  "user_liquid_count": 1055,
+  "user_liquid_count": 1056,
   "unique_holders": 752,
   "dao_members_count": 157,
   "non_custody_holders_count": 746,
@@ -80,7 +80,7 @@
     "terra1nxrc3vh902uluur4909tfvelvnjmgyl74sfgam": 12,
     "terra1z7h3uvq8nnvuqhj6naa039kexkrkudmpndecqj": 1,
     "terra1th6xu5p2nkzvmpke2n4p66q2wkak67hqeeqlvz": 12,
-    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 13,
+    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 12,
     "terra1jjzq6n86cdd3qqq2mq3qxrr756wyadhks29mmg": 3,
     "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh": 19,
     "terra1zgu5w9ddpdt5ft36qn8cags0h8rz2uswr95p98": 26,
@@ -364,6 +364,7 @@
     "terra1tfshgycj7cya6pndu9y0czua9lx90grarha270": 1,
     "terra1962s9qa6d7vg8w8ta2x30zyyqxekdj85ke9x0w": 1,
     "terra1g4xnrkkuccfw0e2rx8xk4vq0lg7a72v4yhl3d3": 1,
+    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 1,
     "terra1lz4ydc6ck6gd7ec0ne0km0upxd8f0pktgtjy49": 1,
     "terra19l4n2nn563zdg2rhqy0yjg3fm6hw22ntnzzmnk": 1,
     "terra1ual8d4v7v926qtwkwn3lgjyzm0flg27zpseufw": 1,
@@ -409,7 +410,7 @@
     "terra1wqv4g0z9v95lcuengwjd9hrqf6jjqckuv4cxnn": 8,
     "terra1hrcurgmgac972nw34nvjrrjc6nr3gny3sg8nay": 1,
     "terra1apeyehuxqzz0c2gegg8p84w25ptqk8u6h39drz": 15,
-    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 300,
+    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 301,
     "terra1qt3r0uvaajpsufx8d02uwq3mfrahmgufkhn6df": 1,
     "terra1xl324wuxrqkpwntzs6guhc757fmrsrx3meyykd": 7,
     "terra15uc26dvk64feg4avzma7mhue982v4pnx5fkpyh": 1,
@@ -471,7 +472,7 @@
     "terra1cznyrvcu8mjq2jt2c8nr2u9hrek0t26yvps686": 1,
     "terra1jjzq6n86cdd3qqq2mq3qxrr756wyadhks29mmg": 3,
     "terra1aq2a00qg7qmhd8gf3w7jtn8hgrjpt4swzqrema": 1,
-    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 15,
+    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 14,
     "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh": 20,
     "terra1zgu5w9ddpdt5ft36qn8cags0h8rz2uswr95p98": 26,
     "terra1wlfagw79h0tushlz7uhvg3kxg5qq6zeg6axazf": 10,
@@ -1143,7 +1144,7 @@
     "terra1drwt52wuqd2p3z5y9pgylhnmqaaznga8xwfcds": 1,
     "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh": 10,
     "terra1r086c539nhw5t6khsjy3xe9x3s9f6l5v9rdz9x": 3,
-    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 2,
+    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 1,
     "terra1k7cftdjzdmtqmfl5nyny8vu77m280tm8c009x5": 2,
     "terra1yqv0af22675wlcmgflxk4ve07vt8qlm999gk0cuw5l64r5xxgadsyg8ywv": 2,
     "terra1mqmqc7vmjpslgeju4m0pwwt94gutllnur775kv": 1,
@@ -1151,7 +1152,8 @@
     "terra10gdvn7j3hgtvnzncr8vvmhu3mn6gdd0lq56aq0": 1,
     "terra1aavxhkpne90snmg3feyu8g96ta5qype6ja4g3n": 1,
     "terra1220zac029dwpy9usfnnx0awmwmleur56evat8j": 2,
-    "terra15zpetcnjmg5p53na6rvyp6vvm7gnf0qcfrn8p9": 1
+    "terra15zpetcnjmg5p53na6rvyp6vvm7gnf0qcfrn8p9": 1,
+    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 1
   },
   "backing": {
     "ampluna_balance": 788994.566953,
@@ -1175,14 +1177,14 @@
       }
     },
     "atrium": {
-      "count": 13,
-      "count_resolved": 13,
+      "count": 12,
+      "count_resolved": 12,
       "by_token": {
         "SOLID": {
-          "count": 13,
-          "total": 6795,
+          "count": 12,
+          "total": 6785,
           "min": 10,
-          "total_usd": 6950.008827000001
+          "total_usd": 6939.780705
         }
       }
     },
