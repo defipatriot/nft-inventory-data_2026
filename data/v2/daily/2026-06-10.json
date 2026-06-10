@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-10",
-  "capturedAt": "2026-06-10T13:00:35.295Z",
+  "capturedAt": "2026-06-10T13:15:14.895Z",
   "epoch": 189,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -14,10 +14,10 @@
   "daodao_staked_count": 1632,
   "daodao_staked_broken_count": 49,
   "bbl_listed_count": 36,
-  "atrium_listed_count": 13,
+  "atrium_listed_count": 12,
   "boost_listed_count": 4,
-  "user_held_count": 1055,
-  "user_held_broken_count": 26,
+  "user_held_count": 1056,
+  "user_held_broken_count": 27,
   "backing": {
     "ampluna_balance": 788994.566953,
     "per_nft_ampluna": 88.58140417121365,
@@ -40,14 +40,14 @@
       }
     },
     "atrium": {
-      "count": 13,
-      "count_resolved": 13,
+      "count": 12,
+      "count_resolved": 12,
       "by_token": {
         "SOLID": {
-          "count": 13,
-          "total": 6795,
+          "count": 12,
+          "total": 6785,
           "min": 10,
-          "total_usd": 6950.008827000001
+          "total_usd": 6939.780705
         }
       }
     },
