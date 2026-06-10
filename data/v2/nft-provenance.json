@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-10T03:25:56.207Z",
+ "builtAt": "2026-06-10T09:53:42.572Z",
  "source": "nft-provenance-backfill.js (transfer_nft spine)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "collection": "adao",
