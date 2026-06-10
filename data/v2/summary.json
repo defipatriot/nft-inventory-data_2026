@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-10T13:45:20.763Z",
-  "capturedAtUnix": 1781099120763,
+  "capturedAt": "2026-06-10T14:00:14.915Z",
+  "capturedAtUnix": 1781100014915,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -409,7 +409,7 @@
     "terra1wqv4g0z9v95lcuengwjd9hrqf6jjqckuv4cxnn": 8,
     "terra1hrcurgmgac972nw34nvjrrjc6nr3gny3sg8nay": 1,
     "terra1apeyehuxqzz0c2gegg8p84w25ptqk8u6h39drz": 15,
-    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 301,
+    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 300,
     "terra1qt3r0uvaajpsufx8d02uwq3mfrahmgufkhn6df": 1,
     "terra1xl324wuxrqkpwntzs6guhc757fmrsrx3meyykd": 7,
     "terra15uc26dvk64feg4avzma7mhue982v4pnx5fkpyh": 1,
@@ -471,7 +471,7 @@
     "terra1cznyrvcu8mjq2jt2c8nr2u9hrek0t26yvps686": 1,
     "terra1jjzq6n86cdd3qqq2mq3qxrr756wyadhks29mmg": 3,
     "terra1aq2a00qg7qmhd8gf3w7jtn8hgrjpt4swzqrema": 1,
-    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 14,
+    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 15,
     "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh": 20,
     "terra1zgu5w9ddpdt5ft36qn8cags0h8rz2uswr95p98": 26,
     "terra1wlfagw79h0tushlz7uhvg3kxg5qq6zeg6axazf": 10,
