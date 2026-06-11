@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-11T01:44:15.939Z",
+ "builtAt": "2026-06-11T16:21:37.319Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "sold": 1315,
-  "delisted": 1894,
-  "active": 55,
+  "sold": 1252,
+  "delisted": 1958,
+  "active": 54,
   "unknown": 0
  },
  "live_listings_missing_create": [],
@@ -27969,12 +27969,11 @@
      "from_ts": "2024-01-10T09:06:30Z",
      "from_height": 8523783,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "46D73571B2849052F4745CDEE2AE957862751406A985FE607627D1215323C03A"
   },
   {
@@ -28505,12 +28504,11 @@
      "from_ts": "2024-01-10T10:22:03Z",
      "from_height": 8524533,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "E2DC8D6F02F3A40B78DAEAB7511D530D1EE32078ECD7CBB8C84EF7BE39BAEF2F"
   },
   {
@@ -28987,12 +28985,11 @@
      "from_ts": "2024-01-10T11:16:24Z",
      "from_height": 8525079,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "4FF88AD22BEB7C518CD59AF8D42E7015DB8F84A78DEAB0BFFD07FEE1406209D4"
   },
   {
@@ -29838,12 +29835,11 @@
      "from_ts": "2024-01-10T15:37:33Z",
      "from_height": 8527674,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "31974CF7E3F1EBAB33EDC9CF1A3B4E1BB134047C6049297B546A52F357BCA28F"
   },
   {
@@ -30727,12 +30723,11 @@
      "from_ts": "2024-01-11T00:45:49Z",
      "from_height": 8533143,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "21091206858FF1C0D1E9E679B19A16C09BC95C5C029A988F9E73F13F0A3A9662"
   },
   {
@@ -30787,12 +30782,11 @@
      "from_ts": "2024-01-11T01:07:48Z",
      "from_height": 8533362,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "8A79B4D7A1E0638BCE76ED19ABF16D79D8A6B84075F8DD91E42AA9E6C271880E"
   },
   {
@@ -32061,12 +32055,11 @@
      "from_ts": "2024-01-11T15:15:02Z",
      "from_height": 8541842,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "BF499A47B8D11A449B97DFE6F0D1C3635ACD4741AA6288527CB96E4579F7EE8E"
   },
   {
@@ -32215,12 +32208,11 @@
      "from_ts": "2024-01-11T18:49:48Z",
      "from_height": 8543994,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "6CA9232A645E697A1B89B830544EF01C65D3BB69C169F06FDBA874F42B57AC44"
   },
   {
@@ -32235,12 +32227,11 @@
      "from_ts": "2024-01-11T18:51:59Z",
      "from_height": 8544016,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "5174193E3C1A9326DF9ED339810DCB2AABEDA9B72C2B5144866B6F71564EE94C"
   },
   {
@@ -32447,12 +32438,11 @@
      "from_ts": "2024-01-12T03:36:52Z",
      "from_height": 8549277,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "17397914EF8F0F3A836C745A88E031EF2CD73A2EEF438A4E7EE9E20AA04EE5B6"
   },
   {
@@ -32604,12 +32594,11 @@
      "from_ts": "2024-01-12T09:50:16Z",
      "from_height": 8553020,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "B11DF5207C3AE2010AD3D6772DC5130746BF9798922CAFCF749727B18DDE1096"
   },
   {
@@ -33204,12 +33193,11 @@
      "from_ts": "2024-01-13T09:13:20Z",
      "from_height": 8567079,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "CF497669E853A59B04B8BA7F8D369C99AB3DC2938815A3DA91EDD6A151E50E7C"
   },
   {
@@ -33262,12 +33250,11 @@
      "from_ts": "2024-01-13T09:31:18Z",
      "from_height": 8567258,
      "to_ts": "2024-01-17T13:39:52Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "F0D7D8A915A1E2D2F1E56FE761F801F8C932E1D9AA78DD9C77365511413BA5A3",
+   "outcome": "delisted",
    "create_tx": "5F3B165DDB35B74E095B4F3BB63BB6D1DD29CF4A3083907E8993ACF44D1CD445"
   },
   {
@@ -33282,12 +33269,11 @@
      "from_ts": "2024-01-13T10:07:52Z",
      "from_height": 8567625,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "2DBA9B59AB0BCB0EF02CA976942AEBFCFC058412F9939E7CDE011E2BFF67A3C4"
   },
   {
@@ -33477,12 +33463,11 @@
      "from_ts": "2024-01-13T17:04:37Z",
      "from_height": 8571806,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "BE56392609A6B380101B2447C17DAC9A753DCA76357A81FDB3CC4C32845C36A6"
   },
   {
@@ -33497,12 +33482,11 @@
      "from_ts": "2024-01-13T17:33:31Z",
      "from_height": 8572094,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "3D855DB9DA807B5734088B1DD9ACAEEA72C8BC0CD37325C2BE81C015289CB852"
   },
   {
@@ -33576,12 +33560,11 @@
      "from_ts": "2024-01-14T04:45:42Z",
      "from_height": 8578832,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "08B6022A62771E84C1A0FC4BDE0D110864B0F1ACCB518DF0CD75186A7F0531F0"
   },
   {
@@ -33655,12 +33638,11 @@
      "from_ts": "2024-01-14T07:49:30Z",
      "from_height": 8580677,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "51D5FAC5CF643D95C734622C1A5F95BB5EE21BC098B3F6FA06031D192B16336D"
   },
   {
@@ -33714,12 +33696,11 @@
      "from_ts": "2024-01-14T08:40:38Z",
      "from_height": 8581189,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "9D371074D0257451F10EB331F9A51C5D101D6B88823833ECF8A21E141FF41BB9"
   },
   {
@@ -33772,12 +33753,11 @@
      "from_ts": "2024-01-14T11:43:10Z",
      "from_height": 8583016,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "D45E328BC8B52B0BE1638C43482401B5A88EAA1B597D099BF1DB8AA2CA33A5F7"
   },
   {
@@ -33792,12 +33772,11 @@
      "from_ts": "2024-01-14T11:46:21Z",
      "from_height": 8583048,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "A013013CF7399AE34FC7E5449B3BBB9799B0E940F71CC317B373E89481A90A71"
   },
   {
@@ -34004,12 +33983,11 @@
      "from_ts": "2024-01-15T02:37:55Z",
      "from_height": 8591973,
      "to_ts": "2024-01-17T13:39:52Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "F0D7D8A915A1E2D2F1E56FE761F801F8C932E1D9AA78DD9C77365511413BA5A3",
+   "outcome": "delisted",
    "create_tx": "8190901EC558EAB9559212384BACFBA6DDA27ED455FEF9154EA6E138F79FF95C"
   },
   {
@@ -34198,12 +34176,11 @@
      "from_ts": "2024-01-15T09:05:31Z",
      "from_height": 8595862,
      "to_ts": "2024-01-17T13:39:52Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "F0D7D8A915A1E2D2F1E56FE761F801F8C932E1D9AA78DD9C77365511413BA5A3",
+   "outcome": "delisted",
    "create_tx": "E9A8AC6EAB783078929941F1995F451EFC7BE11FB06A4A3CFD82DACD64F496F8"
   },
   {
@@ -34275,12 +34252,11 @@
      "from_ts": "2024-01-15T14:14:26Z",
      "from_height": 8598967,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "0ACC57766D3107E128ECF2ED28B855917B7C6D98D98EBB0880235CF8136FB8FE"
   },
   {
@@ -34410,12 +34386,11 @@
      "from_ts": "2024-01-16T06:45:32Z",
      "from_height": 8608920,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "131A27D33277E0543ECE4689DAE6E9CE11EAA8F164E8B057AE741CD34728442A"
   },
   {
@@ -34489,12 +34464,11 @@
      "from_ts": "2024-01-16T15:04:18Z",
      "from_height": 8613926,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "AADAF525BEEFB25A5992053989E70D76CABCF2E836C3895DBDD125E3288FDC5D"
   },
   {
@@ -34528,12 +34502,11 @@
      "from_ts": "2024-01-16T18:28:57Z",
      "from_height": 8615980,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "AEECF7A1D851994E94BC8A6185AE4A365BFE69217B87FC27B8B345E029B67FAB"
   },
   {
@@ -34586,12 +34559,11 @@
      "from_ts": "2024-01-17T02:44:57Z",
      "from_height": 8620960,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "390CD261B1BA4F311826A35DDC4C67642B43EEE6202802D3D27DFB08934A5EDB"
   },
   {
@@ -34760,12 +34732,11 @@
      "from_ts": "2024-01-17T09:21:39Z",
      "from_height": 8624934,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "E1C2397B1B751D784E17C9466824B5CC4D02C10166467E93E8AB932DD5221F57"
   },
   {
@@ -34800,12 +34771,11 @@
      "from_ts": "2024-01-17T10:22:42Z",
      "from_height": 8625546,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "4F0CECF899CFC4F23AF8EBEE16DFA1FEE4610D3FCAD4444FDE58975BC0598698"
   },
   {
@@ -34820,12 +34790,11 @@
      "from_ts": "2024-01-17T10:23:24Z",
      "from_height": 8625553,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "30FB43AC642266A4B4B0618AF3982EDBE02373FE2C6CCD465E43136E66B97E12"
   },
   {
@@ -34859,12 +34828,11 @@
      "from_ts": "2024-01-17T10:47:45Z",
      "from_height": 8625797,
      "to_ts": "2024-01-17T13:37:04Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "45CC595CDB2AFAE83D8654B0CCE92FA7AF160B0BD91891BF73481FD0AEC48077",
+   "outcome": "delisted",
    "create_tx": "3777765A43DCD5114A390A3130AD766DF41895662B8DBA5D6A2804EA28CB16B9"
   },
   {
@@ -37201,12 +37169,11 @@
      "from_ts": "2024-01-23T17:48:36Z",
      "from_height": 8716285,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "E714C636C1C569820A83EF1E7E3BD4490F78847BDA91AB6AC4E5BFD8F36700E6"
   },
   {
@@ -37281,12 +37248,11 @@
      "from_ts": "2024-01-23T17:49:55Z",
      "from_height": 8716298,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "283D75F3E6EA3697DF7ADFBD63A881B828412AA9E51E80E27D3617FB9F2A7E80"
   },
   {
@@ -37301,12 +37267,11 @@
      "from_ts": "2024-01-23T17:50:14Z",
      "from_height": 8716301,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "EB370069E616040F2089FB463128B61781CFF0C23128742A90EDAF057F3C05AD"
   },
   {
@@ -37361,12 +37326,11 @@
      "from_ts": "2024-01-23T17:50:56Z",
      "from_height": 8716308,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "ABBD681F74ABCC9CAF1B4957141DFCAC4E9DB0DF005300B7A7DF6C570C36EC63"
   },
   {
@@ -37401,12 +37365,11 @@
      "from_ts": "2024-01-23T17:51:20Z",
      "from_height": 8716312,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "1930A8A2872368E39FE2130C7FA5B9318EA9C2136C85824BE39A8D1348D2B8BE"
   },
   {
@@ -37481,12 +37444,11 @@
      "from_ts": "2024-01-23T17:52:27Z",
      "from_height": 8716323,
      "to_ts": "2024-02-09T21:12:52Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "1BBC1C18BF6A419D07B7ACFC38A9D614BB2A067D9DC7C194BD1F6DF1ACEC5671",
+   "outcome": "delisted",
    "create_tx": "742616BFA605D13171BCB10142E21F7F0BF3863313483483D2FAAC271AC4C6D9"
   },
   {
@@ -37501,12 +37463,11 @@
      "from_ts": "2024-01-23T17:52:56Z",
      "from_height": 8716328,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "79BE7F77337F87EF7F243B0A3999BD6BADA03F631683897CC493430C8096FA8C"
   },
   {
@@ -37965,12 +37926,11 @@
      "from_ts": "2024-01-27T05:12:39Z",
      "from_height": 8766025,
      "to_ts": "2024-02-09T17:08:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "DB50414FBCA1B110917DFE8CE1324F2F3B1380C80CF0BE9E73A5386D8D890CBE",
+   "outcome": "delisted",
    "create_tx": "064624762FC151859C22240EC4490E62044FBFD90F62270D20176C74A81FABEF"
   },
   {
@@ -38567,12 +38527,11 @@
      "from_ts": "2024-02-03T01:10:14Z",
      "from_height": 8862933,
      "to_ts": "2024-02-05T12:45:09Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "46E934E1B80BBE461BE3769CD8C3D0998CA82085DE6F650D2EF4BEA9102595C2",
+   "outcome": "delisted",
    "create_tx": "762ED0F830C412EE3099CF5D4F11442074D08FAC147DD095AC8AB5328F9D8214"
   },
   {
@@ -38606,12 +38565,11 @@
      "from_ts": "2024-02-03T16:47:52Z",
      "from_height": 8872325,
      "to_ts": "2024-02-05T12:45:09Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "46E934E1B80BBE461BE3769CD8C3D0998CA82085DE6F650D2EF4BEA9102595C2",
+   "outcome": "delisted",
    "create_tx": "67BFFFE19108A79C0FACD26F73337294B07B0DD5F0936B4699350ECA84ED1A63"
   },
   {
@@ -42822,12 +42780,11 @@
      "from_ts": "2024-03-06T09:36:26Z",
      "from_height": 9328764,
      "to_ts": "2024-03-14T23:24:53Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "5ECEDCE3DD111DB471A62A7BC7718A9228FCA34F11F5E18BA7052796AD9729EB",
+   "outcome": "delisted",
    "create_tx": "B16966B5900BA89F5743C4E4E4093E261BEDFB403CEE3F27AA5F90C36E6B9FDF"
   },
   {
@@ -44156,12 +44113,11 @@
      "from_ts": "2024-03-11T13:02:46Z",
      "from_height": 9402660,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "2762CFAF68F26D917AEFECD2CC7E36FE7A4DF976DD3D84A1A41632A9F1287391"
   },
   {
@@ -44176,12 +44132,11 @@
      "from_ts": "2024-03-11T13:03:41Z",
      "from_height": 9402669,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "05B4A755AEE657B7654ED47DD333CDDCE1839A307DEF0197AAA19DECBEAF246D"
   },
   {
@@ -44276,12 +44231,11 @@
      "from_ts": "2024-03-11T13:27:56Z",
      "from_height": 9402913,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "365263BC772463A9EBC67EE1E3B226956CB272BB6B6859DDC868FCF13F87CDA9"
   },
   {
@@ -44531,12 +44485,11 @@
      "from_ts": "2024-03-13T14:04:17Z",
      "from_height": 9432094,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "92BD2B1D38F02E66D6D47730D7CB784B2A48F3E8C60DD8589E3F3839108189BF"
   },
   {
@@ -44551,12 +44504,11 @@
      "from_ts": "2024-03-13T14:04:53Z",
      "from_height": 9432100,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "6E3282041052C7F817B684D5E63273F7751BC451B77991C6BCA11E2EA9F24D72"
   },
   {
@@ -44590,12 +44542,11 @@
      "from_ts": "2024-03-13T14:06:29Z",
      "from_height": 9432116,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "B16A9B007FA6C5D5DF7FC1D11E4DA048D8BEE4E3ADA4944DCB7396AC1D32197A"
   },
   {
@@ -44630,12 +44581,11 @@
      "from_ts": "2024-03-13T14:31:04Z",
      "from_height": 9432362,
      "to_ts": "2024-03-14T23:05:22Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "E11390CCF5959CD13B11778BB15475A4A9AD75C711E016402FD4387313AC06EB",
+   "outcome": "delisted",
    "create_tx": "00519D5F5E2FDC1428BF2F9DC187BC6CF3CC6FDB96C7755CB0B5275C649B278C"
   },
   {
@@ -47502,12 +47452,11 @@
      "from_ts": "2024-04-28T15:05:49Z",
      "from_height": 10092456,
      "to_ts": "2024-05-01T14:51:19Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "720FCAA962E8835980ABA7C612B46560B69114971A6ACDE8F67C7CB59324E7A5",
+   "outcome": "delisted",
    "create_tx": "B39E5D653A2A67B8632830FF5AEF62A0C7DF99465416F416B34DC0096431F168"
   },
   {
@@ -47522,12 +47471,11 @@
      "from_ts": "2024-04-28T15:09:10Z",
      "from_height": 10092489,
      "to_ts": "2024-05-01T14:51:19Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "720FCAA962E8835980ABA7C612B46560B69114971A6ACDE8F67C7CB59324E7A5",
+   "outcome": "delisted",
    "create_tx": "857D08C76514C004BC6605AB197E8B6943A5EE3075AFCB20D2CDF75B442E587E"
   },
   {
@@ -47542,12 +47490,11 @@
      "from_ts": "2024-04-28T15:12:27Z",
      "from_height": 10092522,
      "to_ts": "2024-05-01T14:51:19Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "720FCAA962E8835980ABA7C612B46560B69114971A6ACDE8F67C7CB59324E7A5",
+   "outcome": "delisted",
    "create_tx": "B3F6435F86A38CB3749CED0AF7883D10A50DC94EC6749B9A8BC46E9B056697F6"
   },
   {
@@ -48738,12 +48685,11 @@
      "from_ts": "2024-05-31T08:34:06Z",
      "from_height": 10562322,
      "to_ts": "2024-06-02T21:56:58Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "8C0C3F1EE725F9B71EAEC4638CF3BADF0026B2345FF5758E7AC7E124910D8F2E",
+   "outcome": "delisted",
    "create_tx": "A5ADD67B2D6024BA7D4F94FE236F22EEFEFF120DB0561DCF31DC8ACF49870F46"
   },
   {
@@ -49363,12 +49309,11 @@
      "from_ts": "2024-06-04T01:46:21Z",
      "from_height": 10615304,
      "to_ts": "2024-06-07T17:38:05Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BB98C9EC1621E6A1DBDBE9702A1866E8F7F0E5A9A7AD07E3F0D765C2C7E8044F",
+   "outcome": "delisted",
    "create_tx": "B0538A55AAEA9B27AEDFD25D00A03D19657B0590913D83ADFC4CD4DAC54DC993"
   },
   {
@@ -49522,12 +49467,11 @@
      "from_ts": "2024-06-04T05:00:46Z",
      "from_height": 10617225,
      "to_ts": "2024-06-07T17:38:05Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BB98C9EC1621E6A1DBDBE9702A1866E8F7F0E5A9A7AD07E3F0D765C2C7E8044F",
+   "outcome": "delisted",
    "create_tx": "F963C1038FFAC441370C09A90F6261CC3EAA2F28F0A32BF4E3E8D0C890D44DA7"
   },
   {
@@ -50572,12 +50516,11 @@
      "from_ts": "2024-08-06T17:36:36Z",
      "from_height": 11523409,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "6E7B47599FB5B06227DFABA406F6D9C9C5DE568095D7740161A37D060D97623F"
   },
   {
@@ -50592,12 +50535,11 @@
      "from_ts": "2024-08-06T17:37:06Z",
      "from_height": 11523414,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "D12CAF6A31F728DE1E8191AB30BD474B0E47612882EC5D1B734750FDC83E7B24"
   },
   {
@@ -50612,12 +50554,11 @@
      "from_ts": "2024-08-06T17:37:45Z",
      "from_height": 11523421,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "7A7473693CD6D79AE4AFDA1DFC1E2419D889126D0702E7236EECF4025494F694"
   },
   {
@@ -50632,12 +50573,11 @@
      "from_ts": "2024-08-06T17:38:21Z",
      "from_height": 11523427,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "59F5E49D4B0AA797BAAE64B33627EC27539A60EFF9ECECC3A722D1B566D6AD04"
   },
   {
@@ -50652,12 +50592,11 @@
      "from_ts": "2024-08-06T17:38:51Z",
      "from_height": 11523432,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "5D5A1F8B06631D4ECB2C814420526108EADDFF1FE08E157FAAD64BA2CB8E0E72"
   },
   {
@@ -50712,12 +50651,11 @@
      "from_ts": "2024-08-06T17:40:53Z",
      "from_height": 11523452,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "1B3D383E5686FD72EC63FDE9486380F505E8D52F0CFEC92E6DECAADFF0DEFA4A"
   },
   {
@@ -50732,12 +50670,11 @@
      "from_ts": "2024-08-06T17:41:17Z",
      "from_height": 11523456,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "BCD4AB6583CED8401ED33C2DF2DE9C0B5E1E78B7842224C17BDBEEAE9F2460D4"
   },
   {
@@ -50792,12 +50729,11 @@
      "from_ts": "2024-08-06T17:42:55Z",
      "from_height": 11523472,
      "to_ts": "2024-08-07T01:26:45Z",
-     "end_reason": "sale"
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "sold",
-   "sold_tx": "BA564B711BF6E2AEB9BC6342261347E5FE1279E3DF02368A806B5E2A6060A9A8",
+   "outcome": "delisted",
    "create_tx": "00BB58B2EC99521C827FB85384E985A7EB8ECA3F771FC721E3AA9BBC3176BA95"
   },
   {
@@ -61133,12 +61069,13 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-10T13:51:31Z",
      "from_height": 21401331,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-06-11T00:23:07Z",
+     "end_reason": "sale"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "sold",
+   "sold_tx": "119366DF3695A432584A37B0CB9F2946A70CA30BC0E6894ED573EF9E27CB589C",
    "create_tx": "6325467BF6A6E2A3BB77B4672E9CEC7E5E07999BA4DAA762E2ACD0DF8A573A00",
    "mkt_event_attrs": {
     "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
