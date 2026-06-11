@@ -177,11 +177,16 @@ const MKT_ADDR_BY_NAME = { BBL, Atrium: ATRIUM, Boost: BOOST };
 
 function deriveOutcomes(listings, salesEnriched, provenance, currentNfts) {
     const sales = (salesEnriched && Array.isArray(salesEnriched.sales)) ? salesEnriched.sales : [];
+    // sales-enriched quirk (verified live): BBL rows carry NO `marketplace` field — they're
+    // identified by having `auction_id`. Atrium/Boost rows are labeled and use `listing_id`.
     const salesByRef = new Map();      // "BBL:17746" → sale
-    const salesByTx  = new Map();      // tx_hash → sale
+    const salesByTxTok = new Map();    // `${tx_hash}:${token_id}` → sale (token-STRICT: a
+                                       // multi-action tx must not mark a different token sold)
+    let bblSalesCount = 0;
     for (const s of sales) {
-        if (s.marketplace && s.listing_id != null) salesByRef.set(`${s.marketplace}:${s.listing_id}`, s);
-        if (s.tx_hash) salesByTx.set(s.tx_hash, s);
+        if (s.auction_id != null) { salesByRef.set(`BBL:${s.auction_id}`, s); bblSalesCount++; }
+        else if (s.marketplace && s.listing_id != null) salesByRef.set(`${s.marketplace}:${s.listing_id}`, s);
+        if (s.tx_hash && s.token_id != null) salesByTxTok.set(`${s.tx_hash}:${s.token_id}`, s);
     }
     const provTokens = (provenance && provenance.tokens) || {};
     const liveByRef = new Set();       // currently-live listings "BBL:17746"
@@ -203,12 +208,12 @@ function deriveOutcomes(listings, salesEnriched, provenance, currentNfts) {
         // Find the token's first exit from the marketplace AFTER this create.
         const events = (provTokens[L.token_id]?.events) || [];
         const exit = events.find(ev => ev.from === mktAddr && Number(ev.block) > L.height);
+        const exitSale = exit ? salesByTxTok.get(`${exit.tx_hash}:${L.token_id}`) : null;
 
         if (direct) {
             outcome = 'sold'; end_reason = 'sale'; to_ts = direct.timestamp; sold_tx = direct.tx_hash || null;
-        } else if (exit && salesByTx.has(exit.tx_hash)) {
-            const s = salesByTx.get(exit.tx_hash);
-            outcome = 'sold'; end_reason = 'sale'; to_ts = s.timestamp; sold_tx = s.tx_hash;
+        } else if (exitSale) {
+            outcome = 'sold'; end_reason = 'sale'; to_ts = exitSale.timestamp; sold_tx = exitSale.tx_hash;
         } else if (exit) {
             outcome = 'delisted'; end_reason = 'delist'; to_ts = exit.timestamp;
         } else if (liveByRef.has(refKey) || ownerById.get(L.token_id) === mktAddr) {
@@ -232,7 +237,7 @@ function deriveOutcomes(listings, salesEnriched, provenance, currentNfts) {
             ...(L.mkt_event_attrs ? { mkt_event_attrs: L.mkt_event_attrs } : {}),
         };
     });
-    return { records, counts };
+    return { records, counts, bblSalesCount };
 }
 
 // ─── integrity ───────────────────────────────────────────────────────────────
@@ -252,7 +257,8 @@ function checkBreaks(entries, currentNfts) {
 function checkListings(records, salesEnriched, currentNfts) {
     const issues = [], warnings = [];
     const bblCreates = records.filter(r => r.marketplace === 'BBL');
-    const bblSales = ((salesEnriched && salesEnriched.sales) || []).filter(s => s.marketplace === 'BBL').length;
+    // BBL rows in sales-enriched carry auction_id and NO marketplace label (verified live).
+    const bblSales = ((salesEnriched && salesEnriched.sales) || []).filter(s => s.auction_id != null).length;
     if (bblSales && bblCreates.length < bblSales * 0.95) {
         issues.push(`FATAL: ${bblCreates.length} BBL creates < ${bblSales} BBL sales — every sale needs a create; sweep incomplete`);
     }
