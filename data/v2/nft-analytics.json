@@ -1,20 +1,20 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-06-10T15:27:20.403Z",
+ "builtAt": "2026-06-11T03:38:06.839Z",
  "volume": {
-  "sales_count": 1254,
+  "sales_count": 1255,
   "tokens": {
    "LUNA": 181213.24,
    "bLUNA": 67466.5443,
    "USDC": 105,
    "ampLUNA": 1,
-   "SOLID": 266
+   "SOLID": 267
   },
-  "usd_at_sale": 148090.15,
-  "value_today_usd": 15849.86,
-  "luna_equiv_total": 287490.56,
-  "spot_luna_usd": 0.05165883717157952,
+  "usd_at_sale": 148077.05,
+  "value_today_usd": 15560.76,
+  "luna_equiv_total": 287588.91,
+  "spot_luna_usd": 0.050596,
   "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
  },
  "denom_split": {
@@ -23,14 +23,14 @@
    "tokens": 181213.24,
    "luna_equiv": 181213.24,
    "notional_usd": 134610.9,
-   "value_today_usd": 9361.27
+   "value_today_usd": 9168.66
   },
   "bLUNA": {
    "count": 177,
    "tokens": 67466.5443,
-   "luna_equiv": 106277.32,
-   "notional_usd": 13108.13,
-   "value_today_usd": 6117.48
+   "luna_equiv": 106375.67,
+   "notional_usd": 13094.04,
+   "value_today_usd": 6019.99
   },
   "USDC": {
    "count": 2,
@@ -47,11 +47,11 @@
    "value_today_usd": 0.11
   },
   "SOLID": {
-   "count": 11,
-   "tokens": 266,
+   "count": 12,
+   "tokens": 267,
    "luna_equiv": 0,
-   "notional_usd": 266,
-   "value_today_usd": 266
+   "notional_usd": 267,
+   "value_today_usd": 267
   }
  },
  "royalties": {
@@ -59,8 +59,8 @@
    "LUNA": 8830.662,
    "bLUNA": 3373.3272
   },
-  "to_dao_usd_when_earned": 7317.45,
-  "to_dao_usd_today": 762.06,
+  "to_dao_usd_when_earned": 7316.74,
+  "to_dao_usd_today": 747.8,
   "by_recipient": [
    {
     "recipient": "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm",
@@ -69,8 +69,8 @@
      "LUNA": 8830.662,
      "bLUNA": 1459.8833
     },
-    "usd_when_earned": 7027.01,
-    "usd_today": 588.56
+    "usd_when_earned": 7027.1,
+    "usd_today": 577.06
    },
    {
     "recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
@@ -78,8 +78,8 @@
     "tokens": {
      "bLUNA": 1913.4439
     },
-    "usd_when_earned": 290.44,
-    "usd_today": 173.5
+    "usd_when_earned": 289.64,
+    "usd_today": 170.74
    },
    {
     "recipient": "unknown",
@@ -88,7 +88,7 @@
      "LUNA": 62
     },
     "usd_when_earned": 45.73,
-    "usd_today": 3.2
+    "usd_today": 3.14
    }
   ],
   "note": "Royalties accrue to the treasury as tokens and are not sold, so token totals are the real figure. USD is shown for context only and was never realized. Boost sales carry no royalty data."
@@ -98,8 +98,8 @@
    {
     "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
     "count": 222,
-    "notional_usd": 26076.37,
-    "luna_equiv": 112435.97
+    "notional_usd": 26062.27,
+    "luna_equiv": 112534.33
    },
    {
     "address": "terra1yct7ls8kw3x2ucm66rxg7mgtyvw7kr5v4t4xsx",
@@ -268,8 +268,8 @@
    {
     "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
     "count": 2,
-    "notional_usd": 1860.94,
-    "luna_equiv": 26526.05
+    "notional_usd": 1862.76,
+    "luna_equiv": 26554.19
    },
    {
     "address": "terra1nxs02ts72cj5w455nva02l3r7czfjtf9qn9pda",
@@ -286,8 +286,8 @@
    {
     "address": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
     "count": 11,
-    "notional_usd": 1172.78,
-    "luna_equiv": 9027.71
+    "notional_usd": 1171.03,
+    "luna_equiv": 9035.41
    },
    {
     "address": "terra1ulh95rzcy8npzygxaf9jxgyta4ekg2qsxjw8k5",
@@ -341,8 +341,8 @@
   "most_traded_tokens": [
    {
     "token_id": "8803",
-    "sales": 5,
-    "notional_usd": 49.55
+    "sales": 6,
+    "notional_usd": 50.55
    },
    {
     "token_id": "3290",
@@ -619,14 +619,14 @@
   {
    "month": "2026-05",
    "count": 1,
-   "notional_usd": 1673.29,
-   "luna_equiv": 25926.05
+   "notional_usd": 1675.11,
+   "luna_equiv": 25954.19
   },
   {
    "month": "2026-06",
-   "count": 11,
-   "notional_usd": 967.18,
-   "luna_equiv": 18315.95
+   "count": 12,
+   "notional_usd": 952.27,
+   "luna_equiv": 18386.15
   }
  ],
  "sale_number_distribution": {
@@ -634,11 +634,12 @@
   "2": 237,
   "3": 30,
   "4": 4,
-  "5": 1
+  "5": 1,
+  "6": 1
  },
  "flips": {
-  "realized_pnl_usd": -3367.28,
-  "flip_count": 272,
+  "realized_pnl_usd": -3370.86,
+  "flip_count": 273,
   "top_flips": [
    {
     "token_id": "3070",
@@ -803,7 +804,7 @@
   ]
  },
  "hold_time_days": {
-  "resales_with_basis": 1047,
+  "resales_with_basis": 1048,
   "median": 1.1,
   "max": 734.2
  },
@@ -814,19 +815,19 @@
  },
  "last_sale": {
   "token_id": "8803",
-  "date": "2026-06-10T13:50:38Z",
+  "date": "2026-06-11T00:23:07Z",
   "notional_usd": 1
  },
  "oracle_span": [
   "2022-05-28",
-  "2026-06-08"
+  "2026-06-11"
  ],
  "bluna_pricing": {
   "mode": "bluna-ratio-curve",
   "note": "bLUNA = monotonic monthly-median bLUNA/LUNA ratio (from boneLUNA CoinGecko, gap-interpolated, clamped 1.0–2.0) × LUNA-USD on sale date"
  },
  "bluna_ratio_curve": {
-  "latest": 1.7553,
+  "latest": 1.7636,
   "span": [
    "2024-03-15",
    "2026-06-15"
@@ -878,7 +879,7 @@
    },
    {
     "month": "2026-06",
-    "ratio": 1.755
+    "ratio": 1.764
    }
   ]
  }
