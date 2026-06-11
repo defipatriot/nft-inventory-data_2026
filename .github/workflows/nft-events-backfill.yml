@@ -1,0 +1,70 @@
+name: NFT Events Backfill (one-time)
+
+# Manual-only one-shot: sweeps break_nft events (→ broken-at.json) and listing
+# lifecycle (→ listing-history.json) for the aDAO collection. Reuses the proven
+# resilient pager from bbl-sales-backfill.js, so the same pacing knobs apply.
+# Run "breaks" first if you want the small fast win before the long listings
+# sweep — or "both" and let it run (expect the same multi-hour runtime class
+# as the sales backfill). Safe to re-run: outputs have shrink guards.
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Which sweep to run"
+        type: choice
+        default: both
+        options: [both, breaks, listings]
+      mode:
+        description: "sample = dry-run (writes nothing) | full = write data/v2"
+        type: choice
+        default: full
+        options: [full, sample]
+      lcd:
+        description: "LCD endpoint"
+        type: string
+        default: "https://terra-lcd.publicnode.com"
+      probe_delay_ms:
+        description: "Per-probe delay (ms). Pacing only — does not affect completeness."
+        type: string
+        default: "40"
+      err_backoff_ms:
+        description: "Backoff after an error/empty response (ms)."
+        type: string
+        default: "250"
+      retries:
+        description: "Probes per page (robustness margin)."
+        type: string
+        default: "60"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nft-events-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Checkout (scripts + current data/v2 inputs)
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run events backfill
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPO: ${{ github.repository }}
+          RUN_MODE: ${{ inputs.mode }}
+          TARGET: ${{ inputs.target }}
+          LCD_PRIMARY: ${{ inputs.lcd }}
+          PAGER_PROBE_DELAY: ${{ inputs.probe_delay_ms }}
+          PAGER_ERR_BACKOFF: ${{ inputs.err_backoff_ms }}
+          PAGER_RETRIES: ${{ inputs.retries }}
+        run: node nft-events-backfill.js
