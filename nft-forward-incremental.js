@@ -38,6 +38,18 @@ const PROV_Q = [`wasm._contract_address='${ADAO_NFT}'`, `wasm.action='transfer_n
 const BBL_Q  = [`wasm.action='settle'`,   `wasm.nft_contract='${ADAO_NFT}'`];
 const ATR_Q  = [`wasm.action='buy_nft'`,  `wasm.nft_contract='${ADAO_NFT}'`];
 
+// Forward fill for the events backfill (2026-06-11): keep broken-at.json and
+// listing-history.json current. Reuses the SAME tested parsers + outcome logic
+// as the one-time backfill — one implementation, two callers, no drift.
+const evb = require('./nft-events-backfill.js'); // parseBreakTx, parseBblCreateTx, parseEscrowCreateTx, deriveOutcomes
+const BBL_MKT    = 'terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9';
+const ATRIUM_MKT = 'terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj';
+const BOOST_MKT  = 'terra1kj7pasyahtugajx9qud02r5jqaf60mtm7g5v9utr94rmdfftx0vqspf4at';
+const BREAK_Q      = [`wasm.action='break_nft'`,      `wasm._contract_address='${ADAO_NFT}'`];
+const CREATE_Q     = [`wasm.action='create_auction'`, `wasm.nft_contract='${ADAO_NFT}'`];
+const ESCROW_ATR_Q = [`wasm.action='send_nft'`, `wasm.recipient='${ATRIUM_MKT}'`, `wasm._contract_address='${ADAO_NFT}'`];
+const ESCROW_BST_Q = [`wasm.action='send_nft'`, `wasm.recipient='${BOOST_MKT}'`,  `wasm._contract_address='${ADAO_NFT}'`];
+
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 function httpGet(url) {
     return new Promise((resolve, reject) => {
@@ -171,7 +183,78 @@ async function main() {
         await publish(`${COLL_DIR}/atrium-sales.json`, JSON.stringify(out, null, 1), `incremental: Atrium sales ${merged.length}`);
     }
 
-    console.log(`✅ incremental done (${((Date.now() - t0) / 1000).toFixed(1)}s) — Boost + analytics run next`);
+    console.log(`✅ incremental done (${((Date.now() - t0) / 1000).toFixed(1)}s) — events forward-fill next`);
+
+    // ── events forward-fill: broken-at.json + listing-history.json ──────────
+    // Per-stream watermarks from the files' OWN max heights (not the provenance
+    // watermark) so nothing between the backfill moment and the provenance
+    // frontier can fall through. Skips cleanly if the backfill hasn't run yet.
+    let baDoc = null, lhDoc = null;
+    try { baDoc = readJson(`${COLL_DIR}/broken-at.json`); } catch {}
+    try { lhDoc = readJson(`${COLL_DIR}/listing-history.json`); } catch {}
+
+    if (baDoc) {
+        let baWm = 0; for (const e of Object.values(baDoc.entries || {})) if (e.height > baWm) baWm = e.height;
+        const txs = await fetchSince(BREAK_Q, Math.max(0, baWm - OVERLAP), 'break_nft');
+        const fresh = txs.flatMap(tx => evb.parseBreakTx(tx)).filter(b => !baDoc.entries[b.token_id]);
+        if (fresh.length) {
+            for (const b of fresh.sort((a, c) => a.height - c.height)) if (!baDoc.entries[b.token_id]) baDoc.entries[b.token_id] = b;
+            baDoc.count = Object.keys(baDoc.entries).length;
+            baDoc.builtAt = new Date().toISOString(); baDoc.updatedBy = 'nft-forward-incremental.js';
+            console.log(`  broken-at: +${fresh.length} new breaks → ${baDoc.count}`);
+            await publish(`${COLL_DIR}/broken-at.json`, JSON.stringify(baDoc, null, 1), `incremental: broken-at +${fresh.length} → ${baDoc.count}`);
+        } else console.log('  broken-at: no new breaks');
+    } else console.log('  broken-at.json absent — events backfill not run yet, skipping forward-fill');
+
+    if (lhDoc) {
+        let lhWm = 0; for (const r of (lhDoc.records || [])) { const h = r.segments?.[0]?.from_height || 0; if (h > lhWm) lhWm = h; }
+        const since2 = Math.max(0, lhWm - OVERLAP);
+        const [cTxs, aTxs, bTxs] = await Promise.all([
+            fetchSince(CREATE_Q, since2, 'bbl create_auction'),
+            fetchSince(ESCROW_ATR_Q, since2, 'atrium escrow'),
+            fetchSince(ESCROW_BST_Q, since2, 'boost escrow'),
+        ]);
+        const have = new Set(lhDoc.records.map(r => `${r.marketplace}:${r.listing_ref}`));
+        const newCreates = [
+            ...cTxs.flatMap(tx => evb.parseBblCreateTx(tx)),
+            ...aTxs.flatMap(tx => evb.parseEscrowCreateTx(tx, ATRIUM_MKT)),
+            ...bTxs.flatMap(tx => evb.parseEscrowCreateTx(tx, BOOST_MKT)),
+        ].filter(L => !have.has(`${L.marketplace}:${L.listing_ref}`));
+
+        // Re-derive outcomes for new creates AND existing 'active' records (so
+        // active → sold/delisted closes as it happens). Sales context = the sale
+        // files just merged above (auction_id / tx_hash / token_id / timestamp are
+        // the only fields deriveOutcomes matches on).
+        const combinedSales = { sales: [
+            ...((bblDoc && bblDoc.sales) || []),
+            ...((atrDoc && atrDoc.sales) || []).map(s => ({ ...s, marketplace: s.marketplace || 'Atrium' })),
+            ...(() => { try { return (readJson(`${COLL_DIR}/boost-sales.json`).sales || []).map(s => ({ ...s, marketplace: s.marketplace || 'Boost' })); } catch { return []; } })(),
+        ] };
+        let currentNfts = null; try { currentNfts = readJson(`${COLL_DIR}/nfts.json`); } catch {}
+        const activeAsListings = lhDoc.records.filter(r => r.outcome === 'active').map(r => ({
+            marketplace: r.marketplace, listing_ref: r.listing_ref, token_id: r.token_id, seller: r.seller,
+            price_raw: r.segments[0].price, denom: r.segments[0].denom, listing_type: r.listing_type,
+            created_at: r.segments[0].from_ts, height: r.segments[0].from_height, tx_hash: r.create_tx,
+        }));
+        const { records: rederived, counts } = evb.deriveOutcomes([...activeAsListings, ...newCreates], combinedSales, provOut, currentNfts);
+        const rederivedByKey = new Map(rederived.map(r => [`${r.marketplace}:${r.listing_ref}`, r]));
+        let closed = 0;
+        const records = lhDoc.records.map(r => {
+            const upd = rederivedByKey.get(`${r.marketplace}:${r.listing_ref}`);
+            if (upd && r.outcome === 'active' && upd.outcome !== 'active') closed++;
+            return upd || r;                                  // refreshed actives replace in place
+        });
+        for (const L of newCreates) records.push(rederivedByKey.get(`${L.marketplace}:${L.listing_ref}`));
+        if (newCreates.length || closed) {
+            if (records.length < lhDoc.records.length) throw new Error('listing-history would shrink — aborting');
+            const oc = {}; for (const r of records) oc[r.outcome] = (oc[r.outcome] || 0) + 1;
+            const out = { ...lhDoc, builtAt: new Date().toISOString(), updatedBy: 'nft-forward-incremental.js', counts: oc, count: records.length, records };
+            console.log(`  listing-history: +${newCreates.length} creates, ${closed} actives closed → ${records.length} (${JSON.stringify(oc)})`);
+            await publish(`${COLL_DIR}/listing-history.json`, JSON.stringify(out, null, 1), `incremental: listings +${newCreates.length} new / ${closed} closed`);
+        } else console.log('  listing-history: no new creates, no actives closed');
+    } else console.log('  listing-history.json absent — events backfill not run yet, skipping forward-fill');
+
+    console.log(`✅ forward-fill done (${((Date.now() - t0) / 1000).toFixed(1)}s total) — Boost + analytics run next`);
 }
 
 if (require.main === module) main().catch(e => { console.error(`❌ ${e.message}`); process.exit(1); });
