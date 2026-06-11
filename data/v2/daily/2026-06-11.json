@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-11",
-  "capturedAt": "2026-06-11T20:15:19.572Z",
+  "capturedAt": "2026-06-11T20:30:28.307Z",
   "epoch": 189,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -11,7 +11,7 @@
   "dao_wallet_8ywv_held_count": 2,
   "enterprise_staked_count": 403,
   "enterprise_dao_broken_count": 100,
-  "daodao_staked_count": 1632,
+  "daodao_staked_count": 1631,
   "daodao_staked_broken_count": 49,
   "bbl_listed_count": 36,
   "atrium_listed_count": 14,
