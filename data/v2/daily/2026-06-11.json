@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-11",
-  "capturedAt": "2026-06-11T00:35:21.472Z",
+  "capturedAt": "2026-06-11T00:40:44.081Z",
   "epoch": 189,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -28,14 +28,14 @@
   },
   "marketplaces": {
     "bbl": {
-      "count": 29,
-      "count_resolved": 29,
+      "count": 35,
+      "count_resolved": 35,
       "by_token": {
         "bLUNA": {
-          "count": 29,
-          "total": 189440,
+          "count": 35,
+          "total": 204340,
           "min": 1150,
-          "total_usd": 16748.697073000003
+          "total_usd": 18066.030194000006
         }
       }
     },
