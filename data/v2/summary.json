@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-11T20:30:28.307Z",
-  "capturedAtUnix": 1781209828307,
+  "capturedAt": "2026-06-11T20:45:09.310Z",
+  "capturedAtUnix": 1781210709310,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -1204,11 +1204,11 @@
     }
   },
   "daodao_pending_claim": {
-    "count": 5,
+    "count": 4,
     "tracked": 15,
     "reconciled": false,
     "active_staked": 1631,
-    "custody": 1636,
+    "custody": 1635,
     "unstake_window_seconds": 604800,
     "in_window": [
       {
