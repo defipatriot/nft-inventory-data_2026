@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-06-11T03:38:06.839Z",
+ "builtAt": "2026-06-11T10:18:49.007Z",
  "volume": {
   "sales_count": 1255,
   "tokens": {
@@ -11,10 +11,10 @@
    "ampLUNA": 1,
    "SOLID": 267
   },
-  "usd_at_sale": 148077.05,
-  "value_today_usd": 15560.76,
+  "usd_at_sale": 148084.53,
+  "value_today_usd": 15682.94,
   "luna_equiv_total": 287588.91,
-  "spot_luna_usd": 0.050596,
+  "spot_luna_usd": 0.051003,
   "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
  },
  "denom_split": {
@@ -23,14 +23,14 @@
    "tokens": 181213.24,
    "luna_equiv": 181213.24,
    "notional_usd": 134610.9,
-   "value_today_usd": 9168.66
+   "value_today_usd": 9242.42
   },
   "bLUNA": {
    "count": 177,
    "tokens": 67466.5443,
    "luna_equiv": 106375.67,
-   "notional_usd": 13094.04,
-   "value_today_usd": 6019.99
+   "notional_usd": 13101.52,
+   "value_today_usd": 6068.41
   },
   "USDC": {
    "count": 2,
@@ -59,8 +59,8 @@
    "LUNA": 8830.662,
    "bLUNA": 3373.3272
   },
-  "to_dao_usd_when_earned": 7316.74,
-  "to_dao_usd_today": 747.8,
+  "to_dao_usd_when_earned": 7317.12,
+  "to_dao_usd_today": 753.81,
   "by_recipient": [
    {
     "recipient": "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm",
@@ -70,7 +70,7 @@
      "bLUNA": 1459.8833
     },
     "usd_when_earned": 7027.1,
-    "usd_today": 577.06
+    "usd_today": 581.7
    },
    {
     "recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
@@ -78,8 +78,8 @@
     "tokens": {
      "bLUNA": 1913.4439
     },
-    "usd_when_earned": 289.64,
-    "usd_today": 170.74
+    "usd_when_earned": 290.02,
+    "usd_today": 172.11
    },
    {
     "recipient": "unknown",
@@ -88,7 +88,7 @@
      "LUNA": 62
     },
     "usd_when_earned": 45.73,
-    "usd_today": 3.14
+    "usd_today": 3.16
    }
   ],
   "note": "Royalties accrue to the treasury as tokens and are not sold, so token totals are the real figure. USD is shown for context only and was never realized. Boost sales carry no royalty data."
@@ -98,7 +98,7 @@
    {
     "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
     "count": 222,
-    "notional_usd": 26062.27,
+    "notional_usd": 26069.76,
     "luna_equiv": 112534.33
    },
    {
@@ -286,7 +286,7 @@
    {
     "address": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
     "count": 11,
-    "notional_usd": 1171.03,
+    "notional_usd": 1171.85,
     "luna_equiv": 9035.41
    },
    {
@@ -625,7 +625,7 @@
   {
    "month": "2026-06",
    "count": 12,
-   "notional_usd": 952.27,
+   "notional_usd": 959.75,
    "luna_equiv": 18386.15
   }
  ],
@@ -638,7 +638,7 @@
   "6": 1
  },
  "flips": {
-  "realized_pnl_usd": -3370.86,
+  "realized_pnl_usd": -3368.32,
   "flip_count": 273,
   "top_flips": [
    {
