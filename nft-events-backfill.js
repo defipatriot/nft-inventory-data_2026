@@ -216,7 +216,10 @@ function deriveOutcomes(listings, salesEnriched, provenance, currentNfts) {
             outcome = 'sold'; end_reason = 'sale'; to_ts = exitSale.timestamp; sold_tx = exitSale.tx_hash;
         } else if (exit) {
             outcome = 'delisted'; end_reason = 'delist'; to_ts = exit.timestamp;
-        } else if (liveByRef.has(refKey) || ownerById.get(L.token_id) === mktAddr) {
+        } else if (liveByRef.has(refKey) || (L.marketplace !== 'BBL' && ownerById.get(L.token_id) === mktAddr)) {
+            // BBL: 'active' requires presence in the warlock-filtered current listings —
+            // escrowed-but-not-buyable (e.g. ghost auction 14765) must NOT read as active.
+            // Non-BBL keeps the escrow fallback (no liveness-oracle problem there).
             outcome = 'active'; end_reason = 'still_listed';
         }
         counts[outcome]++;
