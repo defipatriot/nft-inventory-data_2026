@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-11T20:17:17.442Z",
+ "builtAt": "2026-06-12T03:37:49.004Z",
  "source": "atrium-sales-backfill.js (buy_nft events, aDAO)",
  "marketplace": "Atrium",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "collection": "adao",
  "atrium_contract": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
  "note": "Self-contained buy_nft settle record. gross_amount in micro-units of denom. LUNA→oracle, USDC/SOLID→par, others priced in builder. royalty_fee null when the sale had no royalty.",
- "count": 5,
+ "count": 8,
  "sales": [
   {
    "tx_hash": "B028FDE130355659003308EF3E1961E8DE260F93EC636F28780A92DF5E33D742",
@@ -98,10 +98,64 @@
    "royalty_recipient": null,
    "marketplace": "Atrium",
    "sale_number": 3
+  },
+  {
+   "tx_hash": "66A7A4332BADE3DA5094A4E171C5265E243BE71230C85F7CEA9A0B127DB2F6B6",
+   "block": 21424110,
+   "timestamp": "2026-06-12T02:35:06Z",
+   "listing_id": 142,
+   "token_id": "7025",
+   "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "buyer": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+   "denom": "terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+   "denom_symbol": "SOLID",
+   "gross_amount": "75000000",
+   "seller_net": "75000000",
+   "marketplace_fee": "0",
+   "royalty_fee": null,
+   "royalty_recipient": null,
+   "marketplace": "Atrium",
+   "sale_number": 1
+  },
+  {
+   "tx_hash": "1618D2456D3F76C1E4299D9652B6A7B3D49A0D8DE900E1412CBB76CDC78ACC54",
+   "block": 21424185,
+   "timestamp": "2026-06-12T02:42:15Z",
+   "listing_id": 127,
+   "token_id": "1695",
+   "seller": "terra1rxewq5ksxqp2skt9cdpvnuajvspn6eevczcctv",
+   "buyer": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+   "denom": "terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+   "denom_symbol": "SOLID",
+   "gross_amount": "100000000",
+   "seller_net": "98500000",
+   "marketplace_fee": "1500000",
+   "royalty_fee": null,
+   "royalty_recipient": null,
+   "marketplace": "Atrium",
+   "sale_number": 1
+  },
+  {
+   "tx_hash": "B71979833A65634E16B8C6BAD58E8FBCC3260B131470F31FA1BB17F248582FF6",
+   "block": 21424213,
+   "timestamp": "2026-06-12T02:45:01Z",
+   "listing_id": 147,
+   "token_id": "2219",
+   "seller": "terra1fjd6thl0dqh6e5wv9z7rdrqzmtp0xau7fdejpq",
+   "buyer": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+   "denom": "terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+   "denom_symbol": "SOLID",
+   "gross_amount": "10000000",
+   "seller_net": "10000000",
+   "marketplace_fee": "0",
+   "royalty_fee": null,
+   "royalty_recipient": null,
+   "marketplace": "Atrium",
+   "sale_number": 3
   }
  ],
  "updatedBy": "nft-forward-incremental.js",
  "denom_breakdown": {
-  "SOLID": 5
+  "SOLID": 8
  }
 }
