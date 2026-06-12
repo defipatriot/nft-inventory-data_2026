@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-12T03:37:51.850Z",
+ "builtAt": "2026-06-12T10:06:43.499Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "delisted": 1962,
+  "delisted": 1965,
   "sold": 1252,
-  "active": 49,
+  "active": 46,
   "unknown": 1
  },
  "live_listings_missing_create": [],
@@ -60046,12 +60046,12 @@
      "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
      "from_ts": "2026-04-27T07:06:27Z",
      "from_height": 20740641,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-06-12T10:00:21Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "3383C9497CCEE05A163558A012829273D9CA006FAC00C39817804CDB65B5D361"
   },
   {
@@ -60105,12 +60105,12 @@
      "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
      "from_ts": "2026-04-27T07:09:26Z",
      "from_height": 20740672,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-06-12T10:01:20Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "5E3313A231505BF5A7AFB695EAE3DEBEF898BDAE4A73A6656D3350117E9ACC95"
   },
   {
@@ -60124,12 +60124,12 @@
      "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
      "from_ts": "2026-04-27T07:10:29Z",
      "from_height": 20740683,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-06-12T09:59:11Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "3F345CE93C0517AB65D4C9C8D0CEE17C43A0EFA480751CC2B83D25D847E7314C"
   },
   {
