@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-11T20:17:11.240Z",
+ "builtAt": "2026-06-12T03:37:43.341Z",
  "source": "nft-provenance-backfill.js (transfer_nft spine)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "collection": "adao",
  "note": "Per-token change-of-hands history. First event per token = initial distribution; mint phase/price assigned by date from release-history.html (approximate). Sale events tagged where the tx also had a BBL settle — join sales-history.json by tx_hash for price/USD. Stakes use send_nft (different action) and are NOT in this transfer_nft spine; current stake status comes from nfts.json.",
  "summary": {
   "distinct_tokens": 9763,
-  "total_hand_changes": 19824,
+  "total_hand_changes": 19828,
   "phaseCounts": {
    "unknown": 6771,
    "phase1b": 1032,
@@ -19,7 +19,7 @@
    "transfer": 13839,
    "unstake_or_claim": 2891,
    "marketplace_move": 1805,
-   "sale": 1289
+   "sale": 1293
   }
  },
  "tokens": {
@@ -63124,6 +63124,15 @@
      "tx_hash": "143F50159796B90D060FE8F4822777884FE363FD0E32BE21B409B4E098D3675C",
      "block": 16413093,
      "timestamp": "2025-07-09T00:43:13Z"
+    },
+    {
+     "token_id": "1695",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+     "type": "sale",
+     "tx_hash": "1618D2456D3F76C1E4299D9652B6A7B3D49A0D8DE900E1412CBB76CDC78ACC54",
+     "block": 21424185,
+     "timestamp": "2026-06-12T02:42:15Z"
     }
    ],
    "mint": {
@@ -63136,9 +63145,9 @@
     "tx_hash": "4696D297DC0F84A07CE66959DE0D58489033B1144F0B260A79FF00F0820FD3F0",
     "block": 8126547
    },
-   "hand_changes": 7,
-   "sale_count": 2,
-   "current_owner": "terra1rxewq5ksxqp2skt9cdpvnuajvspn6eevczcctv"
+   "hand_changes": 8,
+   "sale_count": 3,
+   "current_owner": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229"
   },
   "1696": {
    "token_id": "1696",
@@ -81655,6 +81664,15 @@
      "tx_hash": "8A6AB1C1305E3D56A6A1B054EDC931423FCF07968B8E7BF9EAAE1681F7CD964A",
      "block": 21383527,
      "timestamp": "2026-06-09T09:08:40Z"
+    },
+    {
+     "token_id": "2219",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+     "type": "sale",
+     "tx_hash": "B71979833A65634E16B8C6BAD58E8FBCC3260B131470F31FA1BB17F248582FF6",
+     "block": 21424213,
+     "timestamp": "2026-06-12T02:45:01Z"
     }
    ],
    "mint": {
@@ -81667,9 +81685,9 @@
     "tx_hash": "EF96207B8F4984889400E9B052A5A2CE6B7B4C9FDC4D1FDFCEDB16DB13DAD606",
     "block": 9135014
    },
-   "hand_changes": 12,
-   "sale_count": 3,
-   "current_owner": "terra1fjd6thl0dqh6e5wv9z7rdrqzmtp0xau7fdejpq"
+   "hand_changes": 13,
+   "sale_count": 4,
+   "current_owner": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229"
   },
   "2220": {
    "token_id": "2220",
@@ -253915,6 +253933,15 @@
      "tx_hash": "B3E577E7736B6742BAB855BED962998B1434E96923DAE2BC585B15230636FC6B",
      "block": 21381523,
      "timestamp": "2026-06-09T05:55:01Z"
+    },
+    {
+     "token_id": "7025",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+     "type": "sale",
+     "tx_hash": "66A7A4332BADE3DA5094A4E171C5265E243BE71230C85F7CEA9A0B127DB2F6B6",
+     "block": 21424110,
+     "timestamp": "2026-06-12T02:35:06Z"
     }
    ],
    "mint": {
@@ -253927,9 +253954,9 @@
     "tx_hash": "ECB405715AF75D2DFE60DBA00B3DCA40EAF4BEEB85D9788D134F7897A7C22523",
     "block": 9135039
    },
-   "hand_changes": 6,
-   "sale_count": 2,
-   "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
+   "hand_changes": 7,
+   "sale_count": 3,
+   "current_owner": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229"
   },
   "7026": {
    "token_id": "7026",
@@ -294550,6 +294577,15 @@
      "tx_hash": "5D3A0AB35C04E241DE883C9F607C5883707741ED8301AE2CACF2A964A1883A6F",
      "block": 21306155,
      "timestamp": "2026-06-04T04:31:55Z"
+    },
+    {
+     "token_id": "8180",
+     "from": "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9",
+     "to": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+     "type": "sale",
+     "tx_hash": "8A0242B9BF0783A99D07EAE163EF9143802345C8B1DB0A70E818181C24CE95EC",
+     "block": 21424196,
+     "timestamp": "2026-06-12T02:43:20Z"
     }
    ],
    "mint": {
@@ -294562,9 +294598,9 @@
     "tx_hash": "021BEBD8901343F0B45379959626E7A491A035A6F305A5A035420E297E821241",
     "block": 8394136
    },
-   "hand_changes": 11,
-   "sale_count": 1,
-   "current_owner": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm"
+   "hand_changes": 12,
+   "sale_count": 2,
+   "current_owner": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229"
   },
   "8181": {
    "token_id": "8181",
