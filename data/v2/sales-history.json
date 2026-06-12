@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-11T20:17:15.643Z",
+ "builtAt": "2026-06-12T03:37:47.666Z",
  "source": "bbl-sales-backfill.js (settle events, aDAO)",
  "marketplace": "BBL",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -9,13 +9,13 @@
  "note": "Raw on-chain BBL sale record from settle events. USD-at-date + sale spread are separate later passes. sale_number is BBL-only sequence; sale_number=1 is the earliest BBL sale (= mint if mints ran on BBL).",
  "denom_breakdown": {
   "LUNA": 1043,
-  "bLUNA": 177
+  "bLUNA": 178
  },
  "royalty_wallets": {
   "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm": 1117,
-  "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm": 97
+  "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm": 98
  },
- "count": 1220,
+ "count": 1221,
  "sales": [
   {
    "tx_hash": "E1F830B6E7A68B09CB877C2D1EC50DA4B5B94D34BEA8BC5A03E5BD2FA1C704D8",
@@ -20756,6 +20756,23 @@
    "royalty_fee": "123750000",
    "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
    "sale_number": 1
+  },
+  {
+   "tx_hash": "8A0242B9BF0783A99D07EAE163EF9143802345C8B1DB0A70E818181C24CE95EC",
+   "block": 21424196,
+   "timestamp": "2026-06-12T02:43:20Z",
+   "auction_id": "17746",
+   "token_id": "8180",
+   "seller": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
+   "buyer": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
+   "denom": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+   "denom_symbol": "bLUNA",
+   "gross_amount": "1150000000",
+   "seller_net": "1069500000",
+   "marketplace_fee": "23000000",
+   "royalty_fee": "57500000",
+   "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
+   "sale_number": 2
   }
  ],
  "updatedBy": "nft-forward-incremental.js"
