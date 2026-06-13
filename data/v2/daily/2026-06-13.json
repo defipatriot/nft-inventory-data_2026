@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-13",
-  "capturedAt": "2026-06-13T00:30:10.030Z",
+  "capturedAt": "2026-06-13T00:45:18.100Z",
   "epoch": 189,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -22,9 +22,9 @@
     "ampluna_balance": 789792.775665,
     "per_nft_ampluna": 88.6710200589424,
     "unbroken_count": 8907,
-    "ampluna_usd": 0.11207226684385076,
-    "treasury_value_usd": 88513.87,
-    "per_nft_value_usd": 9.9376
+    "ampluna_usd": 0.11258870781050721,
+    "treasury_value_usd": 88921.75,
+    "per_nft_value_usd": 9.9834
   },
   "marketplaces": {
     "bbl": {
@@ -35,7 +35,7 @@
           "count": 31,
           "total": 196590,
           "min": 1200,
-          "total_usd": 17992.923742999996
+          "total_usd": 18068.236983
         }
       }
     },
@@ -47,7 +47,7 @@
           "count": 11,
           "total": 7110,
           "min": 10,
-          "total_usd": 7331.996365
+          "total_usd": 7338.225696
         }
       }
     },
@@ -59,13 +59,13 @@
           "count": 3,
           "total": 57200,
           "min": 2200,
-          "total_usd": 2965.4196
+          "total_usd": 2977.832
         },
         "ampLUNA": {
           "count": 1,
           "total": 3000,
           "min": 3000,
-          "total_usd": 336.216801
+          "total_usd": 337.766123
         }
       }
     }
