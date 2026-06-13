@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-13T20:30:13.906Z",
-  "capturedAtUnix": 1781382613906,
+  "capturedAt": "2026-06-13T20:45:09.557Z",
+  "capturedAtUnix": 1781383509557,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -24,7 +24,7 @@
   "enterprise_staked_count": 403,
   "enterprise_dao_broken_count": 100,
   "daodao_staked_count": 1632,
-  "daodao_pending_claim_count": 15,
+  "daodao_pending_claim_count": 30,
   "bbl_listed_count": 32,
   "atrium_listed_count": 11,
   "boost_listed_count": 4,
@@ -470,7 +470,7 @@
     "terra1cznyrvcu8mjq2jt2c8nr2u9hrek0t26yvps686": 1,
     "terra1jjzq6n86cdd3qqq2mq3qxrr756wyadhks29mmg": 3,
     "terra1aq2a00qg7qmhd8gf3w7jtn8hgrjpt4swzqrema": 1,
-    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 14,
+    "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l": 29,
     "terra1xvmwdwc50ukr66gk70yuh0f70rkl2yg5wwc4fh": 20,
     "terra1zgu5w9ddpdt5ft36qn8cags0h8rz2uswr95p98": 26,
     "terra1wlfagw79h0tushlz7uhvg3kxg5qq6zeg6axazf": 10,
@@ -646,7 +646,7 @@
     "terra1cwmsseep6fnckt753nlxg5cz6x9hh7utfkzkpd": 1,
     "terra1ggx3feptwzn9f6y826tzq5q9c5sxrtaw2fa2p9": 1,
     "terra1mfsxaeq403xlk24jwxgasd7ryektkmv49n9xey": 1,
-    "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47": 16,
+    "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47": 1,
     "terra1nrzyfqtrhzflkytpghnppxd9jcma2h5n5382dp": 1,
     "terra16mala8z8xej526t4n889v5dedd8zyxsaw6wkmu": 1,
     "terra1k62efklsgmn348l8whn8jqw406xjpkmr2rwpt8": 1,
@@ -1156,9 +1156,9 @@
     "ampluna_balance": 791379.532087,
     "per_nft_ampluna": 88.84916718165488,
     "unbroken_count": 8907,
-    "ampluna_usd": 0.11359176091888451,
-    "treasury_value_usd": 89894.19,
-    "per_nft_value_usd": 10.0925
+    "ampluna_usd": 0.11339921417625465,
+    "treasury_value_usd": 89741.82,
+    "per_nft_value_usd": 10.0754
   },
   "marketplaces": {
     "bbl": {
@@ -1169,7 +1169,7 @@
           "count": 31,
           "total": 196590,
           "min": 1200,
-          "total_usd": 18232.272147999993
+          "total_usd": 18201.367054000002
         }
       }
     },
@@ -1181,7 +1181,7 @@
           "count": 11,
           "total": 7110,
           "min": 10,
-          "total_usd": 7355.701411
+          "total_usd": 7354.484801
         }
       }
     },
@@ -1193,20 +1193,20 @@
           "count": 3,
           "total": 57200,
           "min": 2200,
-          "total_usd": 3003.286
+          "total_usd": 2998.1952
         },
         "ampLUNA": {
           "count": 1,
           "total": 3000,
           "min": 3000,
-          "total_usd": 340.775283
+          "total_usd": 340.197643
         }
       }
     }
   },
   "daodao_pending_claim": {
     "count": 4,
-    "tracked": 15,
+    "tracked": 30,
     "reconciled": false,
     "active_staked": 1632,
     "custody": 1636,
@@ -1219,10 +1219,34 @@
         "release_at": "2026-06-16T06:46:17.000Z"
       },
       {
+        "token_id": 2904,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 2925,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
         "token_id": 3404,
         "address": "terra1gp88fnzd4uvk4t5plagz762a29f88qgew3kfa2",
         "unstaked_at": "2026-06-11T20:25:36Z",
         "release_at": "2026-06-18T20:25:36.000Z"
+      },
+      {
+        "token_id": 3409,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 4110,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
       },
       {
         "token_id": 4114,
@@ -1231,16 +1255,52 @@
         "release_at": "2026-06-16T06:46:17.000Z"
       },
       {
+        "token_id": 4167,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 4199,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 4224,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 4364,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
         "token_id": 4864,
         "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
         "unstaked_at": "2026-06-09T06:46:17Z",
         "release_at": "2026-06-16T06:46:17.000Z"
       },
       {
+        "token_id": 4944,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
         "token_id": 5085,
         "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
         "unstaked_at": "2026-06-09T06:46:17Z",
         "release_at": "2026-06-16T06:46:17.000Z"
+      },
+      {
+        "token_id": 6027,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
       },
       {
         "token_id": 6192,
@@ -1255,16 +1315,46 @@
         "release_at": "2026-06-16T06:46:17.000Z"
       },
       {
+        "token_id": 7183,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
         "token_id": 7292,
         "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
         "unstaked_at": "2026-06-09T06:46:17Z",
         "release_at": "2026-06-16T06:46:17.000Z"
       },
       {
+        "token_id": 7369,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 7435,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
+        "token_id": 7442,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
+      },
+      {
         "token_id": 7761,
         "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
         "unstaked_at": "2026-06-09T06:46:17Z",
         "release_at": "2026-06-16T06:46:17.000Z"
+      },
+      {
+        "token_id": 7801,
+        "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+        "unstaked_at": "2026-06-09T06:43:06Z",
+        "release_at": "2026-06-16T06:43:06.000Z"
       },
       {
         "token_id": 7822,
@@ -1284,26 +1374,25 @@
         "token_id": 1319,
         "address": "terra1x0njjcge9xykawm7dy48va89vj6wvj77wy3a6k",
         "unstaked_at": "2026-03-15T06:28:51Z",
-        "release_at": "2026-03-22T06:28:51Z",
-        "note": "unstaked 2x / claimed 1x; confirm holder via nft_claims before nudging"
+        "release_at": "2026-03-22T06:28:51.000Z"
       },
       {
         "token_id": 3605,
         "address": "terra1exu3f6t72x7w06ppu5vu5m5m9s4glywenfnplr",
         "unstaked_at": "2025-10-11T12:14:07Z",
-        "release_at": "2025-10-18T12:14:07Z"
+        "release_at": "2025-10-18T12:14:07.000Z"
       },
       {
         "token_id": 6847,
         "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc",
         "unstaked_at": "2026-01-24T13:27:27Z",
-        "release_at": "2026-01-31T13:27:27Z"
+        "release_at": "2026-01-31T13:27:27.000Z"
       },
       {
         "token_id": 7123,
         "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc",
         "unstaked_at": "2026-01-24T13:27:27Z",
-        "release_at": "2026-01-31T13:27:27Z"
+        "release_at": "2026-01-31T13:27:27.000Z"
       }
     ]
   },
