@@ -1,12 +1,11 @@
 {
-  "lastScannedHeight": 21449993,
+  "lastScannedHeight": 21450147,
   "entries": [
     {
       "token_id": 1319,
       "address": "terra1x0njjcge9xykawm7dy48va89vj6wvj77wy3a6k",
       "unstaked_at": "2026-03-15T06:28:51Z",
-      "release_at": "2026-03-22T06:28:51Z",
-      "note": "unstaked 2x / claimed 1x; confirm holder via nft_claims before nudging"
+      "release_at": "2026-03-22T06:28:51.000Z"
     },
     {
       "token_id": 2852,
@@ -15,16 +14,40 @@
       "release_at": "2026-06-16T06:46:17.000Z"
     },
     {
+      "token_id": 2904,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
+      "token_id": 2925,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
       "token_id": 3404,
       "address": "terra1gp88fnzd4uvk4t5plagz762a29f88qgew3kfa2",
       "unstaked_at": "2026-06-11T20:25:36Z",
       "release_at": "2026-06-18T20:25:36.000Z"
     },
     {
+      "token_id": 3409,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
       "token_id": 3605,
       "address": "terra1exu3f6t72x7w06ppu5vu5m5m9s4glywenfnplr",
       "unstaked_at": "2025-10-11T12:14:07Z",
-      "release_at": "2025-10-18T12:14:07Z"
+      "release_at": "2025-10-18T12:14:07.000Z"
+    },
+    {
+      "token_id": 4110,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
     },
     {
       "token_id": 4114,
@@ -33,16 +56,52 @@
       "release_at": "2026-06-16T06:46:17.000Z"
     },
     {
+      "token_id": 4167,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
+      "token_id": 4199,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
+      "token_id": 4224,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
+      "token_id": 4364,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
       "token_id": 4864,
       "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
       "unstaked_at": "2026-06-09T06:46:17Z",
       "release_at": "2026-06-16T06:46:17.000Z"
     },
     {
+      "token_id": 4944,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
       "token_id": 5085,
       "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
       "unstaked_at": "2026-06-09T06:46:17Z",
       "release_at": "2026-06-16T06:46:17.000Z"
+    },
+    {
+      "token_id": 6027,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
     },
     {
       "token_id": 6192,
@@ -54,7 +113,7 @@
       "token_id": 6847,
       "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc",
       "unstaked_at": "2026-01-24T13:27:27Z",
-      "release_at": "2026-01-31T13:27:27Z"
+      "release_at": "2026-01-31T13:27:27.000Z"
     },
     {
       "token_id": 6880,
@@ -66,7 +125,13 @@
       "token_id": 7123,
       "address": "terra13lr8wg5dhus8l67qjrq3qa3ruhl49dnct4anrc",
       "unstaked_at": "2026-01-24T13:27:27Z",
-      "release_at": "2026-01-31T13:27:27Z"
+      "release_at": "2026-01-31T13:27:27.000Z"
+    },
+    {
+      "token_id": 7183,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
     },
     {
       "token_id": 7292,
@@ -75,10 +140,34 @@
       "release_at": "2026-06-16T06:46:17.000Z"
     },
     {
+      "token_id": 7369,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
+      "token_id": 7435,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
+      "token_id": 7442,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
+    },
+    {
       "token_id": 7761,
       "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
       "unstaked_at": "2026-06-09T06:46:17Z",
       "release_at": "2026-06-16T06:46:17.000Z"
+    },
+    {
+      "token_id": 7801,
+      "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+      "unstaked_at": "2026-06-09T06:43:06Z",
+      "release_at": "2026-06-16T06:43:06.000Z"
     },
     {
       "token_id": 7822,
