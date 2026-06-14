@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-14T05:30:16.791Z",
-  "capturedAtUnix": 1781415016791,
+  "capturedAt": "2026-06-14T05:45:21.730Z",
+  "capturedAtUnix": 1781415921730,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -1156,20 +1156,20 @@
     "ampluna_balance": 791379.532087,
     "per_nft_ampluna": 88.84916718165488,
     "unbroken_count": 8907,
-    "ampluna_usd": 0.11288623430703014,
-    "treasury_value_usd": 89335.86,
-    "per_nft_value_usd": 10.0298
+    "ampluna_usd": 0.1123971277148753,
+    "treasury_value_usd": 88948.79,
+    "per_nft_value_usd": 9.9864
   },
   "marketplaces": {
     "bbl": {
-      "count": 35,
+      "count": 31,
       "count_resolved": 31,
       "by_token": {
         "bLUNA": {
           "count": 31,
           "total": 196590,
           "min": 1200,
-          "total_usd": 18112.818733
+          "total_usd": 18034.340615999994
         }
       }
     },
@@ -1181,7 +1181,7 @@
           "count": 11,
           "total": 7110,
           "min": 10,
-          "total_usd": 7371.669383
+          "total_usd": 7366.220594
         }
       }
     },
@@ -1193,13 +1193,13 @@
           "count": 3,
           "total": 57200,
           "min": 2200,
-          "total_usd": 2983.6092000000003
+          "total_usd": 2970.682
         },
         "ampLUNA": {
           "count": 1,
           "total": 3000,
           "min": 3000,
-          "total_usd": 338.658703
+          "total_usd": 337.191383
         }
       }
     }
@@ -3281,7 +3281,7 @@
     "warnings": []
   },
   "listing_resolver": {
-    "warning_count": 7,
+    "warning_count": 3,
     "warnings": [
       {
         "scope": "bbl",
@@ -3289,38 +3289,6 @@
         "auction_id": "14765",
         "token_id": "745",
         "seller": "terra1nj74mncupt0xhpxljls09gg7ufy0nx68fyarfy"
-      },
-      {
-        "scope": "bbl",
-        "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17746",
-        "token_id": "8180",
-        "seller": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
-        "recovered": true
-      },
-      {
-        "scope": "bbl",
-        "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17710",
-        "token_id": "7178",
-        "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4",
-        "recovered": true
-      },
-      {
-        "scope": "bbl",
-        "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17713",
-        "token_id": "7964",
-        "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4",
-        "recovered": true
-      },
-      {
-        "scope": "bbl",
-        "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17697",
-        "token_id": "107",
-        "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
-        "recovered": true
       },
       {
         "scope": "bbl",
@@ -3333,9 +3301,9 @@
       {
         "scope": "bbl",
         "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17714",
-        "token_id": "6270",
-        "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4",
+        "auction_id": "17697",
+        "token_id": "107",
+        "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
         "recovered": true
       }
     ]
