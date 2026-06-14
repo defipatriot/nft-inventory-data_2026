@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-14T16:00:15.137Z",
-  "capturedAtUnix": 1781452815137,
+  "capturedAt": "2026-06-14T16:15:19.159Z",
+  "capturedAtUnix": 1781453719159,
   "epoch": 189,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -397,7 +397,7 @@
     "terra10kwrzdaxhlp0d4ffr36ds4gkcq8w726dpum2t3": 124,
     "terra1w6zp2xmuup9hm5jszxwzwrx4hdfhcg404jgux3": 1,
     "terra1n8utaly5st5du65fgaqawhrkvm0qrlfws9kymc": 43,
-    "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53": 70,
+    "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53": 72,
     "terra1tgvlyhnqyxgwuw07h986jtnjhkcz72es3u33a9": 21,
     "terra13qjxhnw98lm36rxc9yjakkmulhpv7zctdc5zlz": 51,
     "terra1ha6xxq0gf774v0gvx5cwrwafzsuyu8xcj2505r": 1,
@@ -500,7 +500,7 @@
     "terra1qxv56zdtp0dhf709zem0tajl4vw3dvzmd08ge9": 3,
     "terra1fjklhhev666eucy7jrhvfcwgntt7yys2mes9nk": 9,
     "terra1cr8gvqj86duhgfpvjs5x237v4wfsf0qykacsjx": 1,
-    "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9": 4,
+    "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9": 1,
     "terra1wtjfazdwh7d6n5k844dxv4gaz8qlk80ep2qqn3": 7,
     "terra1ekzsuuccwewapj7adw5y5rv3a5c0lsrmsa3me8": 1,
     "terra1zrcmjmwfwdp4e8leasjavlhyaj5rrn86lcjqeg": 2,
@@ -929,6 +929,7 @@
     "terra176hv2mdpj8g2wdese6najxs8vzqtmlhusd3fjp": 1,
     "terra15hfsveszgpjrd7qt8n3647jfenauey5ku6tg78": 1,
     "terra1a6zgs892aq4z5x2ahrcy95utxcjhutkurzc2m5": 1,
+    "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4": 3,
     "terra1w4ud7nzj9nfg6gv4gnqgemuwk0rnm9rh2hdzz7": 1,
     "terra1ksn7v2nfjqkzkkhcuvk9n8pgj4aqcmfsy38ws7": 1,
     "terra1rukm8uvufu33nsedwwckng5xw97r5e7x4wzuu2": 1,
@@ -984,7 +985,6 @@
     "terra1wxhfnlkm57g5np29d6yshmk2k89m82lvsy97wh": 1,
     "terra1fgqgr342dhaz6e747tpakwuknwhane0lg09wng": 3,
     "terra1xvsjzv8mhr4h6n7dlvq9lxdr9ne3yxn0w84cle": 1,
-    "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4": 2,
     "terra1cczlrgqpr39pkmykuwmfwxgs45v7v9ckpkyc6y": 1,
     "terra1ktptgs6uucw8wptjv3wjp37qj64hdgjht4fawx": 1,
     "terra1kzg3rumt7uwhhrs5ru5rlpmmalz4sx5aeggvez": 1,
@@ -1161,14 +1161,14 @@
   },
   "marketplaces": {
     "bbl": {
-      "count": 33,
-      "count_resolved": 33,
+      "count": 36,
+      "count_resolved": 36,
       "by_token": {
         "bLUNA": {
-          "count": 33,
-          "total": 202290,
-          "min": 1200,
-          "total_usd": 18229.686367000006
+          "count": 36,
+          "total": 207688,
+          "min": 1199,
+          "total_usd": 18716.135757000004
         }
       }
     },
@@ -3280,7 +3280,7 @@
     "warnings": []
   },
   "listing_resolver": {
-    "warning_count": 9,
+    "warning_count": 8,
     "warnings": [
       {
         "scope": "bbl",
@@ -3291,17 +3291,11 @@
       },
       {
         "scope": "bbl",
-        "reason": "chain_only_not_on_warlock",
-        "auction_id": "17766",
-        "token_id": "6270",
-        "seller": "terra15rku203wqn9ru4p54k5p78j6tk6tmqkjwwpae4"
-      },
-      {
-        "scope": "bbl",
-        "reason": "chain_only_not_on_warlock",
-        "auction_id": "17765",
-        "token_id": "3389",
-        "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53"
+        "reason": "warlock_only_missing_from_chain_sweep",
+        "auction_id": "17764",
+        "token_id": "2096",
+        "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
+        "recovered": true
       },
       {
         "scope": "bbl",
