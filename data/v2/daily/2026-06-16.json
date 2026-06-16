@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-16",
-  "capturedAt": "2026-06-16T08:45:13.265Z",
+  "capturedAt": "2026-06-16T09:00:35.721Z",
   "epoch": 190,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -19,12 +19,12 @@
   "user_held_count": 1055,
   "user_held_broken_count": 26,
   "backing": {
-    "ampluna_balance": 792979.044565,
-    "per_nft_ampluna": 89.02874644268553,
+    "ampluna_balance": 793776.229645,
+    "per_nft_ampluna": 89.11824740597282,
     "unbroken_count": 8907,
     "ampluna_usd": 0.1154096584223117,
-    "treasury_value_usd": 91517.44,
-    "per_nft_value_usd": 10.2748
+    "treasury_value_usd": 91609.44,
+    "per_nft_value_usd": 10.2851
   },
   "marketplaces": {
     "bbl": {
