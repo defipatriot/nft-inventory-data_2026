@@ -1,5 +1,5 @@
 {
-  "lastScannedHeight": 21524405,
+  "lastScannedHeight": 21524564,
   "entries": [
     {
       "token_id": 1319,
@@ -24,12 +24,6 @@
       "address": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
       "unstaked_at": "2026-06-09T06:43:06Z",
       "release_at": "2026-06-16T06:43:06.000Z"
-    },
-    {
-      "token_id": 3404,
-      "address": "terra1gp88fnzd4uvk4t5plagz762a29f88qgew3kfa2",
-      "unstaked_at": "2026-06-11T20:25:36Z",
-      "release_at": "2026-06-18T20:25:36.000Z"
     },
     {
       "token_id": 3409,
