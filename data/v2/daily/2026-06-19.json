@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-19",
-  "capturedAt": "2026-06-19T00:10:26.137Z",
+  "capturedAt": "2026-06-19T00:15:18.456Z",
   "epoch": 190,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -16,7 +16,7 @@
   "bbl_listed_count": 37,
   "atrium_listed_count": 11,
   "boost_listed_count": 4,
-  "user_held_count": 1056,
+  "user_held_count": 1055,
   "user_held_broken_count": 26,
   "backing": {
     "ampluna_balance": 795368.284451,
