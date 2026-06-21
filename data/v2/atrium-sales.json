@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-21T11:30:48.083Z",
+ "builtAt": "2026-06-21T14:03:22.713Z",
  "source": "atrium-sales-backfill.js (buy_nft events, aDAO)",
  "marketplace": "Atrium",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -153,5 +153,9 @@
    "marketplace": "Atrium",
    "sale_number": 3
   }
- ]
+ ],
+ "updatedBy": "nft-forward-incremental.js",
+ "denom_breakdown": {
+  "SOLID": 8
+ }
 }
