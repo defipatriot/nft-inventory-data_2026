@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-21",
-  "capturedAt": "2026-06-21T01:30:40.746Z",
+  "capturedAt": "2026-06-21T01:45:21.151Z",
   "epoch": 190,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -47,7 +47,7 @@
           "count": 11,
           "total": 7110,
           "min": 10,
-          "total_usd": 7099.9684449999995
+          "total_usd": 7100.304603000001
         }
       }
     },
