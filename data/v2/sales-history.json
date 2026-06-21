@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-21T11:30:26.226Z",
+ "builtAt": "2026-06-21T14:03:20.380Z",
  "source": "bbl-sales-backfill.js (settle events, aDAO)",
  "marketplace": "BBL",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -20774,5 +20774,6 @@
    "royalty_recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
    "sale_number": 2
   }
- ]
+ ],
+ "updatedBy": "nft-forward-incremental.js"
 }
