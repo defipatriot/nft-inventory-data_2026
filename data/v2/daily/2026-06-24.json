@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-24",
-  "capturedAt": "2026-06-24T04:00:13.756Z",
+  "capturedAt": "2026-06-24T04:15:12.092Z",
   "epoch": 191,
   "total_tokens": 10000,
   "broken_count": 1093,
@@ -13,10 +13,10 @@
   "enterprise_dao_broken_count": 100,
   "daodao_staked_count": 1631,
   "daodao_staked_broken_count": 50,
-  "bbl_listed_count": 37,
+  "bbl_listed_count": 38,
   "atrium_listed_count": 11,
   "boost_listed_count": 4,
-  "user_held_count": 1056,
+  "user_held_count": 1055,
   "user_held_broken_count": 26,
   "backing": {
     "ampluna_balance": 799307.249986,
@@ -28,14 +28,14 @@
   },
   "marketplaces": {
     "bbl": {
-      "count": 36,
-      "count_resolved": 36,
+      "count": 37,
+      "count_resolved": 37,
       "by_token": {
         "bLUNA": {
-          "count": 36,
-          "total": 207688,
+          "count": 37,
+          "total": 219678,
           "min": 1199,
-          "total_usd": 18065.108452000004
+          "total_usd": 19108.022103000003
         }
       }
     },
