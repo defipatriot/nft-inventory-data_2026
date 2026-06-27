@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "cron": "nft-inventory",
-  "capturedAt": "2026-06-27T23:00:50.528Z",
-  "capturedAtUnix": 1782601250528,
-  "runId": "nft-20260627230050",
+  "capturedAt": "2026-06-27T23:15:10.886Z",
+  "capturedAtUnix": 1782602110886,
+  "runId": "nft-20260627231510",
   "runMode": "hot",
   "currentEpoch": 191,
   "status": "ok",
@@ -37,5 +37,5 @@
     "enterprise_unattributed": 81,
     "daodao_pending_reconciled": false
   },
-  "next_expected_run_at": "2026-06-27T23:15:50.528Z"
+  "next_expected_run_at": "2026-06-27T23:30:10.886Z"
 }
