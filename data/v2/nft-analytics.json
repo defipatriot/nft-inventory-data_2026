@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-06-30T14:12:21.767Z",
+ "builtAt": "2026-06-30T19:50:48.993Z",
  "volume": {
   "sales_count": 1259,
   "tokens": {
@@ -11,10 +11,10 @@
    "ampLUNA": 1,
    "SOLID": 452
   },
-  "usd_at_sale": 148282.11,
-  "value_today_usd": 14560.29,
-  "luna_equiv_total": 289748.18,
-  "spot_luna_usd": 0.04622318,
+  "usd_at_sale": 148282.29,
+  "value_today_usd": 14578.07,
+  "luna_equiv_total": 289718.45,
+  "spot_luna_usd": 0.04630608,
   "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
  },
  "denom_split": {
@@ -23,14 +23,14 @@
    "tokens": 181213.24,
    "luna_equiv": 181213.24,
    "notional_usd": 134610.9,
-   "value_today_usd": 8376.25
+   "value_today_usd": 8391.27
   },
   "bLUNA": {
    "count": 178,
    "tokens": 68616.5443,
-   "luna_equiv": 108534.94,
-   "notional_usd": 13114.1,
-   "value_today_usd": 5626.94
+   "luna_equiv": 108505.21,
+   "notional_usd": 13114.28,
+   "value_today_usd": 5629.7
   },
   "USDC": {
    "count": 2,
@@ -60,7 +60,7 @@
    "bLUNA": 3430.8272
   },
   "to_dao_usd_when_earned": 7317.75,
-  "to_dao_usd_today": 689.53,
+  "to_dao_usd_today": 690.4,
   "by_recipient": [
    {
     "recipient": "terra1g0mfrpswewteaf9ky4rlj09wh5njp6u9xxk94uszplw4qz2f9mzq3k27fm",
@@ -69,8 +69,8 @@
      "LUNA": 8830.662,
      "bLUNA": 1459.8833
     },
-    "usd_when_earned": 7027.22,
-    "usd_today": 527.9
+    "usd_when_earned": 7027.19,
+    "usd_today": 528.69
    },
    {
     "recipient": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
@@ -78,8 +78,8 @@
     "tokens": {
      "bLUNA": 1970.9439
     },
-    "usd_when_earned": 290.53,
-    "usd_today": 161.63
+    "usd_when_earned": 290.56,
+    "usd_today": 161.71
    },
    {
     "recipient": "unknown",
@@ -98,8 +98,8 @@
    {
     "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
     "count": 222,
-    "notional_usd": 25988.3,
-    "luna_equiv": 112659.31
+    "notional_usd": 25988.42,
+    "luna_equiv": 112631.98
    },
    {
     "address": "terra1yct7ls8kw3x2ucm66rxg7mgtyvw7kr5v4t4xsx",
@@ -188,8 +188,8 @@
    {
     "address": "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229",
     "count": 37,
-    "notional_usd": 1764.77,
-    "luna_equiv": 11310.95
+    "notional_usd": 1764.83,
+    "luna_equiv": 11308.55
    },
    {
     "address": "terra1nj74mncupt0xhpxljls09gg7ufy0nx68fyarfy",
@@ -268,8 +268,8 @@
    {
     "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
     "count": 3,
-    "notional_usd": 1959.1,
-    "luna_equiv": 28624.25
+    "notional_usd": 1958.65,
+    "luna_equiv": 28614.03
    },
    {
     "address": "terra1nxs02ts72cj5w455nva02l3r7czfjtf9qn9pda",
@@ -286,8 +286,8 @@
    {
     "address": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
     "count": 11,
-    "notional_usd": 1162.66,
-    "luna_equiv": 9045.21
+    "notional_usd": 1162.73,
+    "luna_equiv": 9043.07
    },
    {
     "address": "terra1ulh95rzcy8npzygxaf9jxgyta4ekg2qsxjw8k5",
@@ -422,7 +422,7 @@
    {
     "token_id": "7025",
     "sales": 3,
-    "notional_usd": 273.69
+    "notional_usd": 273.76
    },
    {
     "token_id": "9436",
@@ -619,14 +619,14 @@
   {
    "month": "2026-05",
    "count": 1,
-   "notional_usd": 1677.41,
-   "luna_equiv": 25989.96
+   "notional_usd": 1676.91,
+   "luna_equiv": 25982.14
   },
   {
    "month": "2026-06",
    "count": 16,
-   "notional_usd": 1155.02,
-   "luna_equiv": 20509.64
+   "notional_usd": 1155.71,
+   "luna_equiv": 20487.74
   }
  ],
  "sale_number_distribution": {
@@ -638,7 +638,7 @@
   "6": 1
  },
  "flips": {
-  "realized_pnl_usd": -3363.96,
+  "realized_pnl_usd": -3364.26,
   "flip_count": 277,
   "top_flips": [
    {
@@ -827,7 +827,7 @@
   "note": "bLUNA = monotonic monthly-median bLUNA/LUNA ratio (from boneLUNA CoinGecko, gap-interpolated, clamped 1.0–2.0) × LUNA-USD on sale date"
  },
  "bluna_ratio_curve": {
-  "latest": 1.7741,
+  "latest": 1.7718,
   "span": [
    "2024-03-15",
    "2026-06-15"
@@ -879,7 +879,7 @@
    },
    {
     "month": "2026-06",
-    "ratio": 1.774
+    "ratio": 1.772
    }
   ]
  }
