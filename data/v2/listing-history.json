@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-06-28T13:39:43.074Z",
+ "builtAt": "2026-06-30T14:12:17.461Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
   "delisted": 1965,
   "sold": 1252,
-  "active": 56,
+  "active": 57,
   "unknown": 3
  },
  "live_listings_missing_create": [],
- "count": 3276,
+ "count": 3277,
  "records": [
   {
    "token_id": "1764",
@@ -64454,6 +64454,25 @@
    "listing_type": "buy_now",
    "outcome": "active",
    "create_tx": "585D94DFE0CC465EA88F473271F5A338841379E940AD3D4D6EB6B00254BFBA71"
+  },
+  {
+   "token_id": "8446",
+   "marketplace": "BBL",
+   "listing_ref": "17806",
+   "seller": "terra15amg7the2325htty5wlemd63ul3tpqnq79lu4q",
+   "segments": [
+    {
+     "price": "1000000000",
+     "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+     "from_ts": "2026-06-30T13:41:58Z",
+     "from_height": 21699276,
+     "to_ts": null,
+     "end_reason": "still_listed"
+    }
+   ],
+   "listing_type": "buy_now",
+   "outcome": "active",
+   "create_tx": "5A7C69E64B89771707F47BE62CD32DBF51F4E74B7A416415C4149975B6666717"
   }
  ],
  "updatedBy": "nft-forward-incremental.js"
