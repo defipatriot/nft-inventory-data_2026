@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-06-30T13:30:11.530Z",
-  "capturedAtUnix": 1782826211530,
+  "capturedAt": "2026-06-30T13:45:18.798Z",
+  "capturedAtUnix": 1782827118798,
   "epoch": 192,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -25,15 +25,15 @@
   "enterprise_dao_broken_count": 100,
   "daodao_staked_count": 1631,
   "daodao_pending_claim_count": 46,
-  "bbl_listed_count": 42,
+  "bbl_listed_count": 43,
   "atrium_listed_count": 11,
   "boost_listed_count": 4,
-  "user_held_count": 1061,
+  "user_held_count": 1060,
   "daodao_staked_broken_count": 50,
   "user_held_broken_count": 26,
   "minted_count": 4172,
   "dao_held_count": 5828,
-  "user_liquid_count": 1061,
+  "user_liquid_count": 1060,
   "unique_holders": 753,
   "dao_members_count": 156,
   "non_custody_holders_count": 748,
@@ -49,7 +49,7 @@
     "terra10pa0qv7mrqst053zhv9hxxt9mwhmr45ggguygs": 57,
     "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53": 54,
     "terra1ha6xxq0gf774v0gvx5cwrwafzsuyu8xcj2505r": 1,
-    "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9": 42,
+    "terra1ej4cv98e9g2zjefr5auf2nwtq4xl3dm7x0qml58yna2ml2hk595s7gccs9": 43,
     "terra1hrcurgmgac972nw34nvjrrjc6nr3gny3sg8nay": 1,
     "terra1apeyehuxqzz0c2gegg8p84w25ptqk8u6h39drz": 15,
     "terra1drwt52wuqd2p3z5y9pgylhnmqaaznga8xwfcds": 1,
@@ -357,7 +357,6 @@
     "terra1k8j72n8zzdupw8377d2pfv2h2zjzkmwafhc58m": 1,
     "terra1s7w8lh539p73l276nj9hj9p8y3400wqy4srm4n": 1,
     "terra1u6s6gzd5ycj375vhp4n96g5k7neeftene4ntua": 1,
-    "terra15amg7the2325htty5wlemd63ul3tpqnq79lu4q": 1,
     "terra1hqr5h8am6j9tm965vwv4fwnt3h9w2nlmvuqfvm": 1,
     "terra1jf0rruu7xulwf926hellln44dyxr039hhlc7x2": 1,
     "terra1jx8v3y3pfekr9v8q55mghy2kwp8gq4hdj7gfw4": 1,
@@ -1158,20 +1157,20 @@
     "ampluna_balance": 804840.540149,
     "per_nft_ampluna": 90.3604513471427,
     "unbroken_count": 8907,
-    "ampluna_usd": 0.10134902685140561,
-    "treasury_value_usd": 81569.81,
-    "per_nft_value_usd": 9.1579
+    "ampluna_usd": 0.10153009103323303,
+    "treasury_value_usd": 81715.53,
+    "per_nft_value_usd": 9.1743
   },
   "marketplaces": {
     "bbl": {
-      "count": 41,
-      "count_resolved": 41,
+      "count": 42,
+      "count_resolved": 42,
       "by_token": {
         "bLUNA": {
-          "count": 41,
-          "total": 224180,
-          "min": 1150,
-          "total_usd": 18351.227573000004
+          "count": 42,
+          "total": 225180,
+          "min": 1000,
+          "total_usd": 18466.018385
         }
       }
     },
@@ -1183,7 +1182,7 @@
           "count": 11,
           "total": 7110,
           "min": 10,
-          "total_usd": 7133.073362000001
+          "total_usd": 7135.039527999999
         }
       }
     },
@@ -1195,13 +1194,13 @@
           "count": 3,
           "total": 57200,
           "min": 2200,
-          "total_usd": 2645.579508
+          "total_usd": 2650.305944
         },
         "ampLUNA": {
           "count": 1,
           "total": 3000,
           "min": 3000,
-          "total_usd": 304.047081
+          "total_usd": 304.590273
         }
       }
     }
@@ -3378,7 +3377,7 @@
     "warnings": []
   },
   "listing_resolver": {
-    "warning_count": 13,
+    "warning_count": 14,
     "warnings": [
       {
         "scope": "bbl",
@@ -3390,16 +3389,16 @@
       {
         "scope": "bbl",
         "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17797",
-        "token_id": "2096",
+        "auction_id": "17798",
+        "token_id": "3008",
         "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
         "recovered": true
       },
       {
         "scope": "bbl",
         "reason": "warlock_only_missing_from_chain_sweep",
-        "auction_id": "17798",
-        "token_id": "3008",
+        "auction_id": "17797",
+        "token_id": "2096",
         "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
         "recovered": true
       },
@@ -3465,6 +3464,14 @@
         "auction_id": "17698",
         "token_id": "196",
         "seller": "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53",
+        "recovered": true
+      },
+      {
+        "scope": "bbl",
+        "reason": "warlock_only_missing_from_chain_sweep",
+        "auction_id": "13806",
+        "token_id": "3073",
+        "seller": "terra18au39029aa4mey00fap4l74c936l8efjuqhf6u",
         "recovered": true
       },
       {
