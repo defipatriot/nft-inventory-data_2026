@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-07-07T19:50:50.242Z",
+ "builtAt": "2026-07-08T13:56:19.968Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "delisted": 1965,
+  "delisted": 1966,
   "sold": 1252,
-  "active": 67,
+  "active": 66,
   "unknown": 3
  },
  "live_listings_missing_create": [],
@@ -64491,17 +64491,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "392",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "150000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "7761",
-    "msg_index": "0"
-   }
+   "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131"
   },
   {
    "token_id": "7822",
@@ -64520,17 +64510,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "393",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "50000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "7822",
-    "msg_index": "1"
-   }
+   "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131"
   },
   {
    "token_id": "7859",
@@ -64549,17 +64529,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "394",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "150000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "7859",
-    "msg_index": "2"
-   }
+   "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131"
   },
   {
    "token_id": "7292",
@@ -64578,17 +64548,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "0C75ED4F66324502EDC0E24A531385B1B320531B723561CF9A40468CAA269CCC",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "391",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "75000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "7292",
-    "msg_index": "0"
-   }
+   "create_tx": "0C75ED4F66324502EDC0E24A531385B1B320531B723561CF9A40468CAA269CCC"
   },
   {
    "token_id": "6880",
@@ -64607,17 +64567,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "C7622E11768CE4EE4F278BD9E218D1E4580AB7A587A4EA3E1D799EF310AD77C2",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "390",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "150000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "6880",
-    "msg_index": "0"
-   }
+   "create_tx": "C7622E11768CE4EE4F278BD9E218D1E4580AB7A587A4EA3E1D799EF310AD77C2"
   },
   {
    "token_id": "6192",
@@ -64630,23 +64580,13 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:52:40Z",
      "from_height": 21805930,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-07-08T11:21:50Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
-   "create_tx": "799C7AAD47D8ED6A34DECF69781DD3BD1863492B72651C2BDA6E60846171C5F1",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "389",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "50000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "6192",
-    "msg_index": "0"
-   }
+   "outcome": "delisted",
+   "create_tx": "799C7AAD47D8ED6A34DECF69781DD3BD1863492B72651C2BDA6E60846171C5F1"
   },
   {
    "token_id": "5085",
@@ -64665,17 +64605,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "C52724FB094DCFAD5D3B06BEC44927AB63AC586AD32BFDAB25D7EF2FBF986C42",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "388",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "150000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "5085",
-    "msg_index": "0"
-   }
+   "create_tx": "C52724FB094DCFAD5D3B06BEC44927AB63AC586AD32BFDAB25D7EF2FBF986C42"
   },
   {
    "token_id": "4864",
@@ -64694,17 +64624,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "32A541BAC7BF5899595C2D770A5A762CF3D477902AB28D8CB01D0FE17014C846",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "387",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "75000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "4864",
-    "msg_index": "0"
-   }
+   "create_tx": "32A541BAC7BF5899595C2D770A5A762CF3D477902AB28D8CB01D0FE17014C846"
   },
   {
    "token_id": "4114",
@@ -64723,17 +64643,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "602206225DEDD999731BB32C737C3EED52FB8D937C13C3977AE416E72F81D498",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "386",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "75000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "4114",
-    "msg_index": "0"
-   }
+   "create_tx": "602206225DEDD999731BB32C737C3EED52FB8D937C13C3977AE416E72F81D498"
   },
   {
    "token_id": "2852",
@@ -64752,17 +64662,7 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "FEDE2C568239E5EF8C53E02F8DDA155E2707D6EDB3F9C78A6010ECB8CFF669D8",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "385",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "75000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "2852",
-    "msg_index": "0"
-   }
+   "create_tx": "FEDE2C568239E5EF8C53E02F8DDA155E2707D6EDB3F9C78A6010ECB8CFF669D8"
   }
  ],
  "updatedBy": "nft-forward-incremental.js"
