@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-07-12T19:00:46.822Z",
+ "builtAt": "2026-07-13T02:28:17.058Z",
  "volume": {
   "sales_count": 1260,
   "tokens": {
@@ -43,8 +43,8 @@
    "count": 1,
    "tokens": 1,
    "luna_equiv": 0,
-   "notional_usd": 0.11,
-   "value_today_usd": 0.11
+   "notional_usd": 0.1,
+   "value_today_usd": 0.1
   },
   "SOLID": {
    "count": 16,
@@ -553,7 +553,7 @@
   {
    "month": "2025-06",
    "count": 10,
-   "notional_usd": 424.3,
+   "notional_usd": 424.29,
    "luna_equiv": 2554.58
   },
   {
