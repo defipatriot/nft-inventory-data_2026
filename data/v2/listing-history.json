@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-07-17T02:22:49.301Z",
+ "builtAt": "2026-07-17T08:04:05.517Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "delisted": 1967,
+  "delisted": 1968,
   "sold": 1252,
   "active": 65,
   "unknown": 3
  },
  "live_listings_missing_create": [],
- "count": 3287,
+ "count": 3288,
  "records": [
   {
    "token_id": "1764",
@@ -64656,13 +64656,42 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:50:22Z",
      "from_height": 21805907,
+     "to_ts": "2026-07-17T02:31:28Z",
+     "end_reason": "delist"
+    }
+   ],
+   "listing_type": "list_nft",
+   "outcome": "delisted",
+   "create_tx": "FEDE2C568239E5EF8C53E02F8DDA155E2707D6EDB3F9C78A6010ECB8CFF669D8"
+  },
+  {
+   "token_id": "2852",
+   "marketplace": "Atrium",
+   "listing_ref": "445",
+   "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "segments": [
+    {
+     "price": "50000000",
+     "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+     "from_ts": "2026-07-17T02:33:04Z",
+     "from_height": 21944970,
      "to_ts": null,
      "end_reason": "still_listed"
     }
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "FEDE2C568239E5EF8C53E02F8DDA155E2707D6EDB3F9C78A6010ECB8CFF669D8"
+   "create_tx": "E0E450C5A229872D33E0950B8C120C7CB359865BE41C0A49C47E311B58317F51",
+   "mkt_event_attrs": {
+    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+    "action": "list_nft",
+    "listing_id": "445",
+    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+    "price": "50000000",
+    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+    "token_id": "2852",
+    "msg_index": "0"
+   }
   }
  ],
  "updatedBy": "nft-forward-incremental.js"
