@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-16T00:10:53.006Z",
-  "count": 66,
+  "updatedAt": "2026-07-17T00:10:52.884Z",
+  "count": 65,
   "entries": {
     "BBL:17697": {
       "token_id": "107",
@@ -230,11 +230,6 @@
     },
     "Atrium:392": {
       "token_id": "7761",
-      "first_seen_at": "2026-07-08T00:10:44.780Z",
-      "atrium_created_at_height": 21805964
-    },
-    "Atrium:393": {
-      "token_id": "7822",
       "first_seen_at": "2026-07-08T00:10:44.780Z",
       "atrium_created_at_height": 21805964
     },
