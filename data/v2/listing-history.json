@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-07-17T08:04:05.517Z",
+ "builtAt": "2026-07-20T08:52:07.838Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
   "delisted": 1968,
   "sold": 1252,
-  "active": 65,
+  "active": 66,
   "unknown": 3
  },
  "live_listings_missing_create": [],
- "count": 3288,
+ "count": 3289,
  "records": [
   {
    "token_id": "1764",
@@ -64681,17 +64681,26 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "E0E450C5A229872D33E0950B8C120C7CB359865BE41C0A49C47E311B58317F51",
-   "mkt_event_attrs": {
-    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
-    "action": "list_nft",
-    "listing_id": "445",
-    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "50000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "2852",
-    "msg_index": "0"
-   }
+   "create_tx": "E0E450C5A229872D33E0950B8C120C7CB359865BE41C0A49C47E311B58317F51"
+  },
+  {
+   "token_id": "1034",
+   "marketplace": "BBL",
+   "listing_ref": "17835",
+   "seller": "terra1u5mrfn4kjk0kaa26p6a8vu8kdra8phucdxamdg",
+   "segments": [
+    {
+     "price": "1000000000",
+     "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+     "from_ts": "2026-07-20T02:49:24Z",
+     "from_height": 21989672,
+     "to_ts": null,
+     "end_reason": "still_listed"
+    }
+   ],
+   "listing_type": "buy_now",
+   "outcome": "active",
+   "create_tx": "3310AD1BAD043D8A580C152F7D1DF1FFD25B6E9435E275CA15E96ADE2683EDA4"
   }
  ],
  "updatedBy": "nft-forward-incremental.js"
