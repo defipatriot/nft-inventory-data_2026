@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-07-20T02:30:24.756Z",
-  "capturedAtUnix": 1784514624756,
+  "capturedAt": "2026-07-20T02:45:20.777Z",
+  "capturedAtUnix": 1784515520777,
   "epoch": 195,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -24,16 +24,16 @@
   "enterprise_staked_count": 403,
   "enterprise_dao_broken_count": 100,
   "daodao_staked_count": 1630,
-  "daodao_pending_claim_count": 47,
+  "daodao_pending_claim_count": 46,
   "bbl_listed_count": 43,
   "atrium_listed_count": 19,
   "boost_listed_count": 4,
-  "user_held_count": 1052,
+  "user_held_count": 1053,
   "daodao_staked_broken_count": 50,
   "user_held_broken_count": 26,
   "minted_count": 4172,
   "dao_held_count": 5828,
-  "user_liquid_count": 1052,
+  "user_liquid_count": 1053,
   "unique_holders": 754,
   "dao_members_count": 155,
   "non_custody_holders_count": 749,
@@ -41,7 +41,7 @@
   "per_owner_counts": {
     "terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv": 503,
     "terra1h8psjgcsg9fef7w2yv0j6262sfcaszj8vs4tsy3uwla6zwtaspvqrp4l7v": 898,
-    "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47": 1651,
+    "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47": 1650,
     "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm": 5828,
     "terra1yct7ls8kw3x2ucm66rxg7mgtyvw7kr5v4t4xsx": 257,
     "terra1jpqphvz2d24ys4z8llwh643yj94ksc4rxfda0e": 4,
@@ -108,6 +108,7 @@
     "terra1vadhy6kc8c4p9lt93nvkvv8uxrwv5daemgjd2h": 1,
     "terra1v88w8gdsqqjgkwatd4mg5yp7g6ada80gdd8zvt": 1,
     "terra14sel4a2dm5a986dgf6wvkzk2lqfq3me72v8fy7": 2,
+    "terra1u5mrfn4kjk0kaa26p6a8vu8kdra8phucdxamdg": 1,
     "terra103nkswnxykepke9h2l970y7s9uyuh3k3mljfup": 1,
     "terra1ettjrqla8cpmx0wvdurjynn7776gurx5ywfufx": 4,
     "terra1lek6syqjr3gmuzxv5wa2kewpl92kccp3u5a5e9": 1,
@@ -1158,9 +1159,9 @@
     "ampluna_balance": 820067.275182,
     "per_nft_ampluna": 92.06997588211519,
     "unbroken_count": 8907,
-    "ampluna_usd": 0.10220825021944044,
-    "treasury_value_usd": 83817.64,
-    "per_nft_value_usd": 9.4103
+    "ampluna_usd": 0.10159092498854948,
+    "treasury_value_usd": 83311.39,
+    "per_nft_value_usd": 9.3535
   },
   "marketplaces": {
     "bbl": {
@@ -1171,7 +1172,7 @@
           "count": 42,
           "total": 225180,
           "min": 1000,
-          "total_usd": 18319.414979999998
+          "total_usd": 18208.767976000003
         }
       }
     },
@@ -1183,7 +1184,7 @@
           "count": 19,
           "total": 7985,
           "min": 10,
-          "total_usd": 8124.882854999999
+          "total_usd": 8115.7201319999995
         }
       }
     },
@@ -1195,23 +1196,23 @@
           "count": 3,
           "total": 57200,
           "min": 2200,
-          "total_usd": 2629.264924
+          "total_usd": 2613.384488
         },
         "ampLUNA": {
           "count": 1,
           "total": 3000,
           "min": 3000,
-          "total_usd": 306.624751
+          "total_usd": 304.772775
         }
       }
     }
   },
   "daodao_pending_claim": {
-    "count": 20,
-    "tracked": 47,
+    "count": 19,
+    "tracked": 46,
     "reconciled": false,
     "active_staked": 1631,
-    "custody": 1651,
+    "custody": 1650,
     "unstake_window_seconds": 604800,
     "in_window": [],
     "claimable": [
@@ -1226,12 +1227,6 @@
         "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
         "unstaked_at": "2026-05-27T16:44:00Z",
         "release_at": "2026-06-03T16:44:00.000Z"
-      },
-      {
-        "token_id": 1034,
-        "address": "terra1u5mrfn4kjk0kaa26p6a8vu8kdra8phucdxamdg",
-        "unstaked_at": "2026-07-12T23:56:20Z",
-        "release_at": "2026-07-19T23:56:20.000Z"
       },
       {
         "token_id": 1079,
