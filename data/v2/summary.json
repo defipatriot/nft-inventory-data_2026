@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-07-19T23:45:07.884Z",
-  "capturedAtUnix": 1784504707884,
-  "epoch": 194,
+  "capturedAt": "2026-07-20T00:00:23.885Z",
+  "capturedAtUnix": 1784505623885,
+  "epoch": 195,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
     "dao_main_wallet": "terra1sffd4efk2jpdt894r04qwmtjqrrjfc52tmj6vkzjxqhd8qqu2drs3m5vzm",
@@ -1158,9 +1158,9 @@
     "ampluna_balance": 820067.275182,
     "per_nft_ampluna": 92.06997588211519,
     "unbroken_count": 8907,
-    "ampluna_usd": 0.10218223464042726,
-    "treasury_value_usd": 83796.31,
-    "per_nft_value_usd": 9.4079
+    "ampluna_usd": 0.10080798947347899,
+    "treasury_value_usd": 82669.33,
+    "per_nft_value_usd": 9.2814
   },
   "marketplaces": {
     "bbl": {
@@ -1171,7 +1171,7 @@
           "count": 42,
           "total": 225180,
           "min": 1000,
-          "total_usd": 18314.75205300001
+          "total_usd": 18068.437608
         }
       }
     },
@@ -1183,7 +1183,7 @@
           "count": 19,
           "total": 7985,
           "min": 10,
-          "total_usd": 8119.283380999999
+          "total_usd": 8101.639892000001
         }
       }
     },
@@ -1195,13 +1195,13 @@
           "count": 3,
           "total": 57200,
           "min": 2200,
-          "total_usd": 2628.595684
+          "total_usd": 2593.243796
         },
         "ampLUNA": {
           "count": 1,
           "total": 3000,
           "min": 3000,
-          "total_usd": 306.546704
+          "total_usd": 302.423968
         }
       }
     }
@@ -1213,14 +1213,7 @@
     "active_staked": 1631,
     "custody": 1650,
     "unstake_window_seconds": 604800,
-    "in_window": [
-      {
-        "token_id": 1034,
-        "address": "terra1u5mrfn4kjk0kaa26p6a8vu8kdra8phucdxamdg",
-        "unstaked_at": "2026-07-12T23:56:20Z",
-        "release_at": "2026-07-19T23:56:20.000Z"
-      }
-    ],
+    "in_window": [],
     "claimable": [
       {
         "token_id": 920,
@@ -1233,6 +1226,12 @@
         "address": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
         "unstaked_at": "2026-05-27T16:44:00Z",
         "release_at": "2026-06-03T16:44:00.000Z"
+      },
+      {
+        "token_id": 1034,
+        "address": "terra1u5mrfn4kjk0kaa26p6a8vu8kdra8phucdxamdg",
+        "unstaked_at": "2026-07-12T23:56:20Z",
+        "release_at": "2026-07-19T23:56:20.000Z"
       },
       {
         "token_id": 1079,
