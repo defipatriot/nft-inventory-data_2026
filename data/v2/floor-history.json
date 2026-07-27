@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-27T00:10:47.741Z",
+  "updatedAt": "2026-07-27T02:02:23.223Z",
   "caveat": "sales_floor tiers use each token's CURRENT broken flag until broken-at.json lands; avg_days_on_market accrues from first-seen at deploy (2026-06-11), so early values read low.",
   "row_count": 47,
   "rows": [
@@ -1432,31 +1432,31 @@
     },
     {
       "date": "2026-07-27",
-      "capturedAt": "2026-07-27T00:10:47.741Z",
+      "capturedAt": "2026-07-27T02:02:23.223Z",
       "per_tier": {
         "broken": {
           "listed_count": 1,
-          "listing_floor_usd": 9.893971,
+          "listing_floor_usd": 9.919012,
           "sales_floor_usd": 5,
           "sales_floor_n": 5,
-          "avg_days_on_market": 45.97
+          "avg_days_on_market": 46.05
         },
         "base": {
           "listed_count": 62,
-          "listing_floor_usd": 49.469856,
+          "listing_floor_usd": 49.595062,
           "sales_floor_usd": 91.0501,
           "sales_floor_n": 10,
-          "avg_days_on_market": 39.2
+          "avg_days_on_market": 39.28
         },
         "phoenix": {
           "listed_count": 3,
-          "listing_floor_usd": 3470.946474,
+          "listing_floor_usd": 3440.15474,
           "sales_floor_usd": 1213.6727,
           "sales_floor_n": 3,
-          "avg_days_on_market": 45.97
+          "avg_days_on_market": 46.05
         }
       },
-      "backing_per_nft_usd": 9.034,
+      "backing_per_nft_usd": 8.9539,
       "dom_basis": "first_seen",
       "sales_tiering": "current_broken_flag",
       "active_bids": []
