@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "cron": "nft-inventory",
-  "capturedAt": "2026-07-30T00:00:28.006Z",
-  "capturedAtUnix": 1785369628006,
-  "runId": "nft-20260730000028",
-  "runMode": "hot",
+  "capturedAt": "2026-07-30T00:10:24.370Z",
+  "capturedAtUnix": 1785370224370,
+  "runId": "nft-20260730001024",
+  "runMode": "warm",
   "currentEpoch": 196,
   "status": "ok",
   "stats": {
@@ -31,11 +31,11 @@
     "daodao_pending_claim": 19,
     "daodao_pending_claim_records": 46,
     "staker_resolution_errors": 0,
-    "staker_resolution_warnings": 0,
+    "staker_resolution_warnings": 81,
     "listing_resolver_warnings": 15,
     "rev": "C.4",
     "enterprise_unattributed": 81,
     "daodao_pending_reconciled": false
   },
-  "next_expected_run_at": "2026-07-30T00:15:28.006Z"
+  "next_expected_run_at": "2026-07-31T00:10:24.370Z"
 }
