@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-08-01T15:00:53.190Z",
-  "capturedAtUnix": 1785596453190,
+  "capturedAt": "2026-08-01T15:15:26.564Z",
+  "capturedAtUnix": 1785597326564,
   "epoch": 196,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -36,7 +36,7 @@
   "user_liquid_count": 1053,
   "unique_holders": 754,
   "dao_members_count": 155,
-  "non_custody_holders_count": 747,
+  "non_custody_holders_count": 749,
   "enterprise_unattributed_count": 81,
   "per_owner_counts": {
     "terra1e54tcdyulrtslvf79htx4zntqntd4r550cg22sj24r6gfm0anrvq0y8tdv": 503,
@@ -398,7 +398,7 @@
     "terra10kwrzdaxhlp0d4ffr36ds4gkcq8w726dpum2t3": 124,
     "terra1w6zp2xmuup9hm5jszxwzwrx4hdfhcg404jgux3": 1,
     "terra1n8utaly5st5du65fgaqawhrkvm0qrlfws9kymc": 43,
-    "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53": 70,
+    "terra1my2fdaqu523g2vfv72p43wkaaa8lqf0ks2xt53": 72,
     "terra1tgvlyhnqyxgwuw07h986jtnjhkcz72es3u33a9": 21,
     "terra13qjxhnw98lm36rxc9yjakkmulhpv7zctdc5zlz": 51,
     "terra1ha6xxq0gf774v0gvx5cwrwafzsuyu8xcj2505r": 1,
@@ -408,7 +408,7 @@
     "terra1wqv4g0z9v95lcuengwjd9hrqf6jjqckuv4cxnn": 8,
     "terra1hrcurgmgac972nw34nvjrrjc6nr3gny3sg8nay": 1,
     "terra1apeyehuxqzz0c2gegg8p84w25ptqk8u6h39drz": 15,
-    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 280,
+    "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw": 294,
     "terra1qt3r0uvaajpsufx8d02uwq3mfrahmgufkhn6df": 1,
     "terra1xl324wuxrqkpwntzs6guhc757fmrsrx3meyykd": 7,
     "terra15uc26dvk64feg4avzma7mhue982v4pnx5fkpyh": 1,
@@ -465,7 +465,6 @@
     "terra17lapk5p993ugazmv2uuc2wdrn3qveqlh7hklpj": 2,
     "terra1z7h3uvq8nnvuqhj6naa039kexkrkudmpndecqj": 1,
     "terra1th6xu5p2nkzvmpke2n4p66q2wkak67hqeeqlvz": 12,
-    "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 16,
     "terra1kc0sg8a25c83cl6qjhnvp92f0aqdxrwa5d22qg": 2,
     "terra1n28qcuxlm0t94dlky2zny0g7w8vrrklgef7229": 37,
     "terra1cznyrvcu8mjq2jt2c8nr2u9hrek0t26yvps686": 1,
@@ -546,12 +545,12 @@
     "terra1gpqalumaqz97h0nqyqtxf85cwte37l6hps03mt": 10,
     "terra1466ahezuy8r47mvd0qnvcjh8pqy22p9mqkj8sl": 17,
     "terra1dfhtfjemtx7gxe6z2psqa3e497enu5hg55ww6y": 3,
+    "terra1wpg32jhp3qnaguyayy6phxhz3kpv2c6reg9lta": 3,
     "terra186mfgpxxqlum7ry9afus476pk4nkvrg8r336rn": 1,
     "terra1lrkkac0q30uzd783cqw47k9u35snamqpx2xk4z": 1,
     "terra1nrt0tcqc3kazztzfhyd2pf9q59p49ywu9g36w8": 4,
     "terra1dguyh7wldv5h47c05vx9dq3lcg2enf5jzp22kz": 1,
     "terra1stm6tqdd99lrp825hvj5ye2alsurz6f7slmp24": 2,
-    "terra1kj7pasyahtugajx9qud02r5jqaf60mtm7g5v9utr94rmdfftx0vqspf4at": 4,
     "terra147fz7g9dk54k0snqp95uyzl0h66ecpu393uq8v": 1,
     "terra1uyde6vtjju24xgeuk23aw2u9vwn2eutvne4gae": 1,
     "terra1r8w7rvsg6j2c22jdq0jp02cgyspa7r5hzc95zk": 1,
@@ -602,6 +601,7 @@
     "terra1kge6x0q9vxtpg23y7plrn6jatp2vfenqwh7gev": 1,
     "terra1l69w6prvxdnapgxgcl4qnq9stuvwkqhxswqzuf": 2,
     "terra1uaxwcjuswy60cvr2lknks2j6kpwpqqhnuxlvu3": 3,
+    "terra1rxewq5ksxqp2skt9cdpvnuajvspn6eevczcctv": 1,
     "terra1r086c539nhw5t6khsjy3xe9x3s9f6l5v9rdz9x": 3,
     "terra149k2mdz7qn7uqapf3gex604aemvpr5d0yn4wpf": 1,
     "terra1990e6944k5rpa9hz6x8vwcqa02ad6e036qmrsd": 8,
@@ -787,7 +787,6 @@
     "terra1sp0dd9w0cqcdwnex6rh56zl9rg224thl7n0lz3": 1,
     "terra1y7fju2etkhzjl2pq9ph8thc0rmeldc2486aa86": 3,
     "terra1prvu504eea5jms2pkzsc8dp5kscvjgwf6mvtw0": 1,
-    "terra1wpg32jhp3qnaguyayy6phxhz3kpv2c6reg9lta": 1,
     "terra18ryugmgvztqt0pmr923cens6h52va08ujnlzdj": 1,
     "terra1q6k3l4kxduv9q7yxzse6ng9ytnhym9e5pvy0fk": 1,
     "terra1lquf92zhukyksj0746tt0hefy77l2vjyumttd6": 3,
@@ -1052,6 +1051,7 @@
     "terra1m2dxgcpn5zmj9xa0uxvpz8ylzj4spfw7m3sjxx": 1,
     "terra1ex0ls373fdw3uufackgfedpfd2yqp9p9n7uyz9": 1,
     "terra1emlrtly8pgrkjzq7hz5xem28842nu0nghmhh80": 1,
+    "terra1t2v52y6sazlewjpxg6vdy62u9dn23txl7hrn8m": 1,
     "terra15g99s0ya7cr2nvw6kpfua7ue553dkkwsmy5e4l": 1,
     "terra136epuvkjuz0y4rqs07a4f59va9rhypp8lxck4s": 1,
     "terra1tj469256t6utfkqsfnttcdl67dctxk7cag7nfw": 1,
@@ -1155,7 +1155,14 @@
     "terra15zpetcnjmg5p53na6rvyp6vvm7gnf0qcfrn8p9": 1,
     "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 1
   },
-  "backing": null,
+  "backing": {
+    "ampluna_balance": 830253.586686,
+    "per_nft_ampluna": 93.21360578039744,
+    "unbroken_count": 8907,
+    "ampluna_usd": 0.0932579007097988,
+    "treasury_value_usd": 77427.71,
+    "per_nft_value_usd": 8.6929
+  },
   "marketplaces": {
     "bbl": {
       "count": 42,
@@ -1170,21 +1177,41 @@
       }
     },
     "atrium": {
-      "count": 0,
-      "count_resolved": 0,
-      "by_token": {}
+      "count": 19,
+      "count_resolved": 19,
+      "by_token": {
+        "SOLID": {
+          "count": 19,
+          "total": 7985,
+          "min": 10,
+          "total_usd": 7991.498230999999
+        }
+      }
     },
     "boost": {
-      "count": 0,
-      "count_resolved": 0,
-      "by_token": {}
+      "count": 4,
+      "count_resolved": 4,
+      "by_token": {
+        "LUNA": {
+          "count": 3,
+          "total": 57200,
+          "min": 2200,
+          "total_usd": 2374.7472319999997
+        },
+        "ampLUNA": {
+          "count": 1,
+          "total": 3000,
+          "min": 3000,
+          "total_usd": 279.773702
+        }
+      }
     }
   },
   "daodao_pending_claim": {
-    "count": 46,
+    "count": 19,
     "tracked": 46,
-    "reconciled": null,
-    "active_staked": null,
+    "reconciled": false,
+    "active_staked": 1631,
     "custody": 1650,
     "unstake_window_seconds": 604800,
     "in_window": [],
@@ -2244,7 +2271,1100 @@
       "voting_power_pct": 0.06131207847946045
     }
   ],
-  "enterprise_stakers": [],
+  "enterprise_stakers": [
+    {
+      "address": "terra1nn7yrgjzj6zvle7ms9vlpg4cj3kaxjls4g6ugw",
+      "count": 100
+    },
+    {
+      "address": "terra1cry3unp2h9jhhxdskzvwyetuzjpcezfqnfds20",
+      "count": 9
+    },
+    {
+      "address": "terra1kht0pj9064mc9w94y4mg4eny8yvspc68fwdxm5",
+      "count": 6
+    },
+    {
+      "address": "terra1f73eyq3a3zq52sq5ul5jmjh85xnux6agjkypsw",
+      "count": 5
+    },
+    {
+      "address": "terra1srj2fh6w5qjxpjsrv8rndxrvx3jgu0h84huh2p",
+      "count": 5
+    },
+    {
+      "address": "terra15wqx0a088hngpcc5ckfhp2k6uy56h5jq69gqml",
+      "count": 4
+    },
+    {
+      "address": "terra1pxuver865uwuffk43upunt05rzmvw7syxlw38z",
+      "count": 4
+    },
+    {
+      "address": "terra10nyxzaz32hx7durcpfr3lxrr5c0nkhvgf7436f",
+      "count": 3
+    },
+    {
+      "address": "terra13g40yedrn7y6mgrv5artasxt8sj2nlat2z3nux",
+      "count": 3
+    },
+    {
+      "address": "terra1dfhtfjemtx7gxe6z2psqa3e497enu5hg55ww6y",
+      "count": 3
+    },
+    {
+      "address": "terra1yu076nvjakk759r9tlsnhhtvnyn3addq60ush0",
+      "count": 3
+    },
+    {
+      "address": "terra10ep3rpmjjhumzeglgxfd9zs5cmt5awxhyjsrte",
+      "count": 2
+    },
+    {
+      "address": "terra15heeg7rt6j5kywqx49r2yfez5crjggj78y6yx0",
+      "count": 2
+    },
+    {
+      "address": "terra17g9tpu0u6hpukmvsa2uj200jmvrnl8pfdcevzl",
+      "count": 2
+    },
+    {
+      "address": "terra17scjzhn9s2pv867j4hple2l367h8ggcvw53ewr",
+      "count": 2
+    },
+    {
+      "address": "terra180zkrg7grjp6ffxqljsx3xnagg3fzem8ydccza",
+      "count": 2
+    },
+    {
+      "address": "terra19pl6u08wzdxzxw8y8r2mwj5qd58zgrxhtxg7aq",
+      "count": 2
+    },
+    {
+      "address": "terra1dzvlltcs6fg9hldtnykgm7fre4j8j5z6w5wrjd",
+      "count": 2
+    },
+    {
+      "address": "terra1hppefqufuetxkyzhvrmw5p27kh3myyzrac6tn3",
+      "count": 2
+    },
+    {
+      "address": "terra1jt40yaa0yw9zcdk5wsnhwuyjcf5kwsjrn830kc",
+      "count": 2
+    },
+    {
+      "address": "terra1kc0sg8a25c83cl6qjhnvp92f0aqdxrwa5d22qg",
+      "count": 2
+    },
+    {
+      "address": "terra1m9f0kqmuakcr2ww8a0xeeuuz8z4qenwdrqzfa8",
+      "count": 2
+    },
+    {
+      "address": "terra1stm6tqdd99lrp825hvj5ye2alsurz6f7slmp24",
+      "count": 2
+    },
+    {
+      "address": "terra1wcu4z49ma9mfs57t5h2nvdjvs6jqdls2fq3y5x",
+      "count": 2
+    },
+    {
+      "address": "terra1x5n6qrd4kmqasft9mcelvn6ansurx26h0fp4pm",
+      "count": 2
+    },
+    {
+      "address": "terra1zrcmjmwfwdp4e8leasjavlhyaj5rrn86lcjqeg",
+      "count": 2
+    },
+    {
+      "address": "terra100z53uewr78uz8396pnpr3dkfhq5cvvzpx7z0t",
+      "count": 1
+    },
+    {
+      "address": "terra102q2r9w8fpg0fwzhdd8shyudj0jmy8zrqq07jq",
+      "count": 1
+    },
+    {
+      "address": "terra1072q7txl66nc5zfyexe0wk3m6w05jy88arnra4",
+      "count": 1
+    },
+    {
+      "address": "terra107t3dtcg48jhzrau75jlf0s9vdj0xcfndtkyzq",
+      "count": 1
+    },
+    {
+      "address": "terra108ucngf04nsl7kqdqaapwhaglvhh9jck2xwm0z",
+      "count": 1
+    },
+    {
+      "address": "terra10g0cnzfpyerxjq266zku5yd6qpes7qm4zmxy32",
+      "count": 1
+    },
+    {
+      "address": "terra10hjyx8gfacrvhe26a376kdnf4jcedvvxajezhg",
+      "count": 1
+    },
+    {
+      "address": "terra10vzh4razhkg8nh3fse6djmr5wvkafw3xn9wk58",
+      "count": 1
+    },
+    {
+      "address": "terra10zwqf55neauxzkhs7euxw5rz09cgmgcvnx7m7z",
+      "count": 1
+    },
+    {
+      "address": "terra120zpz9espst5j6tj6e6tswjz75uw2h7jyum792",
+      "count": 1
+    },
+    {
+      "address": "terra12629f3upv4ltattegp6tzc7uwssq5wfdy7824f",
+      "count": 1
+    },
+    {
+      "address": "terra127w0ms630ay6j05cyufqmsnfp48nyxxnt2yuw6",
+      "count": 1
+    },
+    {
+      "address": "terra1288lm729k978rp0du64sjjgpawhc2s3ls8408g",
+      "count": 1
+    },
+    {
+      "address": "terra129qed4tt7z3q9zdu7k7x7sx9m6m2zzflag47g9",
+      "count": 1
+    },
+    {
+      "address": "terra12cs22gtcfz6rll4x6dq4fr8gmfs79jyzdduwqf",
+      "count": 1
+    },
+    {
+      "address": "terra12p7kj9nfk69c3rkqsxkva9dukfvxner44f5yah",
+      "count": 1
+    },
+    {
+      "address": "terra12uvu7llj7ufugvaqt6lfxegfgexaf4wf84nj73",
+      "count": 1
+    },
+    {
+      "address": "terra135p6w8ym676rqufsfmyd0m0du8vuv3wwguktyd",
+      "count": 1
+    },
+    {
+      "address": "terra136epuvkjuz0y4rqs07a4f59va9rhypp8lxck4s",
+      "count": 1
+    },
+    {
+      "address": "terra136nvt37q5wysvc43t7ugt06a8c8q98dhfhaxfh",
+      "count": 1
+    },
+    {
+      "address": "terra13du88jm8d2dj5t0ywqetzq0qq7jng8vx65f2tt",
+      "count": 1
+    },
+    {
+      "address": "terra13xglkt9unan88zaqe49n58fmq76efzhysqcyqv",
+      "count": 1
+    },
+    {
+      "address": "terra13xl2kg2ew04jhtaa0uhm4rqudqzv0j3pdda73q",
+      "count": 1
+    },
+    {
+      "address": "terra13zf6xx2avlragrtr25eayhj5um07ydfq774ckp",
+      "count": 1
+    },
+    {
+      "address": "terra14699gz5n4djwcdl4wc8zvqzcn3yftgx4zmk64s",
+      "count": 1
+    },
+    {
+      "address": "terra147fz7g9dk54k0snqp95uyzl0h66ecpu393uq8v",
+      "count": 1
+    },
+    {
+      "address": "terra148fwvg8patygfjvluypujavq05e8n6tr8qrayf",
+      "count": 1
+    },
+    {
+      "address": "terra149k2mdz7qn7uqapf3gex604aemvpr5d0yn4wpf",
+      "count": 1
+    },
+    {
+      "address": "terra14j6ctamzh62ukxq2d0r8prtqtvkfqvt5xerjyp",
+      "count": 1
+    },
+    {
+      "address": "terra14kgu4hlug2c8gjdxkt35pqe3jgdcm3wr55gazs",
+      "count": 1
+    },
+    {
+      "address": "terra14pc54y8nnqc8tgxjtdld23cx4az70jxf94gs2x",
+      "count": 1
+    },
+    {
+      "address": "terra14r8h48mfw32n564zxqdddxl3t99a8pxkct5fs7",
+      "count": 1
+    },
+    {
+      "address": "terra14serep5hdgqwaqtyn4h8z8vrakpell337mtvtc",
+      "count": 1
+    },
+    {
+      "address": "terra14tgtnkawmjye7a2hkkxddtr4fhet5z46z6tmt8",
+      "count": 1
+    },
+    {
+      "address": "terra155k5surjxg09qrkzlf9xjr6u4kfelmy26cscss",
+      "count": 1
+    },
+    {
+      "address": "terra15936akdg8q3e6ezc4wgsk8t8r009e55rygshpt",
+      "count": 1
+    },
+    {
+      "address": "terra15cv79l30u8sjml2jr5q0ca0kwm3ah0ej80q5uy",
+      "count": 1
+    },
+    {
+      "address": "terra15g99s0ya7cr2nvw6kpfua7ue553dkkwsmy5e4l",
+      "count": 1
+    },
+    {
+      "address": "terra15k5je80veu4ksaxcrxvlrhpury66rkjvaeud6x",
+      "count": 1
+    },
+    {
+      "address": "terra15trmnvmm07pxhvc6hed9dl527h47dnuxee065s",
+      "count": 1
+    },
+    {
+      "address": "terra15uc26dvk64feg4avzma7mhue982v4pnx5fkpyh",
+      "count": 1
+    },
+    {
+      "address": "terra15vmdeefkvxllsquqgdvkjuc3fctde3djgmd2hv",
+      "count": 1
+    },
+    {
+      "address": "terra167jx0cs890ak7ktrcfzrm95ynvdw0hn8e4e622",
+      "count": 1
+    },
+    {
+      "address": "terra167p0s9dcxrg0qltud87fep6aevks3qxrlrx9ag",
+      "count": 1
+    },
+    {
+      "address": "terra16hhxa4x0n04q59fcjcgdg7rd49a2j0r3a209ul",
+      "count": 1
+    },
+    {
+      "address": "terra16hq4vswe6gydxq5svehzfaq7qwj5kesc6vt280",
+      "count": 1
+    },
+    {
+      "address": "terra16srpvaerzt84jln7x23qyr4lp5eqcpmm6hhdam",
+      "count": 1
+    },
+    {
+      "address": "terra170zy2s4x8suwyht5t0z94wspcchnl7lckn5wjw",
+      "count": 1
+    },
+    {
+      "address": "terra173cz3gl2e94ceqj7vfpua4phwx7uen9efxkpqd",
+      "count": 1
+    },
+    {
+      "address": "terra174yc9k2d3r2afm5pz6agtnggk82e2lvvfvs5c9",
+      "count": 1
+    },
+    {
+      "address": "terra175vgxxdqem93hnemuyq7jku5v7ummsj3drnv5f",
+      "count": 1
+    },
+    {
+      "address": "terra17nq7lgc3y67a37pyf0ljnlec9cr2906fpl9psr",
+      "count": 1
+    },
+    {
+      "address": "terra17q0rrhtjq7a4wgqwqfy3c07hjvj0kdxxsc0ka3",
+      "count": 1
+    },
+    {
+      "address": "terra17u3f9nvx6u6mczwjv9cy2fql6u893yckvuk9wt",
+      "count": 1
+    },
+    {
+      "address": "terra1822q0kxy2l3jmdcx8ns5a2ztf79lalvuln2rky",
+      "count": 1
+    },
+    {
+      "address": "terra18728r0aqctelew3zs5xpadq8xkxxjd968ahphf",
+      "count": 1
+    },
+    {
+      "address": "terra187zk78lq8t2ga448l8l99dmu4ykp3ylfffdshh",
+      "count": 1
+    },
+    {
+      "address": "terra18da60z6n6j6uhec5vsnxnpmdxkq5ps3deq2te3",
+      "count": 1
+    },
+    {
+      "address": "terra18dzdhjkn37wvjej98qa0xrxk5n0ygk0me8uh2n",
+      "count": 1
+    },
+    {
+      "address": "terra18q8f9e4j8kgwfjjx50gxq86uctg94l0450rcwf",
+      "count": 1
+    },
+    {
+      "address": "terra18xwae94yafekmfecn2rn8rnl38ezt2msl99ngz",
+      "count": 1
+    },
+    {
+      "address": "terra19me65np9zchq5ppps82ay2k08dt0yj88f0r3cf",
+      "count": 1
+    },
+    {
+      "address": "terra19syl0vgj528j9z6zdj9drxs4pn6lv99uu8hajl",
+      "count": 1
+    },
+    {
+      "address": "terra19tv7ulgprauyy2cu9fslhvqtrnz3jvahn9mwn2",
+      "count": 1
+    },
+    {
+      "address": "terra19uwr2arrn3kjlfw3594zql9jr8f9nss5vayul2",
+      "count": 1
+    },
+    {
+      "address": "terra19zkkfm59w2pa8q89477vqw6fmzjqhu7sstd52r",
+      "count": 1
+    },
+    {
+      "address": "terra1a6zgs892aq4z5x2ahrcy95utxcjhutkurzc2m5",
+      "count": 1
+    },
+    {
+      "address": "terra1a9dhfdrlllqdl77mksw0xpr3w0lhlswvjr025k",
+      "count": 1
+    },
+    {
+      "address": "terra1ajr49zhtnujesnqc4pcmdfzl4hquf5285ypvdg",
+      "count": 1
+    },
+    {
+      "address": "terra1aky4257p45k0cayvuzrqk5v89x0uslyts8vas4",
+      "count": 1
+    },
+    {
+      "address": "terra1amjt3drhwntkpcpqnmvu60mdau0r5mepdqlau6",
+      "count": 1
+    },
+    {
+      "address": "terra1ancz4qt92z4hzzj2q3gfpxvzsxrj89azu95lzj",
+      "count": 1
+    },
+    {
+      "address": "terra1aq2a00qg7qmhd8gf3w7jtn8hgrjpt4swzqrema",
+      "count": 1
+    },
+    {
+      "address": "terra1au4g0xkhe63zevhf3h7uk0j6cqkfrkfq4cvds0",
+      "count": 1
+    },
+    {
+      "address": "terra1ausn25cpuqr558zjcn65zel6gj5fvys0ync22k",
+      "count": 1
+    },
+    {
+      "address": "terra1avtwjk5xeszvxd9hvwqlxvtvv3c7yf6qfydp6k",
+      "count": 1
+    },
+    {
+      "address": "terra1axjenrjrqyxuec2s8pr2y574n4j4zp3z5y50s8",
+      "count": 1
+    },
+    {
+      "address": "terra1azd6zsand20tdznge8246lplsy2hp88er5azu6",
+      "count": 1
+    },
+    {
+      "address": "terra1c3q6eu4nwyw55y95mvhm86xwrdgp9vzddlf22j",
+      "count": 1
+    },
+    {
+      "address": "terra1c5ghlxrh2xhnj32sajven0avkuf4r4ejavnkvj",
+      "count": 1
+    },
+    {
+      "address": "terra1c6g84yzxgstj4jwhjm9ya9j5u4lf6sfpg7cepg",
+      "count": 1
+    },
+    {
+      "address": "terra1caz7un0vtg8ffalrtehvfjkpddk38jwmkun64k",
+      "count": 1
+    },
+    {
+      "address": "terra1cl0xj9acpcr7wkmpp2uwaye24drgwkmr9wsag2",
+      "count": 1
+    },
+    {
+      "address": "terra1cuuy0v7yczxxu2pvtuvv77k4ethj33keyu4n7y",
+      "count": 1
+    },
+    {
+      "address": "terra1cwmsseep6fnckt753nlxg5cz6x9hh7utfkzkpd",
+      "count": 1
+    },
+    {
+      "address": "terra1cznyrvcu8mjq2jt2c8nr2u9hrek0t26yvps686",
+      "count": 1
+    },
+    {
+      "address": "terra1d2800anenxq899kptt2gme8mhy7cgrj3ppsjp9",
+      "count": 1
+    },
+    {
+      "address": "terra1d8uurn9cdycvg0q992d5d9536h4fx2k7cpfkge",
+      "count": 1
+    },
+    {
+      "address": "terra1daw90dhgh652wjpcz2dtwc6k09lc2mn3j36tk5",
+      "count": 1
+    },
+    {
+      "address": "terra1dc7h5wtyh9x2glpv4c20hk3d4vf6jlxmp8zrlc",
+      "count": 1
+    },
+    {
+      "address": "terra1dg0tq4sc6e9eldayr29klfcspy06s062r6eskv",
+      "count": 1
+    },
+    {
+      "address": "terra1dguyh7wldv5h47c05vx9dq3lcg2enf5jzp22kz",
+      "count": 1
+    },
+    {
+      "address": "terra1dk485cjydmd8q4g04mc2u74j0uwftxg8e32ypr",
+      "count": 1
+    },
+    {
+      "address": "terra1dmzj3tegc472gl6n8yd0ttcjt8n2grftwydg86",
+      "count": 1
+    },
+    {
+      "address": "terra1dv982f7wm7czfjva6x4v02naj56qs9efcyd0ez",
+      "count": 1
+    },
+    {
+      "address": "terra1e2c6mvm0f7zk5jj8g55sjtdqkng5mw8mp2gxzc",
+      "count": 1
+    },
+    {
+      "address": "terra1e3r0eezgjsfkk0pwlyhr4rlaz5n8yfp8qpnqgp",
+      "count": 1
+    },
+    {
+      "address": "terra1e6p930wzfena6n7c5qkcvv3rckguuevmsy9rjz",
+      "count": 1
+    },
+    {
+      "address": "terra1ehal8xp0m9teqn3fsyf9xzqc9fk030gc45fjse",
+      "count": 1
+    },
+    {
+      "address": "terra1emc2kzqefwgasyq48qr7q3p7gjjlw4cd9a8t7s",
+      "count": 1
+    },
+    {
+      "address": "terra1ewxqzej62khpv3w25k87exgrfcr300auu4s8ux",
+      "count": 1
+    },
+    {
+      "address": "terra1exmn56ehyp36qaq79f53smkwn3rq0udjj6k5yv",
+      "count": 1
+    },
+    {
+      "address": "terra1eyz7rha6jnr55jcxaq7h5pukmt9tdzmvvnf6tq",
+      "count": 1
+    },
+    {
+      "address": "terra1f2mvwhq387qpz4mamkvy8sfx6kxzguf3eymdl0",
+      "count": 1
+    },
+    {
+      "address": "terra1f8u4vxkmdkmgmgawxpwve9xca8sh0qz7qxftpq",
+      "count": 1
+    },
+    {
+      "address": "terra1fcsvy758ymnhkhu5x5y2pudjev4tt824jk0d63",
+      "count": 1
+    },
+    {
+      "address": "terra1fh3n9hxw2h4nqaeu2ecas0eu4espcnvevpcljf",
+      "count": 1
+    },
+    {
+      "address": "terra1fje0f2545j8fjceqwum4nw4rcgfruqlhk8jyl3",
+      "count": 1
+    },
+    {
+      "address": "terra1fntz556dg6chvzkv8jv83mddfanqnku33ytr32",
+      "count": 1
+    },
+    {
+      "address": "terra1fqvqhj0ar75e0z0knhwjuzlejp5qw2kwq6y2j8",
+      "count": 1
+    },
+    {
+      "address": "terra1ftfwst6fe3e8zlnjlwrp5vmnsf0246wr56x3q7",
+      "count": 1
+    },
+    {
+      "address": "terra1fxymqd60rgfxq62et07hgavxvy7ghvuqm7e6md",
+      "count": 1
+    },
+    {
+      "address": "terra1fyt6ttm2wcqhnrem0vqqc9t42mkx9udgagccf6",
+      "count": 1
+    },
+    {
+      "address": "terra1g65cpke0qga6kk7c54rmynl9kyk80hxdy8usx9",
+      "count": 1
+    },
+    {
+      "address": "terra1g68kxu93k62v0ycf0a5j9d48hknffkgz7t3al3",
+      "count": 1
+    },
+    {
+      "address": "terra1galsk2gqf9c3zjvuukkg4apn305ht5xemax88j",
+      "count": 1
+    },
+    {
+      "address": "terra1gfnldc5awsvaysudekzgzrqze3e0denqzkfeex",
+      "count": 1
+    },
+    {
+      "address": "terra1ghfll96w20dvgul4v6yar7heqe0pehrw6s78w6",
+      "count": 1
+    },
+    {
+      "address": "terra1gpyztc00z2xvchkhleetckc605a03wm9ryegkk",
+      "count": 1
+    },
+    {
+      "address": "terra1gxcfdsl9fjc6k9s3t7v4wyyaydwe7vjpyfhgy6",
+      "count": 1
+    },
+    {
+      "address": "terra1h5nhs45njqkqcp7f43kpzwk2weaszltwt5772d",
+      "count": 1
+    },
+    {
+      "address": "terra1hj4rhth55vnlufug0da4p7qxw4yc3gzxs4xnkk",
+      "count": 1
+    },
+    {
+      "address": "terra1hn0pywa94a6vn7x046dl0dpvsz9mptvzemq6lm",
+      "count": 1
+    },
+    {
+      "address": "terra1hr7svdp2rga9vf3ry95sx7g5wyspgwmg94qac8",
+      "count": 1
+    },
+    {
+      "address": "terra1hzsem376yhguf406dq7qj0a203a6y2527zmkpd",
+      "count": 1
+    },
+    {
+      "address": "terra1j6astpat66aackwxl7ys38yv3azs40ynmsljt2",
+      "count": 1
+    },
+    {
+      "address": "terra1jkr0yl00yjzqd04strw72ky5yju0muemwkv0qa",
+      "count": 1
+    },
+    {
+      "address": "terra1jltqf27jd8x9nxeanvxcqjhy03zaz7tsaf525p",
+      "count": 1
+    },
+    {
+      "address": "terra1jvars4tut99n2pppmcxjxfh0x8fydpdjxfuuzq",
+      "count": 1
+    },
+    {
+      "address": "terra1k0p5flc2ltw38xtc8xkq3ylum4g4s77ny38ne5",
+      "count": 1
+    },
+    {
+      "address": "terra1k42pc4kt0227atraaxtnwkzd83sjj550zt26m3",
+      "count": 1
+    },
+    {
+      "address": "terra1k6gx7le2slz4ecmkjptdmxrycc4rnaz2tywz2g",
+      "count": 1
+    },
+    {
+      "address": "terra1k8qpzglnxz7hgk0yhkn33hm2zfr2pfqd2sp8sj",
+      "count": 1
+    },
+    {
+      "address": "terra1kc9rnjn09h5gqwj9cd54elejgvkxf6evv00p5l",
+      "count": 1
+    },
+    {
+      "address": "terra1kge6x0q9vxtpg23y7plrn6jatp2vfenqwh7gev",
+      "count": 1
+    },
+    {
+      "address": "terra1kpk46lk4tr8ekqzaxl9045weq3l2lu8yc32zd6",
+      "count": 1
+    },
+    {
+      "address": "terra1ktptgs6uucw8wptjv3wjp37qj64hdgjht4fawx",
+      "count": 1
+    },
+    {
+      "address": "terra1kzg3rumt7uwhhrs5ru5rlpmmalz4sx5aeggvez",
+      "count": 1
+    },
+    {
+      "address": "terra1l63rsx8f5ksu9lr4kz9u2edvjg69cc2sxz68g6",
+      "count": 1
+    },
+    {
+      "address": "terra1l69w6prvxdnapgxgcl4qnq9stuvwkqhxswqzuf",
+      "count": 1
+    },
+    {
+      "address": "terra1l8x2ehlq5h2n7xt38rze6tudzqwgnqhsft5qtz",
+      "count": 1
+    },
+    {
+      "address": "terra1l9ttqv09fd3vvnem0j0gmjznfp6nj8gdht2pkn",
+      "count": 1
+    },
+    {
+      "address": "terra1lcs3ut8lse8unm4tf0dl0fdg8xaymwxtdlrclm",
+      "count": 1
+    },
+    {
+      "address": "terra1lpksgpt4ezef6svuq0xckd2cx5fgsgktf5mu2x",
+      "count": 1
+    },
+    {
+      "address": "terra1ls6979kp8n20cu3uqtwuhyuyum7avcgy45r2w9",
+      "count": 1
+    },
+    {
+      "address": "terra1lvrkc5wdrvl5glke6gz72jyf2rh2uxh0azl7c3",
+      "count": 1
+    },
+    {
+      "address": "terra1m2dxgcpn5zmj9xa0uxvpz8ylzj4spfw7m3sjxx",
+      "count": 1
+    },
+    {
+      "address": "terra1mfsxaeq403xlk24jwxgasd7ryektkmv49n9xey",
+      "count": 1
+    },
+    {
+      "address": "terra1mkecdhjl4lnqglkqnm8k9adgyja9kk5dfjxmgu",
+      "count": 1
+    },
+    {
+      "address": "terra1mr0lwy6n9kkgjtdc2hz8aftnq5a7xxnnss98fr",
+      "count": 1
+    },
+    {
+      "address": "terra1mt33vdmvvr6cs227ycj6q6u7lscrq6jzzpnz34",
+      "count": 1
+    },
+    {
+      "address": "terra1mu7mx7j09halwdtrjn4065mdwclhzv074nazsx",
+      "count": 1
+    },
+    {
+      "address": "terra1mytrnr9e5nkeglg5zluesyuhn56mg6t8f2wjp0",
+      "count": 1
+    },
+    {
+      "address": "terra1n6r74w7rarlsppkvdy3tdrh8cn38hzjhxek9uu",
+      "count": 1
+    },
+    {
+      "address": "terra1n9md7f6e0rtwzpynfm3xj6algd2xd539r2keam",
+      "count": 1
+    },
+    {
+      "address": "terra1ncncqvhvwm4lc0yypkvxkss48dwktf45muawm6",
+      "count": 1
+    },
+    {
+      "address": "terra1nfcnj5y7ffvxz4cpqq3e3kk45skcqttcqhujjj",
+      "count": 1
+    },
+    {
+      "address": "terra1ng539293qw49f82l7393pc76rdyw7dn6dgq7g4",
+      "count": 1
+    },
+    {
+      "address": "terra1nhvjgyga4yfkmzv7ts79vu3w2azj6mes0jhccm",
+      "count": 1
+    },
+    {
+      "address": "terra1nk59vdn7x6ftq8qrac7ssr06w2lpx8u3l0tm2x",
+      "count": 1
+    },
+    {
+      "address": "terra1nq6t7l8hw8gyef72sr3d22ypdwa2dgy5e4rw52",
+      "count": 1
+    },
+    {
+      "address": "terra1nry7dkjj7suv270zafpe623dt5en7rgtwu62k5",
+      "count": 1
+    },
+    {
+      "address": "terra1nrzyfqtrhzflkytpghnppxd9jcma2h5n5382dp",
+      "count": 1
+    },
+    {
+      "address": "terra1ntj0vsqdj5xlml70gktejhxm4slxyztq2efrfs",
+      "count": 1
+    },
+    {
+      "address": "terra1nx2vmfs8fk3lwgsar7a93pwfuzk37r34smm8mq",
+      "count": 1
+    },
+    {
+      "address": "terra1p7r58c70dq62u4prl9cyrsn4z07qjyy67cl22v",
+      "count": 1
+    },
+    {
+      "address": "terra1pc4uy6wgnudxsvhdc005grjl8rwdk3zcrxk424",
+      "count": 1
+    },
+    {
+      "address": "terra1pqhptt7stfyfgjzsjx8wu5zwqhtxldmu3f4gu7",
+      "count": 1
+    },
+    {
+      "address": "terra1prvu504eea5jms2pkzsc8dp5kscvjgwf6mvtw0",
+      "count": 1
+    },
+    {
+      "address": "terra1q9qnqjrs36g2xuft3tq89lqepfh4ccwj3ysj35",
+      "count": 1
+    },
+    {
+      "address": "terra1qju60yp8r9l2lj3qhqndsdkly4dgw773826jdd",
+      "count": 1
+    },
+    {
+      "address": "terra1qt3r0uvaajpsufx8d02uwq3mfrahmgufkhn6df",
+      "count": 1
+    },
+    {
+      "address": "terra1qvunvrue4l067qlc392f95hp0fknqlwm4puvtr",
+      "count": 1
+    },
+    {
+      "address": "terra1rctvuyrq4v5treql95ku76654665aqyv8elc73",
+      "count": 1
+    },
+    {
+      "address": "terra1res73mkjw3s64ccn7l2l8yq2um92fqtv42phwn",
+      "count": 1
+    },
+    {
+      "address": "terra1rm75tpta5re49ww3ejzpn52yewe65g0rte6l4q",
+      "count": 1
+    },
+    {
+      "address": "terra1rt63m9gaj0tnh7xx6vuwgun8a9ldmkmr72fzzd",
+      "count": 1
+    },
+    {
+      "address": "terra1rtc38kx96p734x9x3lmqrqqe4w8sl94zlr5xjq",
+      "count": 1
+    },
+    {
+      "address": "terra1rtm76eccc5ka0dd8eac7j2w64qvclr2jkg89q3",
+      "count": 1
+    },
+    {
+      "address": "terra1s44jz4p5vyeql8fk8w97c5egwjrdxvxmp0z9vv",
+      "count": 1
+    },
+    {
+      "address": "terra1smw6mampz4y2k8jxqcp57ktzg9rfnmasq8yeaj",
+      "count": 1
+    },
+    {
+      "address": "terra1sp0dd9w0cqcdwnex6rh56zl9rg224thl7n0lz3",
+      "count": 1
+    },
+    {
+      "address": "terra1ss8wg7huv0lfczts8nhc4tn6uy5zjaper6ewun",
+      "count": 1
+    },
+    {
+      "address": "terra1stnj22sa0rc3p2hz5mz5pjnpyt9re4x48zr6fu",
+      "count": 1
+    },
+    {
+      "address": "terra1t5kvxr0w4fmac9jqv6439vyltp8vludsmnmfsg",
+      "count": 1
+    },
+    {
+      "address": "terra1thzch6f0aalccxa5xjwpntmlplzmxd7u34hjwg",
+      "count": 1
+    },
+    {
+      "address": "terra1tj469256t6utfkqsfnttcdl67dctxk7cag7nfw",
+      "count": 1
+    },
+    {
+      "address": "terra1tjp2r83w4g7l4v95nhzgt2amahlmmxt0h6ppsf",
+      "count": 1
+    },
+    {
+      "address": "terra1tt46n2js33usya78qcmvvrmtyj8su6rhqmvzrx",
+      "count": 1
+    },
+    {
+      "address": "terra1u3lkjkegmc8x2p3eaxadaevlykygnark86jp67",
+      "count": 1
+    },
+    {
+      "address": "terra1u5zjfv30k7ukzvrvqkfd3u9dsu9qx6e6xkguw6",
+      "count": 1
+    },
+    {
+      "address": "terra1u6t4v60y4cu2p4x53zdyr93r42elxj4xwmh7g3",
+      "count": 1
+    },
+    {
+      "address": "terra1u9vatqv6t9w6fmrylspnlmqg45h4jgy70kr52r",
+      "count": 1
+    },
+    {
+      "address": "terra1ue2e0rsddjy4ctud20zzal8a23uyz0ge0yvtgf",
+      "count": 1
+    },
+    {
+      "address": "terra1uehz0w9grag6eydf68g9zyc6r6u4yf88v9jycq",
+      "count": 1
+    },
+    {
+      "address": "terra1ughusa5cxwn8qw5a03zqg45dw97sldmxkgr2dw",
+      "count": 1
+    },
+    {
+      "address": "terra1uhngcccx9f0qmuy7a7ktk2srr4c0le7mpd48v9",
+      "count": 1
+    },
+    {
+      "address": "terra1uhnwq4cpvj2rmx0jz5488ucmztfuwalnhj0h5r",
+      "count": 1
+    },
+    {
+      "address": "terra1up9cmxsqe5gr39n9wlsj4quy0twf7gccznfrqx",
+      "count": 1
+    },
+    {
+      "address": "terra1upu0p6cj5rczqle5fwu4crmr3z9mq6amy7lgyr",
+      "count": 1
+    },
+    {
+      "address": "terra1ur8zs3ckf9nrnd99r6gwg5y9kkhzhl36y723rh",
+      "count": 1
+    },
+    {
+      "address": "terra1v07j0lhetduj8kr2lrfde7mnnkmz3m4tze0v4z",
+      "count": 1
+    },
+    {
+      "address": "terra1v295clcshg04mfsrqc3ggsekxh35u99zyt09y9",
+      "count": 1
+    },
+    {
+      "address": "terra1v2dlv38e6u8q37qhs0c5c360gsusr7p4njmz5f",
+      "count": 1
+    },
+    {
+      "address": "terra1v7w8p27hk6ea9sunjac25sarn3q769zrxzvmnm",
+      "count": 1
+    },
+    {
+      "address": "terra1vdhsasy72z9gt3g77y67pe3jv55694wm9t0y38",
+      "count": 1
+    },
+    {
+      "address": "terra1vejelzded8yhd3hsnvqluuv3kkpjp4gz54px2v",
+      "count": 1
+    },
+    {
+      "address": "terra1vh9gfxra7uvxsqj2z0fs44m684ln939gzmv4hv",
+      "count": 1
+    },
+    {
+      "address": "terra1vkh2plfdllv4n36h8dvrhsc855gmcy0ca3s86w",
+      "count": 1
+    },
+    {
+      "address": "terra1vkmpmy3anc7f0h6jqxmdx7hw0a88rswggu02kh",
+      "count": 1
+    },
+    {
+      "address": "terra1vlwmp6e2waq24rmt72vwjy0kkn8u0tcjvavzuq",
+      "count": 1
+    },
+    {
+      "address": "terra1vqe9xw34mx4s57l8d0h0qzek7s3v58lp5hpd3f",
+      "count": 1
+    },
+    {
+      "address": "terra1w6zp2xmuup9hm5jszxwzwrx4hdfhcg404jgux3",
+      "count": 1
+    },
+    {
+      "address": "terra1wfvxvzhkn4lgphser75h6ljmcw8kdw6vel4970",
+      "count": 1
+    },
+    {
+      "address": "terra1wjcrk8qaz3rm0v846kaldmcxh4slcdm9kpe57m",
+      "count": 1
+    },
+    {
+      "address": "terra1wu39czzmx4lxux89gkmftjck5f2xvt58h3jget",
+      "count": 1
+    },
+    {
+      "address": "terra1wuyuk834pmhx5dnyt90e7r2lqvvl77e2pfdzgm",
+      "count": 1
+    },
+    {
+      "address": "terra1wx5wzqyrc90xm67nzgqdgzy5yvdjpk75gjnws3",
+      "count": 1
+    },
+    {
+      "address": "terra1wx7dhe9f36jlyru4gscp9nqjrpd2wqcvyp05pu",
+      "count": 1
+    },
+    {
+      "address": "terra1wxhfnlkm57g5np29d6yshmk2k89m82lvsy97wh",
+      "count": 1
+    },
+    {
+      "address": "terra1x0njjcge9xykawm7dy48va89vj6wvj77wy3a6k",
+      "count": 1
+    },
+    {
+      "address": "terra1x3a8s2n7f4pdfhvjha8hgd8tehjr69kfjfnv8e",
+      "count": 1
+    },
+    {
+      "address": "terra1x7lf32zghjxksdnftv83y0pskyhf846s0h3nfq",
+      "count": 1
+    },
+    {
+      "address": "terra1xcqcge9fz5tmc68rg6vmjn8kd3cta24cnaa0ku",
+      "count": 1
+    },
+    {
+      "address": "terra1xctfng0j34uwhsgunfjatcuwwkny50rjfsqsxq",
+      "count": 1
+    },
+    {
+      "address": "terra1xcy4vhtes0yv3x3uvt7zwzjrh6gjwfd0cdjeql",
+      "count": 1
+    },
+    {
+      "address": "terra1xda5pp8qzvjezav47ul9g565nl9kuugldr9snj",
+      "count": 1
+    },
+    {
+      "address": "terra1xfq3a2nrnuwdx8dkq58r9q9jsxpe6kadvnam5u",
+      "count": 1
+    },
+    {
+      "address": "terra1y2s4shy0snp007szlqquc5rhj00xw88m7fzrzm",
+      "count": 1
+    },
+    {
+      "address": "terra1y4059q78s3ua85cje49stpyx5f7x574f4nrzgj",
+      "count": 1
+    },
+    {
+      "address": "terra1ycnd0wuqtrpmlennhew3rtrqx3w79rxngfd59m",
+      "count": 1
+    },
+    {
+      "address": "terra1yf89my47ycwd6aegh7xvmnjrlcvdys2wdmazc9",
+      "count": 1
+    },
+    {
+      "address": "terra1ymty07747emnzx6ps4rskdazsq0q8qp86qe4aw",
+      "count": 1
+    },
+    {
+      "address": "terra1ymxu5e9mj50rjr6krnhdxppxu7vrk2wv9jmkaz",
+      "count": 1
+    },
+    {
+      "address": "terra1yqm3qymxrzlm7dlcelw729asw0qnh22fea223h",
+      "count": 1
+    },
+    {
+      "address": "terra1yuf8puncsscvfcnnple8gllj9aygnxmyucsk3m",
+      "count": 1
+    },
+    {
+      "address": "terra1yvsegy8k3gakjz23qq02dzrvkalvl2s9phsvze",
+      "count": 1
+    },
+    {
+      "address": "terra1ywqxqj2kq4azl3k3c5ya3tt0ml5g5jgq9zudv7",
+      "count": 1
+    },
+    {
+      "address": "terra1yxf8dgs86cq8j4537rahngshht2v5kyjz6gz4d",
+      "count": 1
+    },
+    {
+      "address": "terra1yzxve2zqdmf5yrm46cnn2y2fldj0fhrtf5e3gr",
+      "count": 1
+    },
+    {
+      "address": "terra1z0epch6gp9pp0y7jyat4vead5rkypnwg8ddg8x",
+      "count": 1
+    },
+    {
+      "address": "terra1z4635zapfmwvklwtpla8vfz70ndmwq0hu7w23m",
+      "count": 1
+    },
+    {
+      "address": "terra1z75yypurfmnektxkl3v2y7e3xgnutfqc0ngur5",
+      "count": 1
+    },
+    {
+      "address": "terra1z9zy3z7zr3z0u0t8ukk07wr3s0ntgd2d8kuk75",
+      "count": 1
+    },
+    {
+      "address": "terra1zu8733ut3fs0uw76e7kspc3g8nqt3wwmqm49aq",
+      "count": 1
+    },
+    {
+      "address": "terra1zzka8p4m8lrm3zzng0g9njsfwnr7zhqukrzp0j",
+      "count": 1
+    },
+    {
+      "address": "terra1zzzss5c665wtshywnhms3r599vrmyj0t2vmxjv",
+      "count": 1
+    }
+  ],
   "staker_resolution": {
     "mode": "hot",
     "resolved_this_run": false,
