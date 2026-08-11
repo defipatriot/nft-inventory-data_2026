@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-08-11T07:00:26.365Z",
+ "builtAt": "2026-08-11T12:55:39.458Z",
  "volume": {
   "sales_count": 1261,
   "tokens": {
@@ -11,8 +11,8 @@
    "ampLUNA": 1,
    "SOLID": 552
   },
-  "usd_at_sale": 148480.21,
-  "value_today_usd": 16240.12,
+  "usd_at_sale": 148480.22,
+  "value_today_usd": 16240.13,
   "luna_equiv_total": 289505.24,
   "spot_luna_usd": 0.05165883717157952,
   "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
@@ -43,8 +43,8 @@
    "count": 1,
    "tokens": 1,
    "luna_equiv": 0,
-   "notional_usd": 0.09,
-   "value_today_usd": 0.09
+   "notional_usd": 0.11,
+   "value_today_usd": 0.11
   },
   "SOLID": {
    "count": 17,
@@ -98,7 +98,7 @@
    {
     "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
     "count": 222,
-    "notional_usd": 26076.35,
+    "notional_usd": 26076.37,
     "luna_equiv": 112435.97
    },
    {
@@ -553,7 +553,7 @@
   {
    "month": "2025-06",
    "count": 10,
-   "notional_usd": 424.28,
+   "notional_usd": 424.3,
    "luna_equiv": 2554.58
   },
   {
@@ -644,7 +644,7 @@
   "6": 1
  },
  "flips": {
-  "realized_pnl_usd": -3368.36,
+  "realized_pnl_usd": -3368.34,
   "flip_count": 279,
   "top_flips": [
    {
