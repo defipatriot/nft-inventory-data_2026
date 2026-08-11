@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "capturedAt": "2026-08-11T08:45:15.952Z",
-  "capturedAtUnix": 1786437915952,
+  "capturedAt": "2026-08-11T09:00:31.931Z",
+  "capturedAtUnix": 1786438831931,
   "epoch": 198,
   "contracts": {
     "nft": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
@@ -1152,12 +1152,12 @@
     "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj": 1
   },
   "backing": {
-    "ampluna_balance": 837299.582194,
-    "per_nft_ampluna": 94.00466848478725,
+    "ampluna_balance": 838083.555882,
+    "per_nft_ampluna": 94.0926861886157,
     "unbroken_count": 8907,
     "ampluna_usd": 0.0939497849686853,
-    "treasury_value_usd": 78664.12,
-    "per_nft_value_usd": 8.8317
+    "treasury_value_usd": 78737.77,
+    "per_nft_value_usd": 8.84
   },
   "marketplaces": {
     "bbl": {
