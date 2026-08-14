@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-08-13T18:58:25.272Z",
+ "builtAt": "2026-08-14T01:39:43.515Z",
  "source": "bbl-sales-backfill.js (settle events, aDAO)",
  "marketplace": "BBL",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
