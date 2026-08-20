@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-08-20T12:40:11.831Z",
+ "builtAt": "2026-08-20T18:33:35.230Z",
  "volume": {
   "sales_count": 1261,
   "tokens": {
@@ -12,7 +12,7 @@
    "SOLID": 552
   },
   "usd_at_sale": 148480.22,
-  "value_today_usd": 16240.12,
+  "value_today_usd": 16240.13,
   "luna_equiv_total": 289505.24,
   "spot_luna_usd": 0.05165883717157952,
   "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
