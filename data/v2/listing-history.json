@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-08-19T18:29:24.843Z",
+ "builtAt": "2026-08-20T18:33:30.309Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "delisted": 1972,
+  "delisted": 1974,
   "sold": 1252,
-  "active": 64,
+  "active": 63,
   "unknown": 3
  },
  "live_listings_missing_create": [],
- "count": 3291,
+ "count": 3292,
  "records": [
   {
    "token_id": "1764",
@@ -60631,12 +60631,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-08T16:00:05Z",
      "from_height": 21372886,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-20T16:39:25Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "77F7205A426398DBFFB78A9560D8D1EB1EEA055A6E61773E1C7737899F59E2A0"
   },
   {
@@ -64618,12 +64618,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:51:37Z",
      "from_height": 21805919,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-20T16:35:40Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "32A541BAC7BF5899595C2D770A5A762CF3D477902AB28D8CB01D0FE17014C846"
   },
   {
@@ -64739,6 +64739,35 @@
    "listing_type": "buy_now",
    "outcome": "active",
    "create_tx": "DB506A9C72A0CF1B135F1A2F90D3B5EA5C4E636765733A491D6C799E98BF5545"
+  },
+  {
+   "token_id": "4864",
+   "marketplace": "Atrium",
+   "listing_ref": "545",
+   "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+   "segments": [
+    {
+     "price": "50000000",
+     "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+     "from_ts": "2026-08-20T16:36:55Z",
+     "from_height": 22461917,
+     "to_ts": null,
+     "end_reason": "still_listed"
+    }
+   ],
+   "listing_type": "list_nft",
+   "outcome": "active",
+   "create_tx": "CDD4C53D15138EDF03666D36237F8018CAB8B55C7E53F4D4CCA7BD0A4D7DB984",
+   "mkt_event_attrs": {
+    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+    "action": "list_nft",
+    "listing_id": "545",
+    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+    "price": "50000000",
+    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+    "token_id": "4864",
+    "msg_index": "0"
+   }
   }
  ],
  "updatedBy": "nft-forward-incremental.js"
