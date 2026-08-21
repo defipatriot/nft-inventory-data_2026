@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-08-20T18:33:30.309Z",
+ "builtAt": "2026-08-21T18:31:13.278Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "delisted": 1974,
+  "delisted": 1978,
   "sold": 1252,
-  "active": 63,
-  "unknown": 3
+  "active": 62,
+  "unknown": 5
  },
  "live_listings_missing_create": [],
- "count": 3292,
+ "count": 3297,
  "records": [
   {
    "token_id": "1764",
@@ -60220,12 +60220,12 @@
      "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
      "from_ts": "2026-06-04T04:35:31Z",
      "from_height": 21306192,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-21T14:39:27Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "buy_now",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "FC1D581D2659175406576CD3FA65D78279D08FA82D9981CF8A63685CE5E90E70"
   },
   {
@@ -64757,15 +64757,140 @@
    ],
    "listing_type": "list_nft",
    "outcome": "active",
-   "create_tx": "CDD4C53D15138EDF03666D36237F8018CAB8B55C7E53F4D4CCA7BD0A4D7DB984",
+   "create_tx": "CDD4C53D15138EDF03666D36237F8018CAB8B55C7E53F4D4CCA7BD0A4D7DB984"
+  },
+  {
+   "token_id": "2639",
+   "marketplace": "BBL",
+   "listing_ref": "17856",
+   "seller": "terra1v0k9r7csmknkcafvkem0kt4ul65qzpykjy9mpm",
+   "segments": [
+    {
+     "price": "20000000000",
+     "denom": "cw20:terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+     "from_ts": "2026-08-21T14:41:42Z",
+     "from_height": 22475766,
+     "to_ts": null,
+     "end_reason": "unknown"
+    }
+   ],
+   "listing_type": "buy_now",
+   "outcome": "unknown",
+   "create_tx": "0CB90160323DCA90FBEA39454463427F991DBDB697D9DCE181D51C5CE2E1946D"
+  },
+  {
+   "token_id": "6192",
+   "marketplace": "Atrium",
+   "listing_ref": "549",
+   "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+   "segments": [
+    {
+     "price": "49990000",
+     "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+     "from_ts": "2026-08-21T14:38:25Z",
+     "from_height": 22475732,
+     "to_ts": null,
+     "end_reason": "unknown"
+    }
+   ],
+   "listing_type": "list_nft",
+   "outcome": "unknown",
+   "create_tx": "638C37FAB146544219806A6637F41AA68AA48156021854875CABC62FDBD3806B",
    "mkt_event_attrs": {
     "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
     "action": "list_nft",
-    "listing_id": "545",
+    "listing_id": "549",
     "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
-    "price": "50000000",
-    "seller": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "token_id": "4864",
+    "price": "49990000",
+    "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+    "token_id": "6192",
+    "msg_index": "1"
+   }
+  },
+  {
+   "token_id": "6192",
+   "marketplace": "Atrium",
+   "listing_ref": "548",
+   "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+   "segments": [
+    {
+     "price": "49949900",
+     "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+     "from_ts": "2026-08-21T14:36:46Z",
+     "from_height": 22475715,
+     "to_ts": "2026-08-21T14:38:25Z",
+     "end_reason": "delist"
+    }
+   ],
+   "listing_type": "list_nft",
+   "outcome": "delisted",
+   "create_tx": "D959EDA7FCEDD6C358F2A20D5680457A389B83982E500C984A6E72870D14BB17",
+   "mkt_event_attrs": {
+    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+    "action": "list_nft",
+    "listing_id": "548",
+    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+    "price": "49949900",
+    "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+    "token_id": "6192",
+    "msg_index": "1"
+   }
+  },
+  {
+   "token_id": "6192",
+   "marketplace": "Atrium",
+   "listing_ref": "547",
+   "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+   "segments": [
+    {
+     "price": "49900000",
+     "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+     "from_ts": "2026-08-21T14:35:25Z",
+     "from_height": 22475701,
+     "to_ts": "2026-08-21T14:36:46Z",
+     "end_reason": "delist"
+    }
+   ],
+   "listing_type": "list_nft",
+   "outcome": "delisted",
+   "create_tx": "301EB8E867A7925E26775C82DB249BB00BD45E80848A425F1158C4D822C2A79A",
+   "mkt_event_attrs": {
+    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+    "action": "list_nft",
+    "listing_id": "547",
+    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+    "price": "49900000",
+    "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+    "token_id": "6192",
+    "msg_index": "1"
+   }
+  },
+  {
+   "token_id": "6192",
+   "marketplace": "Atrium",
+   "listing_ref": "546",
+   "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+   "segments": [
+    {
+     "price": "49999900",
+     "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
+     "from_ts": "2026-08-21T14:32:44Z",
+     "from_height": 22475673,
+     "to_ts": "2026-08-21T14:35:25Z",
+     "end_reason": "delist"
+    }
+   ],
+   "listing_type": "list_nft",
+   "outcome": "delisted",
+   "create_tx": "61846DF9A492656C1580A37E3D08C2C880B30A7988CA1D6B660F5B46ECBD052D",
+   "mkt_event_attrs": {
+    "_contract_address": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+    "action": "list_nft",
+    "listing_id": "546",
+    "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
+    "price": "49999900",
+    "seller": "terra1eykdj5xp2tgcauryaj65dc0d7dnu0ze2gt72wy",
+    "token_id": "6192",
     "msg_index": "0"
    }
   }
