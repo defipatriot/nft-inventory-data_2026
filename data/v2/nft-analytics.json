@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-08-21T18:31:17.159Z",
+ "builtAt": "2026-08-22T01:01:17.644Z",
  "volume": {
-  "sales_count": 1261,
+  "sales_count": 1262,
   "tokens": {
    "LUNA": 181213.24,
    "bLUNA": 68616.5443,
    "USDC": 105,
    "ampLUNA": 1,
-   "SOLID": 552
+   "SOLID": 601.99
   },
-  "usd_at_sale": 148480.23,
-  "value_today_usd": 16240.13,
+  "usd_at_sale": 148530.22,
+  "value_today_usd": 16290.13,
   "luna_equiv_total": 289505.24,
   "spot_luna_usd": 0.05165883717157952,
   "note": "tokens = raw per-denom amounts traded. usd_at_sale = sum(amount * token-USD on sale date) — a realized market price. value_today = amount * current spot (context only)."
@@ -47,11 +47,11 @@
    "value_today_usd": 0.11
   },
   "SOLID": {
-   "count": 17,
-   "tokens": 552,
+   "count": 18,
+   "tokens": 601.99,
    "luna_equiv": 0,
-   "notional_usd": 552,
-   "value_today_usd": 552
+   "notional_usd": 601.99,
+   "value_today_usd": 601.99
   }
  },
  "royalties": {
@@ -97,8 +97,8 @@
   "top_buyers": [
    {
     "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
-    "count": 222,
-    "notional_usd": 26076.37,
+    "count": 223,
+    "notional_usd": 26126.37,
     "luna_equiv": 112435.97
    },
    {
@@ -633,19 +633,25 @@
    "count": 2,
    "notional_usd": 100,
    "luna_equiv": 0
+  },
+  {
+   "month": "2026-08",
+   "count": 1,
+   "notional_usd": 49.99,
+   "luna_equiv": 0
   }
  ],
  "sale_number_distribution": {
   "1": 982,
   "2": 240,
-  "3": 32,
+  "3": 33,
   "4": 5,
   "5": 1,
   "6": 1
  },
  "flips": {
-  "realized_pnl_usd": -3368.34,
-  "flip_count": 279,
+  "realized_pnl_usd": -3368.35,
+  "flip_count": 280,
   "top_flips": [
    {
     "token_id": "3070",
@@ -810,7 +816,7 @@
   ]
  },
  "hold_time_days": {
-  "resales_with_basis": 1054,
+  "resales_with_basis": 1055,
   "median": 1.1,
   "max": 734.2
  },
@@ -820,9 +826,9 @@
   "notional_usd": 153.6273
  },
  "last_sale": {
-  "token_id": "7822",
-  "date": "2026-07-16T19:06:04Z",
-  "notional_usd": 50
+  "token_id": "6192",
+  "date": "2026-08-21T18:48:42Z",
+  "notional_usd": 49.99
  },
  "oracle_span": [
   "2022-05-28",
