@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-08-25T12:40:19.638Z",
+ "builtAt": "2026-08-29T20:21:32.743Z",
  "source": "nft-events-backfill.js (create_auction + escrow send_nft; outcomes from sales-enriched + provenance)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "note": "One record per marketplace listing. BBL price changes are cancel+recreate on-chain, so each auction_id is one price segment. Outcomes: sold (matched sale), delisted (token left the marketplace, no sale), active (still escrowed + live), unknown.",
  "counts": {
-  "delisted": 1978,
+  "delisted": 1991,
   "sold": 1252,
-  "active": 62,
+  "active": 49,
   "unknown": 7
  },
  "live_listings_missing_create": [],
@@ -60718,12 +60718,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:18:46Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -60737,12 +60737,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:14:27Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -60756,12 +60756,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:15:02Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -60775,12 +60775,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:16:00Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -60794,12 +60794,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:13:00Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -60832,12 +60832,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:13:35Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -60851,12 +60851,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-06-09T06:10:12Z",
      "from_height": 21381680,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:18:17Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "2B444F3C3AC6AC0C198DF48CD4C9AEA125B233525E657FE30E36504300BD229E"
   },
   {
@@ -64485,12 +64485,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:55:58Z",
      "from_height": 21805964,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:17:25Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131"
   },
   {
@@ -64523,12 +64523,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:55:58Z",
      "from_height": 21805964,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:17:48Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "B8AC421D3CABE29E4A2F13DF6ACF2930528C7F7853EEC3DDA89BE4EED33F4131"
   },
   {
@@ -64542,12 +64542,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:54:04Z",
      "from_height": 21805945,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:01:52Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "0C75ED4F66324502EDC0E24A531385B1B320531B723561CF9A40468CAA269CCC"
   },
   {
@@ -64561,12 +64561,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:53:29Z",
      "from_height": 21805939,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:16:51Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "C7622E11768CE4EE4F278BD9E218D1E4580AB7A587A4EA3E1D799EF310AD77C2"
   },
   {
@@ -64599,12 +64599,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-07-07T17:52:06Z",
      "from_height": 21805924,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:16:21Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "C52724FB094DCFAD5D3B06BEC44927AB63AC586AD32BFDAB25D7EF2FBF986C42"
   },
   {
@@ -64751,12 +64751,12 @@
      "denom": "cw20:terra10aa3zdkrc7jwuf8ekl3zq7e7m42vmzqehcmu74e4egc7xkm5kr2s0muyst",
      "from_ts": "2026-08-20T16:36:55Z",
      "from_height": 22461917,
-     "to_ts": null,
-     "end_reason": "still_listed"
+     "to_ts": "2026-08-29T18:00:55Z",
+     "end_reason": "delist"
     }
    ],
    "listing_type": "list_nft",
-   "outcome": "active",
+   "outcome": "delisted",
    "create_tx": "CDD4C53D15138EDF03666D36237F8018CAB8B55C7E53F4D4CCA7BD0A4D7DB984"
   },
   {
