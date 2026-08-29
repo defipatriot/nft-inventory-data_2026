@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-08-29T12:13:21.311Z",
+ "builtAt": "2026-08-29T20:21:21.130Z",
  "source": "nft-provenance-backfill.js (transfer_nft spine)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "collection": "adao",
  "note": "Per-token change-of-hands history. First event per token = initial distribution; mint phase/price assigned by date from release-history.html (approximate). Sale events tagged where the tx also had a BBL settle — join sales-history.json by tx_hash for price/USD. Stakes use send_nft (different action) and are NOT in this transfer_nft spine; current stake status comes from nfts.json.",
  "summary": {
   "distinct_tokens": 9763,
-  "total_hand_changes": 19862,
+  "total_hand_changes": 19890,
   "phaseCounts": {
    "unknown": 6771,
    "phase1b": 1032,
@@ -17,8 +17,8 @@
   },
   "typeCounts": {
    "transfer": 13842,
-   "unstake_or_claim": 2903,
-   "marketplace_move": 1821,
+   "unstake_or_claim": 2918,
+   "marketplace_move": 1834,
    "sale": 1296
   }
  },
@@ -15244,6 +15244,15 @@
      "tx_hash": "21FD2441A37A220E2A1B2494F4ED5B71B745F69328492C2044075ADF9C9DCC89",
      "block": 21381527,
      "timestamp": "2026-06-09T05:55:24Z"
+    },
+    {
+     "token_id": "417",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "EE5C6A01B814F55D53B8445097C5A966637E3D2B6BC71D04F497C6481B949D5F",
+     "block": 22598400,
+     "timestamp": "2026-08-29T18:18:46Z"
     }
    ],
    "mint": {
@@ -15256,7 +15265,7 @@
     "tx_hash": "F3121D08DBD165B14FB06D5262B240874386DC6E2E31CE90CF3E850ECC474242",
     "block": 9135002
    },
-   "hand_changes": 7,
+   "hand_changes": 8,
    "sale_count": 1,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -47608,6 +47617,15 @@
      "tx_hash": "4F2BDCEBA82B458978FC7C65A8178C08CDF9F57EBA61C331EE475151E5FE9375",
      "block": 21381532,
      "timestamp": "2026-06-09T05:55:53Z"
+    },
+    {
+     "token_id": "1290",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "638E7F4D60FEC7D18710727774CBF771B31013E2D624EF7B3C90641496EE4682",
+     "block": 22598355,
+     "timestamp": "2026-08-29T18:14:27Z"
     }
    ],
    "mint": {
@@ -47620,7 +47638,7 @@
     "tx_hash": "0AB4B2FFE354AB27BE4069AF100B2C5BE7A8B81E3CD877F7A268ECD8DD8332C5",
     "block": 8383736
    },
-   "hand_changes": 9,
+   "hand_changes": 10,
    "sale_count": 2,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -105721,6 +105739,15 @@
      "tx_hash": "4965666B82EA0695F38373FB067C1E337CDF0AF264902992AF213A63A33E0092",
      "block": 14686487,
      "timestamp": "2025-03-13T00:20:50Z"
+    },
+    {
+     "token_id": "2904",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -105733,7 +105760,7 @@
     "tx_hash": "34CBFDE3CD7931FD408FE5FD7506A7C816BDAFB02D3FCAD172BAC9A751FC383E",
     "block": 10584004
    },
-   "hand_changes": 8,
+   "hand_changes": 9,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -106567,6 +106594,15 @@
      "tx_hash": "AAF4053B719D93DEEB8DA68A7FDB69879AEC880E3890341E4A46BE8C1AF29B83",
      "block": 16546927,
      "timestamp": "2025-07-18T02:20:40Z"
+    },
+    {
+     "token_id": "2925",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -106579,7 +106615,7 @@
     "tx_hash": "3B2BC4B604B7420E5749963B01E2FEB4FE010650730DC236920A991A3D0380C2",
     "block": 8524910
    },
-   "hand_changes": 9,
+   "hand_changes": 10,
    "sale_count": 2,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -124108,6 +124144,15 @@
      "tx_hash": "311D706953A69B22440BECDEDF1907B98644FC683B758BE89DB64A21293CDB34",
      "block": 17733324,
      "timestamp": "2025-10-06T18:58:53Z"
+    },
+    {
+     "token_id": "3409",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -124120,7 +124165,7 @@
     "tx_hash": "898FF5E12A77572389B6328960704EA000C72A50152BF87E54DE19ECBE13688F",
     "block": 9135028
    },
-   "hand_changes": 8,
+   "hand_changes": 9,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -149884,6 +149929,15 @@
      "tx_hash": "DF61B56578879692FA88BC9555BCADFFCCFFE880367D4657505E32A6AB7E3DA8",
      "block": 15795599,
      "timestamp": "2025-05-27T19:30:51Z"
+    },
+    {
+     "token_id": "4110",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -149896,7 +149950,7 @@
     "tx_hash": "ED4343411D4C3C3BBB01B8502B36E5E3378B9FF0F43D2952C4AF6D9EB6DE8783",
     "block": 10584008
    },
-   "hand_changes": 5,
+   "hand_changes": 6,
    "sale_count": 0,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -151909,6 +151963,15 @@
      "tx_hash": "27D5CF9DCEADA032FBD4B2A5BA69C0F58D37CFC2681E6D0DF140660629E516D1",
      "block": 14464070,
      "timestamp": "2025-02-25T18:17:44Z"
+    },
+    {
+     "token_id": "4167",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -151921,7 +151984,7 @@
     "tx_hash": "061D17E83BE76C5A0FED01C4088025B98D5283F459C028FE652697FF3297B9B0",
     "block": 8409275
    },
-   "hand_changes": 11,
+   "hand_changes": 12,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -153277,6 +153340,15 @@
      "tx_hash": "1CBD3C773A2F0B68DD8207A8E100997A0799ADAFAFA14FA0E1F11401736DEC86",
      "block": 20126330,
      "timestamp": "2026-03-17T05:03:43Z"
+    },
+    {
+     "token_id": "4199",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -153289,7 +153361,7 @@
     "tx_hash": "E991B08EB8236B7960883E897E0BF2E26E7ACC8FA0991717A0031419B4148C64",
     "block": 9134998
    },
-   "hand_changes": 8,
+   "hand_changes": 9,
    "sale_count": 0,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -154096,6 +154168,15 @@
      "tx_hash": "DE1D2265A15D78995B72B5EAD91155A18524C65A5A26DBD46DA75A7752EF28B4",
      "block": 14686497,
      "timestamp": "2025-03-13T00:21:50Z"
+    },
+    {
+     "token_id": "4224",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -154108,7 +154189,7 @@
     "tx_hash": "ECB405715AF75D2DFE60DBA00B3DCA40EAF4BEEB85D9788D134F7897A7C22523",
     "block": 9135039
    },
-   "hand_changes": 6,
+   "hand_changes": 7,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -159532,6 +159613,15 @@
      "tx_hash": "27D5CF9DCEADA032FBD4B2A5BA69C0F58D37CFC2681E6D0DF140660629E516D1",
      "block": 14464070,
      "timestamp": "2025-02-25T18:17:44Z"
+    },
+    {
+     "token_id": "4364",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -159544,7 +159634,7 @@
     "tx_hash": "C0193338EB3E6D1CE764CC304F331505E75313A76C6B42B98E38BAB42BB21166",
     "block": 8382864
    },
-   "hand_changes": 7,
+   "hand_changes": 8,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -169207,6 +169297,15 @@
      "tx_hash": "956152A85529F44557EBDF1125CB30E418ED5A00BC67E8AEAE39DAC6D68F5563",
      "block": 21381538,
      "timestamp": "2026-06-09T05:56:27Z"
+    },
+    {
+     "token_id": "4617",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "B4291AF30438941D24A093B3E50A877269FB2DB6122FE2948CBCA2061B0FFC2A",
+     "block": 22598361,
+     "timestamp": "2026-08-29T18:15:02Z"
     }
    ],
    "mint": {
@@ -169219,7 +169318,7 @@
     "tx_hash": "C74CE66FAED1A59DFB336AC522040C45CAFB9559DF9C010DB769DB6FE4A526C3",
     "block": 8384869
    },
-   "hand_changes": 6,
+   "hand_changes": 7,
    "sale_count": 2,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -177955,6 +178054,15 @@
      "tx_hash": "727FC7DE636EFF7EE37DBC7CCE16FC1F29F6B4A65923C0801F3289F3B19C2238",
      "block": 22461904,
      "timestamp": "2026-08-20T16:35:40Z"
+    },
+    {
+     "token_id": "4864",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "D6612AAE7A3FDC463246779A294AD3982493FE62BF087D8F9A9F3619218ED650",
+     "block": 22598214,
+     "timestamp": "2026-08-29T18:00:55Z"
     }
    ],
    "mint": {
@@ -177967,7 +178075,7 @@
     "tx_hash": "31FD3A4A3954B6C1F10B5DC6AEE77F2100674601E44FDC14459C0E240739E7CB",
     "block": 8456113
    },
-   "hand_changes": 8,
+   "hand_changes": 9,
    "sale_count": 2,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -180754,6 +180862,15 @@
      "tx_hash": "E2A1281B38DCC5F3E337B53627A2ADE23F0A187900953B658F7B7CC20BDA8148",
      "block": 14686517,
      "timestamp": "2025-03-13T00:23:50Z"
+    },
+    {
+     "token_id": "4944",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -180766,7 +180883,7 @@
     "tx_hash": "478D2BB3C659407A203506FCAD2CE3D79F3D96DAF7662C6A1E3F976083D91D2D",
     "block": 8524025
    },
-   "hand_changes": 10,
+   "hand_changes": 11,
    "sale_count": 2,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -185965,6 +186082,15 @@
      "tx_hash": "09667D0A79F0D9045B4B1A0BB321B173E88A737A400E0445AA2396ABAA246649",
      "block": 21613317,
      "timestamp": "2026-06-24T19:14:24Z"
+    },
+    {
+     "token_id": "5085",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "CC31B5CA037988FCC65AE618098AEDBD20C98E703049D4BF04D660B944A8733E",
+     "block": 22598375,
+     "timestamp": "2026-08-29T18:16:21Z"
     }
    ],
    "mint": {
@@ -185977,7 +186103,7 @@
     "tx_hash": "3100414E0D5AD48329C26308FF4D3095D84D10B287AA5D8264193C9ED260C9EB",
     "block": 8380423
    },
-   "hand_changes": 9,
+   "hand_changes": 10,
    "sale_count": 2,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -188683,6 +188809,15 @@
      "tx_hash": "6757AC75ED344BE09FB20AB1F70E301E251CE9719B0626F22757E25B65F3BCD9",
      "block": 21381545,
      "timestamp": "2026-06-09T05:57:05Z"
+    },
+    {
+     "token_id": "5157",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "7E137DC2ABD6B38D56D50A3504AC7CFEAF05120FDFF91AA4F81EEB654A38BBD3",
+     "block": 22598371,
+     "timestamp": "2026-08-29T18:16:00Z"
     }
    ],
    "mint": {
@@ -188695,7 +188830,7 @@
     "tx_hash": "6B6848AD3E5BB3BB367A684392F9E6DE4F0A28ACCECBB31B9E8F9F3572AE0A2A",
     "block": 12470890
    },
-   "hand_changes": 4,
+   "hand_changes": 5,
    "sale_count": 1,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -219616,6 +219751,15 @@
      "tx_hash": "9C0340EB14A13FAD2F4D198C79087ACBEF0853C28B26E39938F82678DE29C5D0",
      "block": 14464075,
      "timestamp": "2025-02-25T18:18:14Z"
+    },
+    {
+     "token_id": "6027",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -219628,7 +219772,7 @@
     "tx_hash": "57678E448A90908FF65709C662E2E20CFF1B681E91418ABCFFF5AE1F446F8896",
     "block": 8383121
    },
-   "hand_changes": 8,
+   "hand_changes": 9,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -221002,6 +221146,15 @@
      "tx_hash": "FF9762039EA56A956904BD9ED0CCC75FDC7742E67041CB00EA091472861A7A6F",
      "block": 21120792,
      "timestamp": "2026-05-22T18:17:45Z"
+    },
+    {
+     "token_id": "6067",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "214E56C7D02660CF6EA22A6182A6E3E557CA76E66EF83411EE3A97F887604CD1",
+     "block": 22598340,
+     "timestamp": "2026-08-29T18:13:00Z"
     }
    ],
    "mint": {
@@ -221014,7 +221167,7 @@
     "tx_hash": "4320D4508184B4805FA33E18742361E7D41F93ABFC06D4F21C0ECA1C5B202ECF",
     "block": 8257023
    },
-   "hand_changes": 6,
+   "hand_changes": 7,
    "sale_count": 2,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -249343,6 +249496,15 @@
      "tx_hash": "09667D0A79F0D9045B4B1A0BB321B173E88A737A400E0445AA2396ABAA246649",
      "block": 21613317,
      "timestamp": "2026-06-24T19:14:24Z"
+    },
+    {
+     "token_id": "6880",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "23E3E5B4D44AD142D8B685105FA3911B7F73DBFB416F85F2E10BE4B1A2129A43",
+     "block": 22598380,
+     "timestamp": "2026-08-29T18:16:51Z"
     }
    ],
    "mint": {
@@ -249355,7 +249517,7 @@
     "tx_hash": "F7024A00334DA05873D9D0FFE594C8E1B37837C3C224AA972EDA830EDD8E21FE",
     "block": 8380573
    },
-   "hand_changes": 10,
+   "hand_changes": 11,
    "sale_count": 1,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -259981,6 +260143,15 @@
      "tx_hash": "9C0340EB14A13FAD2F4D198C79087ACBEF0853C28B26E39938F82678DE29C5D0",
      "block": 14464075,
      "timestamp": "2025-02-25T18:18:14Z"
+    },
+    {
+     "token_id": "7183",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -259993,7 +260164,7 @@
     "tx_hash": "30C260404C1799A4564613DC30BE330C9E8BC99FFC8504257E2519F5F6D6B906",
     "block": 8382624
    },
-   "hand_changes": 6,
+   "hand_changes": 7,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -264049,6 +264220,15 @@
      "tx_hash": "09667D0A79F0D9045B4B1A0BB321B173E88A737A400E0445AA2396ABAA246649",
      "block": 21613317,
      "timestamp": "2026-06-24T19:14:24Z"
+    },
+    {
+     "token_id": "7292",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "ADC7B40631D83FA1C6CDB275AD4EE8F68EDEFFDD3D63739BB7827F08F1E20AEF",
+     "block": 22598224,
+     "timestamp": "2026-08-29T18:01:52Z"
     }
    ],
    "mint": {
@@ -264061,7 +264241,7 @@
     "tx_hash": "9200A0CC3F1AE919C8C515B7700B6076804D79827FF92C85EEEBB7D174BD1BF1",
     "block": 8384392
    },
-   "hand_changes": 11,
+   "hand_changes": 12,
    "sale_count": 2,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -266704,6 +266884,15 @@
      "tx_hash": "D55BF47DCE40A8DADC2289CE7C867BBB44CA40D56024023C888E4CF976B9E1EF",
      "block": 14464035,
      "timestamp": "2025-02-25T18:14:20Z"
+    },
+    {
+     "token_id": "7369",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -266716,7 +266905,7 @@
     "tx_hash": "A5EF5CCD888CF5EEB9BABFDD3E527B54E4245E6813F9E429E2ADE086ACE4FEC2",
     "block": 8384252
    },
-   "hand_changes": 6,
+   "hand_changes": 7,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -268972,6 +269161,15 @@
      "tx_hash": "5DC43724852DB9E20E7C0E5ED3E52EED16D1E2282817C73B50CBD7CB288AA3F1",
      "block": 14686523,
      "timestamp": "2025-03-13T00:24:26Z"
+    },
+    {
+     "token_id": "7435",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -268984,7 +269182,7 @@
     "tx_hash": "2CB7079DD2DFD3C2E7947CD5E2B70E9D67069E9CC98F63854A783776CB06B52E",
     "block": 8529533
    },
-   "hand_changes": 11,
+   "hand_changes": 12,
    "sale_count": 2,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -269224,6 +269422,15 @@
      "tx_hash": "D55BF47DCE40A8DADC2289CE7C867BBB44CA40D56024023C888E4CF976B9E1EF",
      "block": 14464035,
      "timestamp": "2025-02-25T18:14:20Z"
+    },
+    {
+     "token_id": "7442",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -269236,7 +269443,7 @@
     "tx_hash": "B8CE2C912D9A8FFE06140C3916A514C932B28AB7E32A819F3DD5DA0869D4BD8A",
     "block": 8119655
    },
-   "hand_changes": 8,
+   "hand_changes": 9,
    "sale_count": 1,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -280321,6 +280528,15 @@
      "tx_hash": "09667D0A79F0D9045B4B1A0BB321B173E88A737A400E0445AA2396ABAA246649",
      "block": 21613317,
      "timestamp": "2026-06-24T19:14:24Z"
+    },
+    {
+     "token_id": "7761",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "4F0CA08F1FD1594FC3B197A1704D4A424145B67B46C77868741AF111662455B8",
+     "block": 22598386,
+     "timestamp": "2026-08-29T18:17:25Z"
     }
    ],
    "mint": {
@@ -280333,7 +280549,7 @@
     "tx_hash": "A3060A6B5BA090E79145FD5EA57E8A5AE78DD6ABEAEEC7ED9400CD635F5E0069",
     "block": 8382606
    },
-   "hand_changes": 6,
+   "hand_changes": 7,
    "sale_count": 1,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -281869,6 +282085,15 @@
      "tx_hash": "BABE38BAF2725D803BF50FF333B1A488A554ACFFD9FB0BDCB7933211D24B9A80",
      "block": 17068194,
      "timestamp": "2025-08-22T14:48:39Z"
+    },
+    {
+     "token_id": "7801",
+     "from": "terra1c57ur376szdv8rtes6sa9nst4k536dynunksu8tx5zu4z5u3am6qmvqx47",
+     "to": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l",
+     "type": "unstake_or_claim",
+     "tx_hash": "A3ED5EA2D21FC9BAE2F360F0AACC34D39489F08A56A639B01A4E696BB12050EB",
+     "block": 22597676,
+     "timestamp": "2026-08-29T17:09:33Z"
     }
    ],
    "mint": {
@@ -281881,7 +282106,7 @@
     "tx_hash": "5371EB75C5DFAF30E13488397F67AD1B762DE0E950C4445C3FEDB2A7D3640DEB",
     "block": 8515320
    },
-   "hand_changes": 11,
+   "hand_changes": 12,
    "sale_count": 2,
    "current_owner": "terra1d0jq9l5narcgy46v5agnv8hqmn5m8kj3lkh93l"
   },
@@ -284119,6 +284344,15 @@
      "tx_hash": "09667D0A79F0D9045B4B1A0BB321B173E88A737A400E0445AA2396ABAA246649",
      "block": 21613317,
      "timestamp": "2026-06-24T19:14:24Z"
+    },
+    {
+     "token_id": "7859",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "2F855C291D52DD4AE7B88C3D74A2DD48AA53771F78101A7CED314DEDA3EA33D6",
+     "block": 22598390,
+     "timestamp": "2026-08-29T18:17:48Z"
     }
    ],
    "mint": {
@@ -284131,7 +284365,7 @@
     "tx_hash": "2824B13792C8993BF216D25C6AF11FA5BAE48E9FC686121370414FCBC7897ED9",
     "block": 8526280
    },
-   "hand_changes": 10,
+   "hand_changes": 11,
    "sale_count": 3,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -299347,6 +299581,15 @@
      "tx_hash": "E855F94CF0F79CCBB7C3FDCF60ED186259C5C53E8899396613F5C2CD6ECC9D69",
      "block": 21381613,
      "timestamp": "2026-06-09T06:03:38Z"
+    },
+    {
+     "token_id": "8316",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "E1A545FE315E22E6F5498B2F45F4A21BF3554D981B85F8CD55AA506603F17080",
+     "block": 22598346,
+     "timestamp": "2026-08-29T18:13:35Z"
     }
    ],
    "mint": {
@@ -299359,7 +299602,7 @@
     "tx_hash": "66874C6D9CA6E397FDFC59FB40EBEFA17A83A3E10791FA835D17A94BEB8F02CF",
     "block": 10583980
    },
-   "hand_changes": 12,
+   "hand_changes": 13,
    "sale_count": 1,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
@@ -301156,6 +301399,15 @@
      "tx_hash": "466E77E555EB3087A8A2DB5EF0A5BD8AAC009EEE3D49A66B6CBCC31A4D730911",
      "block": 21381600,
      "timestamp": "2026-06-09T06:02:22Z"
+    },
+    {
+     "token_id": "8369",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "marketplace_move",
+     "tx_hash": "A15D95712DBFC99E1F654C873578A201233758429DB0F95FE866E9D2B0E0568A",
+     "block": 22598395,
+     "timestamp": "2026-08-29T18:18:17Z"
     }
    ],
    "mint": {
@@ -301168,7 +301420,7 @@
     "tx_hash": "ADB88F2C66269ECCAF70DE803729F4A7415B0E82171ACCA0B15C78183CC4FFF0",
     "block": 10583996
    },
-   "hand_changes": 5,
+   "hand_changes": 6,
    "sale_count": 1,
    "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
