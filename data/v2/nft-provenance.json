@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-08-30T15:58:27.915Z",
+ "builtAt": "2026-08-30T20:29:34.387Z",
  "source": "nft-provenance-backfill.js (transfer_nft spine)",
  "nft_contract": "terra1phr9fngjv7a8an4dhmhd0u0f98wazxfnzccqtyheq4zqrrp4fpuqw3apw9",
  "collection": "adao",
  "note": "Per-token change-of-hands history. First event per token = initial distribution; mint phase/price assigned by date from release-history.html (approximate). Sale events tagged where the tx also had a BBL settle — join sales-history.json by tx_hash for price/USD. Stakes use send_nft (different action) and are NOT in this transfer_nft spine; current stake status comes from nfts.json.",
  "summary": {
   "distinct_tokens": 9763,
-  "total_hand_changes": 19890,
+  "total_hand_changes": 19891,
   "phaseCounts": {
    "unknown": 6771,
    "phase1b": 1032,
@@ -19,7 +19,7 @@
    "transfer": 13842,
    "unstake_or_claim": 2918,
    "marketplace_move": 1834,
-   "sale": 1296
+   "sale": 1297
   }
  },
  "tokens": {
@@ -315916,6 +315916,15 @@
      "tx_hash": "119366DF3695A432584A37B0CB9F2946A70CA30BC0E6894ED573EF9E27CB589C",
      "block": 21407855,
      "timestamp": "2026-06-11T00:23:07Z"
+    },
+    {
+     "token_id": "8803",
+     "from": "terra15du229lqcxkn939pmjgklqunftf604q4wz87kt5awj6reghec5jqs0w0kj",
+     "to": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
+     "type": "sale",
+     "tx_hash": "BE431F43C7F41EF07193FE809E9BD7C04481E5CCF5D16F73F6D37B4760676C62",
+     "block": 22614345,
+     "timestamp": "2026-08-30T19:43:51Z"
     }
    ],
    "mint": {
@@ -315928,9 +315937,9 @@
     "tx_hash": "898FF5E12A77572389B6328960704EA000C72A50152BF87E54DE19ECBE13688F",
     "block": 9135028
    },
-   "hand_changes": 13,
-   "sale_count": 4,
-   "current_owner": "terra1fjd6thl0dqh6e5wv9z7rdrqzmtp0xau7fdejpq"
+   "hand_changes": 14,
+   "sale_count": 5,
+   "current_owner": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw"
   },
   "8804": {
    "token_id": "8804",
