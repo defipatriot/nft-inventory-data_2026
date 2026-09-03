@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "collection": "adao",
- "builtAt": "2026-09-03T02:48:09.345Z",
+ "builtAt": "2026-09-03T10:38:09.538Z",
  "volume": {
   "sales_count": 1263,
   "tokens": {
@@ -98,7 +98,7 @@
    {
     "address": "terra1hr8zsfpch47qygc96c8e6rzkd2t7mafqx77ulw",
     "count": 224,
-    "notional_usd": 26136.35,
+    "notional_usd": 26136.36,
     "luna_equiv": 112435.97
    },
    {
